@@ -1,3 +1,4 @@
+
   copy = (clicked_id) => {
   event.preventDefault();
   input = document.createElement("input");
@@ -11,7 +12,7 @@
 
 function onClick(clicked_id)
 	{
-		var par = '-§-'
+		var par = '═§═'
 		var tip = 'Copied!'
 		document.getElementById(clicked_id).innerHTML = tip;
 		copy(clicked_id);
