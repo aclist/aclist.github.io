@@ -463,10 +463,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_quick_connect_to_favorite_server">Quick connect to favorite server</a></li>
 <li><a href="#_add_server_by_id">Add server by ID</a></li>
 <li><a href="#_add_favorite_server">Add favorite server</a></li>
+<li><a href="#_delete_server">Delete server</a></li>
 <li><a href="#_list_installed_mods">List installed mods</a></li>
+<li><a href="#_toggle_debug_mode">Toggle debug mode</a></li>
 <li><a href="#_report_bug">Report bug</a></li>
 <li><a href="#_help_file">Help file</a></li>
 <li><a href="#_view_changelog">View changelog</a></li>
+<li><a href="#_debug_options">Debug options</a></li>
 </ul>
 </li>
 <li><a href="#_config_file_keyvalue_pairs">Config file key/value pairs</a></li>
@@ -549,6 +552,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <pre class="highlight"><code>echo 'vm.max_map_count=1048576' | sudo tee /etc/sysctl.d/dayz.conf</code></pre>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If it detects an incorrect map count value, DZGUI will prompt you to permanently update the map count value when starting up.
+</td>
+</tr>
+</table>
+</div>
 <div class="olist arabic">
 <ol class="arabic" start="2">
 <li>
@@ -584,7 +599,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p>Each server has a unique ID. This is the string of numbers at the end of the URL. Copy these IDs. For example, in the URL <a href="https://www.battlemetrics.com/servers/dayz/8039514" class="bare">https://www.battlemetrics.com/servers/dayz/8039514</a>, the ID is <code>8039514</code>.</p>
-
 </li>
 </ol>
 </div>
@@ -641,16 +655,16 @@ If the path was not detected correctly, you can manually edit the config file at
 <p>If DZGUI detects a new upstream version, it will prompt you to download it automatically. It backs up the original version before fetching the new one, then updates your config file with your existing values. Once finished, it will ask you to relaunch the app.</p>
 </div>
 <div class="paragraph">
-  <p>if you decline to upgrade to the new version, DZGUI will continue to the main menu with the current version.</p>
+<p>If you decline to upgrade to the new version, DZGUI will continue to the main menu with the current version.</p>
 </div>
 <div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<div class="title">note</div>
+<div class="title">Note</div>
 </td>
 <td class="content">
-New versions may include changes to bugs that could prevent you from playing on certain servers. upgrading is always advised.
+New versions may include changes to bugs that could prevent you from playing on certain servers. Upgrading is always advised.
 </td>
 </tr>
 </table>
@@ -694,8 +708,8 @@ New versions may include changes to bugs that could prevent you from playing on 
 <div class="paragraph">
 <p>DZGUI will check the server&#8217;s modset against your local mods. If you are missing any, it will prompt you to download them through the Steam Workshop and open a window in the background in the system browser.</p>
 </div>
-  <div class="paragraph">
-<p>Log in to the Steam web site, open each link, and click Subscribe to schedule these for download.</p>
+<div class="paragraph">
+<p>Open each link and click Subscribe to schedule these for download.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -704,7 +718,7 @@ New versions may include changes to bugs that could prevent you from playing on 
 <div class="title">Note</div>
 </td>
 <td class="content">
-You must be logged into both the Steam client and the Steam web site for the mod changes to take effect. It can take some time for the subscribed mods to download and update. You can continue clicking Next to regenerate the list, or wait for all of them to complete.
+You must be logged into Steam for mod change to take effect. It can take some time for the subscribed mods to download and update. You can continue clicking Next to regenerate the list, or wait for all of them to complete.
 </td>
 </tr>
 </table>
@@ -763,13 +777,25 @@ You must be logged into both the Steam client and the Steam web site for the mod
 <div class="sect3">
 <h4 id="_add_favorite_server">Add favorite server</h4>
 <div class="paragraph">
-<p>Prompts you to add a favorite server to the config file by ID. The name of the server will be updated in the header of the app. This server is used when selecting the <a href="#_quick_connect_to_favorite_server">Quick connect to favorite server</a> option.</p>
+<p>Prompts you to add/change a favorite server to the config file by ID. The name of the server will be updated in the header of the app. This server is used when selecting the <a href="#_quick_connect_to_favorite_server">Quick connect to favorite server</a> option. If a favorite server is already enabled, this option switches to "Change favorite server."</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_delete_server">Delete server</h4>
+<div class="paragraph">
+<p>Prints a list of human-readable servers currently saved, and lets you delete them by selecting one from the list.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_list_installed_mods">List installed mods</h4>
 <div class="paragraph">
-<p>Prints a scrollable dialog containing all locally-installed mods.</p>
+<p>Prints a scrollable dialog containing all locally-installed mods and their corresponding symlinks IDs.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_toggle_debug_mode">Toggle debug mode</h4>
+<div class="paragraph">
+<p>Toggles debug mode, which is used to perform dry-runs and output what parameters would have been used to connect to a server. Enabling debug mode also exposes the <a href="#_debug_options">Debug options</a> menu, which contains some settings for advanced use.</p>
 </div>
 </div>
 <div class="sect3">
@@ -790,13 +816,25 @@ You must be logged into both the Steam client and the Steam web site for the mod
 <p>Prints the entire changelog up to the current version (and unreleased changes) in-app.</p>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_debug_options">Debug options</h4>
+<div class="paragraph">
+<p>If enabled, this menu contains a sub-menu with various advanced features, enumerated below.</p>
+</div>
+<div class="sect4">
+<h5 id="_toggle_branch">Toggle branch</h5>
+<div class="paragraph">
+<p>Used to toggle the branch to fetch DZGUI from between <code>stable</code> and <code>testing</code>. The app ships with the stable branch enabled, with the testing branch being used to elaborate various experimental features.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_config_file_keyvalue_pairs">Config file key/value pairs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Under normal usage, these values are populated automatically in-app. In the future, this config file will also be compatible with DZTUI.</p>
+<p>Under normal usage, these values are populated and toggled automatically in-app. This config file is partially compatible DZTUI.</p>
 </div>
 <table class="tableblock frame-all grid-all fit-content">
 <colgroup>
@@ -829,6 +867,14 @@ You must be logged into both the Steam client and the Steam web site for the mod
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>debug</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">by default, set to 0; set to <code>1</code> to print launch options that would have been run, instead of actually connecting (used for troubleshooting and submitting bug reports)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>branch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">by default, set to <code>stable</code>; set to <code>testing</code> to fetch the testing branch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>seen_news</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stores a hash of the news item last seen by the client. This is used to suppress news messages until a new one is posted.</p></td>
 </tr>
 </tbody>
 </table>
@@ -876,7 +922,7 @@ You must be logged into both the Steam client and the Steam web site for the mod
 <p>Playing on a server with an enormous amount of mods</p>
 </li>
 <li>
-<p>Playing on a server with non-English mod names (?)</p>
+<p>Playing on a server with non-ASCII mod names (?)</p>
 </li>
 </ul>
 </div>
