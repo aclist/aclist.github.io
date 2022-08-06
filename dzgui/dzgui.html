@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="DayZ community server graphical launcher for Linux">
+<meta name="author" content="DayZ community server graphical launcher for Linux | Last updated: 2022-08-05">
 <title>DZGUI documentation</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment the following line when using as a custom stylesheet */
 /* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
 html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 {color: #8a1414 !important}
 a{background:none}
 a:focus{outline:thin dotted}
 a:active,a:hover{outline:0}
@@ -70,7 +70,7 @@ a:hover,a:focus{color:#1d4b8f}
 a img{border:0}
 p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
 p aside{font-size:.875em;line-height:1.35;font-style:italic}
-h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#8a1414;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
 h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
 h1{font-size:2.125em}
 h2{font-size:1.6875em}
@@ -435,13 +435,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+
 </style>
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
 <h1>DZGUI documentation</h1>
 <div class="details">
-<span id="author" class="author">DayZ community server graphical launcher for Linux</span><br>
+<span id="author" class="author">DayZ community server graphical launcher for Linux | Last updated: 2022-08-05</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -453,6 +454,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_preparation">Preparation</a></li>
 <li><a href="#_api_key_server_ids">API key &amp; server IDs</a></li>
 <li><a href="#_first_time_launch">First-time launch</a></li>
+<li><a href="#_steam_integration_artwork">Steam integration &amp; artwork</a></li>
 <li><a href="#_updating_the_app">Updating the app</a></li>
 </ul>
 </li>
@@ -524,13 +526,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p><strong>Automatic method (skip to 3 below when complete)</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl -s "https://raw.githubusercontent.com/aclist/dztui/testing/install.sh" | bash</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Manual method</strong></p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>chmod +x dzgui.sh</code></pre>
 </div>
 </div>
 <div class="olist arabic">
-<ol class="arabic">
+<ol class="arabic" start="2">
 <li>
 <p>Update the <code>vm.max_map_count</code> value (see <a href="https://www.protondb.com/app/221100" class="bare">https://www.protondb.com/app/221100</a>)</p>
 </li>
@@ -565,7 +578,7 @@ If it detects an incorrect map count value, DZGUI will prompt you to permanently
 </table>
 </div>
 <div class="olist arabic">
-<ol class="arabic" start="2">
+<ol class="arabic" start="3">
 <li>
 <p>Steam account with DayZ license</p>
 </li>
@@ -617,9 +630,44 @@ You will be prompted to enter these IDs when starting the app, so you could refe
 </div>
 <div class="sect2">
 <h3 id="_first_time_launch">First-time launch</h3>
-<div class="paragraph">
-<p>Follow the menu prompts provided by the app. You will be asked to provide:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>DZGUI can be launched one of two ways.</p>
+</li>
+</ol>
 </div>
+<div class="paragraph">
+<p><strong>From the terminal:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>./dzgui.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Launching from the terminal gives more verbose information, and can be a good way of troubleshooting problems.</p>
+</div>
+<div class="paragraph">
+<p><strong>From the shortcut shipped with the application:</strong></p>
+</div>
+<div class="paragraph">
+<p>*If using a desktop environment based on the Freedesktop specification</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Located under the "Games" category of your system&#8217;s applications list.</p>
+</li>
+<li>
+<p>Via the DZGUI desktop shortcut (Steam Deck only)</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Follow the menu prompts given by the app. You will be asked to provide:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -632,6 +680,9 @@ You will be prompted to enter these IDs when starting the app, so you could refe
 <p>At least one server ID</p>
 </li>
 </ul>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>DZGUI will then attempt to locate your default Steam installation and DayZ path. If it detects multiple paths, you will be given a list to choose from.</p>
@@ -647,6 +698,156 @@ If the path was not detected correctly, you can manually edit the config file at
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_steam_integration_artwork">Steam integration &amp; artwork</h3>
+<div class="paragraph">
+<p>DZGUI can be added to Steam as a "non-Steam game" in order to facilitate integration with Steam Deck or desktop environments.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Launch Steam in the "Large" view.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Steam Deck: you must switch to "Desktop Mode" and launch Steam from the desktop.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Select <strong>Add a Game</strong> &gt; <strong>Add a Non-Steam Game</strong> from the lower left-hand corner.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://github.com/aclist/dztui/raw/testing/images/tutorial/01.png" alt="01" width="500">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>Navigate to <code>$HOME/.local/share/dzgui</code> and select <code>dzgui.sh</code></p>
+</li>
+<li>
+<p>Select <strong>Add Selected Programs</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The application also ships with Steam cover artwork. It is located under:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$HOME/.local/share/dzgui</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The artwork consists of four parts:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Grid: a vertical "box art" grid used on library pages</p>
+</li>
+<li>
+<p>Hero: a large horizontal banner used on the app&#8217;s details page</p>
+</li>
+<li>
+<p>Logo: a transparent icon used to remove Steam&#8217;s default app text</p>
+</li>
+<li>
+<p>dzgui: used by freedesktop shortcut to generate a desktop icon; not intended for the user</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Updating the artwork:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the app&#8217;s details page and right-click the blank image header at the top.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://github.com/aclist/dztui/raw/testing/images/tutorial/03.png" alt="03" width="700">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Select <strong>Set Custom Background</strong></p>
+</li>
+<li>
+<p>Navigate to the artwork path described above and select <code>hero.png</code>.</p>
+</li>
+<li>
+<p>Next, right-click the image background and select <strong>Set Custom Logo</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://github.com/aclist/dztui/raw/testing/images/tutorial/04.png" alt="04" width="700">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="5">
+<li>
+<p>Navigate to the same path and select <code>logo.png</code>. Notice that this removes the redundant app name that occluded the image.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://github.com/aclist/dztui/raw/testing/images/tutorial/05.png" alt="05" width="700">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="6">
+<li>
+<p>Next, navigate to your Library index (looks like a bookshelf of cover art) and find the DZGUI app.</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="7">
+<li>
+<p>Right-click its cover and select <strong>Manage</strong> &gt; <strong>Set custom artwork</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://github.com/aclist/dztui/raw/testing/images/tutorial/06.png" alt="06" width="700">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="8">
+<li>
+<p>Navigate to the same path and select <code>grid.png</code>. The final result:</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://github.com/aclist/dztui/raw/testing/images/tutorial/07.png" alt="07" width="700">
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -689,7 +890,15 @@ New versions may include changes to bugs that could prevent you from playing on 
 </div>
 </div>
 <div class="paragraph">
-<p>Config:</p>
+<p>If launching DZGUI via its system shortcut, the backup file (similarly for log files) will be located under:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$HOME/.local/share/dzgui</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Backup config files:</p>
 </div>
 <div class="listingblock">
 <div class="content">
