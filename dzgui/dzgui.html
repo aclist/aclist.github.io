@@ -463,6 +463,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel3">
 <li><a href="#_launch_server_list">Launch server list</a></li>
 <li><a href="#_quick_connect_to_favorite_server">Quick connect to favorite server</a></li>
+<li><a href="#_connect_by_ip">Connect by IP</a></li>
 <li><a href="#_add_server_by_id">Add server by ID</a></li>
 <li><a href="#_add_favorite_server">Add favorite server</a></li>
 <li><a href="#_delete_server">Delete server</a></li>
@@ -531,7 +532,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>curl -s "https://raw.githubusercontent.com/aclist/dztui/dzgui/install.sh" | bash</code></pre>
+<pre class="highlight"><code>curl -s "https://raw.githubusercontent.com/aclist/dztui/testing/install.sh" | bash</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -981,6 +982,22 @@ You must be logged into Steam for mod change to take effect. It can take some ti
 </div>
 </div>
 <div class="sect3">
+<h4 id="_connect_by_ip">Connect by IP</h4>
+<div class="paragraph">
+<p>Instead of relying on server IDs, returns the list of servers behind a given IP. Provide only the IP; no port is necessary. This returns the server metadata for you to verify before connecting.</p>
+</div>
+<div class="paragraph">
+<p>If there are multiple maps hosted behind an IP (e.g. different maps on varying ports), the application will list all of them.</p>
+</div>
+<div class="paragraph">
+<p>In order to use this feature, you must have a <a href="https://steamcommunity.com/dev/apikey">Steam API key</a>. You will be asked for a unique URL for your app when registering.
+Since this key is for a personal use application and does not actually call back anywhere, set a generic local identifier here like "127.0.0.1".</p>
+</div>
+<div class="paragraph">
+<p>Once configured, you can insert this key in the app when launching the "Connect by IP" feature for the first time.</p>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_add_server_by_id">Add server by ID</h4>
 <div class="paragraph">
 <p>Prompts you to add servers to the config file by ID. An indefinite number of servers can be added. These will be listed when using the <a href="#_launch_server_list">Launch server list</a> option.</p>
@@ -1105,7 +1122,7 @@ You must be logged into Steam for mod change to take effect. It can take some ti
 </div>
 <div class="paragraph">
 <div class="title">Game launches, but throws a "mod missing/check PBO file" error when connecting</div>
-<p>You are missing mods or mods did not download correctly. Re-run the app to verify and link missing mods.</p>
+<p>In rare cases, the server may be using misconfigured, malformed, or obsolete mods. This is out of our control and depends on server operators checking their mods for integrity. If you believe the mods are correct and this is a bug, please report it.</p>
 </div>
 <div class="paragraph">
 <div class="title">Game and server launches, but when joining the game world, an error occurs</div>
