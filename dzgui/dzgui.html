@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="author" content="DayZ community server graphical launcher for Linux | Last updated: 2022-10-04">
+<meta name="author" content="DayZ community server graphical launcher for Linux | Last updated: 2022-10-11">
 <title>DZGUI documentation</title>
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -442,7 +442,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>DZGUI documentation</h1>
 <div class="details">
-<span id="author" class="author">DayZ community server graphical launcher for Linux | Last updated: 2022-09-08</span><br>
+<span id="author" class="author">DayZ community server graphical launcher for Linux | Last updated: 2022-10-11</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -461,8 +461,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_usage">Usage</a></li>
 <li><a href="#_menu_options">Menu options</a>
 <ul class="sectlevel3">
-<li><a href="#_server_browser">Server browser</a></li>
-<li><a href="#_my_servers">My servers</a></li>
+<li><a href="#_launch_server_list">Launch server list</a></li>
 <li><a href="#_quick_connect_to_favorite_server">Quick connect to favorite server</a></li>
 <li><a href="#_connect_by_ip">Connect by IP</a></li>
 <li><a href="#_add_server_by_id">Add server by ID</a></li>
@@ -500,12 +499,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_dependencies">Dependencies</h3>
 <div class="paragraph">
-<p>If not already installed, the below can be found in your system&#8217;s package manager.
-With the exception of Steam (which presumably you already have), in 99% of cases,
-the other utilities should ship out of the box with mainstream distributions. They are provided here merely as a reference.</p>
-</div>
-<div class="paragraph">
-<p>If any dependencies are missing when the application starts, it will warn you, so you need not take any preemptive measures here.</p>
+<p>If not already installed, the below can be found in your system&#8217;s package manager.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -552,8 +546,7 @@ the other utilities should ship out of the box with mainstream distributions. Th
 <div class="olist arabic">
 <ol class="arabic" start="2">
 <li>
-<p>Update the <code>vm.max_map_count</code> value (see <a href="https://www.protondb.com/app/221100" class="bare">https://www.protondb.com/app/221100</a>).
-This is handled automatically by DZGUI if you just choose to run the application out of the box.</p>
+<p>Update the <code>vm.max_map_count</code> value (see <a href="https://www.protondb.com/app/221100" class="bare">https://www.protondb.com/app/221100</a>)</p>
 </li>
 </ol>
 </div>
@@ -598,6 +591,8 @@ If it detects an incorrect map count value, DZGUI will prompt you to permanently
 </div>
 <div class="sect2">
 <h3 id="_api_key_server_ids">API key &amp; server IDs</h3>
+<div class="sect3">
+<h4 id="_battlemetrics_api_key">BattleMetrics API key</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -634,6 +629,23 @@ You will be prompted to enter these IDs when starting the app, so you could refe
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_steam_api_key">Steam API key</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Register for a <a href="https://steamcommunity.com/dev/apikey">Steam API key</a> using your Steam account. You will be asked for a unique URL for your app when registering.</p>
+</li>
+<li>
+<p>Since this key is for a personal use application and does not actually call back anywhere, set a generic local identifier here like "127.0.0.1".</p>
+</li>
+<li>
+<p>Once configured, you can insert this key in the app when launching the "Connect by IP" feature for the first time.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -935,7 +947,7 @@ New versions may include changes to bugs that could prevent you from playing on 
 <h2 id="_usage">Usage</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Select <a href="#_my_servers">My servers</a> to fetch details for the server IDs you provided. Select the server you wish to connect to and click OK.</p>
+<p>Select <a href="#_launch_server_list">Launch server list</a> to fetch details for the server IDs you provided. Select the server you wish to connect to and click OK.</p>
 </div>
 <div class="paragraph">
 <p>DZGUI will check the server&#8217;s modset against your local mods. If you are missing any, it will prompt you to download them through the Steam Workshop and open a window in the background in the system browser.</p>
@@ -964,135 +976,7 @@ You must be logged into Steam for mod change to take effect. It can take some ti
 <h2 id="_menu_options">Menu options</h2>
 <div class="sectionbody">
 <div class="sect3">
-<h4 id="_server_browser">Server browser</h4>
-<div class="paragraph">
-<p>The server browser retrieves and lists all publicly broadcasting servers (including official ones) in a table.
-These servers can be filtered by various parameters in order to display a more granular result.</p>
-</div>
-<div class="paragraph">
-<p>After a server is selected from the list, the application continues to the mod validation step.</p>
-</div>
-<div class="paragraph">
-<p>In order to use this feature, you must have a <a href="https://steamcommunity.com/dev/apikey">Steam API key</a>. You will be asked for a unique URL for your app when registering.
-Since this key is for a personal use application and does not actually call back anywhere, set a generic local identifier here like "127.0.0.1".</p>
-</div>
-<div class="paragraph">
-<p>You will be prompted to insert this key into the app when launching the server browser for the first time.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-It is not currently possible to save servers from the full server browser.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_filters">Filters</h5>
-<div class="paragraph">
-<p>The server browser exposes the following filters. These options can be combined.</p>
-</div>
-<div class="paragraph">
-<p>Untick filters to exclude those matches from the returned results. The "All maps" and "Keyword search" filters have special behavior (see below).
-You must have a minimum of one filter active to return any results.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Filter</th>
-<th class="tableblock halign-left valign-top">Usage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All maps</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Return all available map types being served.
-Note: disabling this option will present a list from which you can select one specific map type (e.g., namalsk)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Daytime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Include servers with gametime between 0600 and 1659</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nighttime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Include servers with gametime between 1700 and 0559</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Empty</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Include servers with 0 current players</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Full</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Include servers at maximum capacity</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Low population</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Include servers with fewer than 10 players online</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Non-ASCII titles</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Include servers with special symbols, Unicode, or text in the title.
-Note: disabling this filter will also exclude CJK languages, Cyrillic, and other special character sets.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Keyword</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select this option to filter by server titles matching a specific word or phrase (case insensitive)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_table_details">Table details</h5>
-<div class="paragraph">
-<p>After retrieval, the browser presents a table of results with the following parameters.
-Due to the density of information, the table will try to render at a minimum of 1920x1080 on a desktop or at fullscreen on a Steam Deck.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Total matches/total servers queried</p>
-</li>
-<li>
-<p>Total players online on all servers</p>
-</li>
-<li>
-<p>Map name</p>
-</li>
-<li>
-<p>Server title</p>
-</li>
-<li>
-<p>Gametime: the in-game time</p>
-</li>
-<li>
-<p>Players: this is zero-padded for sorting purposes</p>
-</li>
-<li>
-<p>Max players: this is zero-padded for sorting purposes</p>
-</li>
-<li>
-<p>Distance: the physical distance to the server in kilometers is calculated by geolocation</p>
-</li>
-<li>
-<p>IP: the IP address and port</p>
-</li>
-<li>
-<p>Qport: the query port used to retrieve metadata and rules</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_my_servers">My servers</h4>
+<h4 id="_launch_server_list">Launch server list</h4>
 <div class="paragraph">
 <p>Fetches detailed server information on the list of servers saved in the config file. This is the main place you interact with DZGUI when choosing a server from your list. These details are:</p>
 </div>
@@ -1131,7 +1015,7 @@ Due to the density of information, the table will try to render at a minimum of 
 <div class="sect3">
 <h4 id="_connect_by_ip">Connect by IP</h4>
 <div class="paragraph">
-<p>Instead of relying on server IDs, returns the list of maps behind a given IP. Provide only the IP; no port is necessary. This returns the server metadata for you to verify before connecting.</p>
+<p>Instead of relying on server IDs, returns the list of servers behind a given IP. Provide only the IP; no port is necessary. This returns the server metadata for you to verify before connecting.</p>
 </div>
 <div class="paragraph">
 <p>If there are multiple maps hosted behind an IP (e.g. different maps on varying ports), the application will list all of them.</p>
@@ -1141,13 +1025,13 @@ Due to the density of information, the table will try to render at a minimum of 
 Since this key is for a personal use application and does not actually call back anywhere, set a generic local identifier here like "127.0.0.1".</p>
 </div>
 <div class="paragraph">
-<p>You will be prompted to insert this key into the app when launching the "Connect by IP" feature for the first time.</p>
+<p>Once configured, you can insert this key in the app when launching the "Connect by IP" feature for the first time.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_add_server_by_id">Add server by ID</h4>
 <div class="paragraph">
-<p>Prompts you to add servers to the config file by ID. An indefinite number of servers can be added. These will be listed when using the <a href="#Launch server list">[Launch server list]</a> option.</p>
+<p>Prompts you to add servers to the config file by ID. An indefinite number of servers can be added. These will be listed when using the <a href="#_launch_server_list">Launch server list</a> option.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1225,8 +1109,8 @@ Since this key is for a personal use application and does not actually call back
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Key</th>
-<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">key</th>
+<th class="tableblock halign-left valign-top">value</th>
 </tr>
 </thead>
 <tbody>
