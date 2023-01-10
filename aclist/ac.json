@@ -1,0 +1,2823 @@
+{
+  "native": [
+    {
+      "appid": 251570,
+      "name": "7 Days to Die",
+      "status": "Working",
+      "shortname": "7daysnative",
+      "ac": "EAC"
+    },
+    {
+      "appid": 761890,
+      "name": "Albion Online",
+      "status": "Working",
+      "shortname": "albionnative",
+      "ac": "EAC"
+    },
+    {
+      "appid": 346110,
+      "name": "ARK: Survival Evolved",
+      "status": "Working",
+      "shortname": "arksurvivalnative",
+      "ac": "BE"
+    },
+    {
+      "appid": 407530,
+      "name": "ARK: Survival of the Fittest",
+      "status": "Working",
+      "shortname": "arkfittestnative",
+      "ac": "BE"
+    },
+    {
+      "appid": 445220,
+      "name": "Avorion",
+      "status": "Working",
+      "shortname": "avorion",
+      "ac": "VAC"
+    },
+    {
+      "appid": 296300,
+      "name": "Ballistic Overkill",
+      "status": "Working",
+      "shortname": "ballistic",
+      "ac": "VAC"
+    },
+    {
+      "appid": 346330,
+      "name": "BrainBread 2",
+      "status": "Working",
+      "shortname": "brainbread",
+      "ac": "VAC"
+    },
+    {
+      "appid": 219640,
+      "name": "Chivalry: Medieval Warfare",
+      "status": "Working",
+      "shortname": "chivalry",
+      "ac": "VAC"
+    },
+    {
+      "appid": 10,
+      "name": "Counter-Strike",
+      "status": "Working",
+      "shortname": "cs",
+      "ac": "VAC"
+    },
+    {
+      "appid": 80,
+      "name": "Counter-Strike: Condition Zero",
+      "status": "Working",
+      "shortname": "cscz",
+      "ac": "VAC"
+    },
+    {
+      "appid": 730,
+      "name": "Counter-Strike: Global Offensive",
+      "status": "Working",
+      "shortname": "csgo",
+      "ac": "VAC"
+    },
+    {
+      "appid": 240,
+      "name": "Counter-Strike: Source",
+      "status": "Working",
+      "shortname": "cssource",
+      "ac": "VAC"
+    },
+    {
+      "appid": 2130,
+      "name": "Dark Messiah of Might & Magic",
+      "status": "Working",
+      "shortname": "dmom",
+      "ac": "VAC"
+    },
+    {
+      "appid": 30,
+      "name": "Day of Defeat",
+      "status": "Working",
+      "shortname": "dod",
+      "ac": "VAC"
+    },
+    {
+      "appid": 300,
+      "name": "Day of Defeat: Source",
+      "status": "Working",
+      "shortname": "dodsrc",
+      "ac": "VAC"
+    },
+    {
+      "appid": 447820,
+      "name": "Day of Infamy",
+      "status": "Working",
+      "shortname": "doi",
+      "ac": "VAC"
+    },
+    {
+      "appid": 40,
+      "name": "Deathmatch Classic",
+      "status": "Working",
+      "shortname": "dmclassic",
+      "ac": "VAC"
+    },
+    {
+      "appid": 570,
+      "name": "Dota 2",
+      "status": "Working",
+      "shortname": "dota2",
+      "ac": "VAC"
+    },
+    {
+      "appid": 65800,
+      "name": "Dungeon Defenders",
+      "status": "Working",
+      "shortname": "dungeondefenders",
+      "ac": "VAC"
+    },
+    {
+      "appid": 239140,
+      "name": "Dying Light",
+      "status": "Working",
+      "shortname": "dyinglight",
+      "ac": "VAC"
+    },
+    {
+      "appid": 4000,
+      "name": "Garry’s Mod",
+      "status": "Working",
+      "shortname": "gmod",
+      "ac": "VAC"
+    },
+    {
+      "appid": 70,
+      "name": "Half-Life",
+      "status": "Working",
+      "shortname": "hl1",
+      "ac": "VAC"
+    },
+    {
+      "appid": 320,
+      "name": "Half-Life 2: Deathmath",
+      "status": "Working",
+      "shortname": "hl2dm",
+      "ac": "VAC"
+    },
+    {
+      "appid": 360,
+      "name": "Half-Life Deathmatch: Source",
+      "status": "Working",
+      "shortname": "hldmsrc",
+      "ac": "VAC"
+    },
+    {
+      "appid": 63000,
+      "name": "Hoard",
+      "status": "Working",
+      "shortname": "hoard",
+      "ac": "VAC"
+    },
+    {
+      "appid": 222880,
+      "name": "Insurgency",
+      "status": "Working",
+      "shortname": "insurgency",
+      "ac": "VAC"
+    },
+    {
+      "appid": 1250,
+      "name": "Killing Floor",
+      "status": "Working",
+      "shortname": "kf",
+      "ac": "VAC"
+    },
+    {
+      "appid": 500,
+      "name": "Left 4 Dead 2",
+      "status": "Working",
+      "shortname": "l4d2",
+      "ac": "VAC"
+    },
+    {
+      "appid": 224260,
+      "name": "No More Room in Hell",
+      "status": "Working",
+      "shortname": "nmrih",
+      "ac": "VAC"
+    },
+    {
+      "appid": 17710,
+      "name": "Nuclear Dawn",
+      "status": "Working",
+      "shortname": "nucleardawn",
+      "ac": "VAC"
+    },
+    {
+      "appid": 327090,
+      "name": "Out of Reach",
+      "status": "Working",
+      "shortname": "outofreach",
+      "ac": "VAC"
+    },
+    {
+      "appid": 17570,
+      "name": "Pirates, Vikings, and Knights II",
+      "status": "Working",
+      "shortname": "piratesvikings",
+      "ac": "VAC"
+    },
+    {
+      "appid": 1200,
+      "name": "Red Orchestra: Ostfront 41-45",
+      "status": "Working",
+      "shortname": "ros4145",
+      "ac": "VAC"
+    },
+    {
+      "appid": 677620,
+      "name": "Splitgate",
+      "status": "Working",
+      "shortname": "splitgate",
+      "ac": "Custom"
+    },
+    {
+      "appid": 20,
+      "name": "Team Fortress Classic",
+      "status": "Working",
+      "shortname": "tfc",
+      "ac": "VAC"
+    },
+    {
+      "appid": 440,
+      "name": "Team Fortress 2",
+      "status": "Working",
+      "shortname": "tf2",
+      "ac": "VAC"
+    },
+    {
+      "appid": 360940,
+      "name": "The Mean Greens: Plastic Warfare",
+      "status": "Working",
+      "shortname": "meangreens",
+      "ac": "VAC"
+    },
+    {
+      "appid": 2400,
+      "name": "The Ship: Murder Party",
+      "status": "Working",
+      "shortname": "theship",
+      "ac": "VAC"
+    },
+    {
+      "appid": 34330,
+      "name": "Total War: SHOGUN 2",
+      "status": "Working",
+      "shortname": "shogun2",
+      "ac": "VAC"
+    },
+    {
+      "appid": 394690,
+      "name": "Tower Unite",
+      "status": "Working",
+      "shortname": "towerunite",
+      "ac": "VAC"
+    },
+    {
+      "appid": 304930,
+      "name": "Unturned",
+      "status": "Working",
+      "shortname": "unturned",
+      "ac": "VAC"
+    },
+    {
+      "appid": 58610,
+      "name": "Wargame: European Escalation",
+      "status": "Working",
+      "shortname": "wargame-ee",
+      "ac": "VAC"
+    },
+    {
+      "appid": 236390,
+      "name": "War Thunder",
+      "status": "Working",
+      "shortname": "warthunder",
+      "ac": "EAC"
+    },
+    {
+      "appid": 17500,
+      "name": "Zombie Panic! Source",
+      "status": "Working",
+      "shortname": "zombiepanicsrc",
+      "ac": "VAC"
+    }
+  ],
+  "wine": [
+    {
+      "name": "7 Days to Die",
+      "status": "Broken",
+      "shortname": "7dayswin",
+      "ac": "EAC"
+    },
+    {
+      "name": "Aion",
+      "status": "Unknown",
+      "shortname": "aion",
+      "ac": "XC3"
+    },
+    {
+      "name": "Absolver",
+      "status": "Broken",
+      "shortname": "absolver",
+      "ac": "EAC"
+    },
+    {
+      "name": "Albatross",
+      "status": "Unknown",
+      "shortname": "albatross",
+      "ac": "GG"
+    },
+    {
+      "name": "Albion Online",
+      "status": "Broken",
+      "shortname": "albionwin",
+      "ac": "EAC"
+    },
+    {
+      "name": "APB Reloaded",
+      "status": "Broken",
+      "shortname": "apbreloaded",
+      "ac": "BE"
+    },
+    {
+      "name": "Apex Legends",
+      "status": "Working",
+      "shortname": "apex",
+      "ac": "EAC"
+    },
+    {
+      "name": "ArcheAge",
+      "status": "Broken",
+      "shortname": "archeage",
+      "ac": "EAC"
+    },
+    {
+      "name": "Arma 2: Operation Arrowhead",
+      "status": "Broken",
+      "shortname": "arma2oa",
+      "ac": "BE"
+    },
+    {
+      "name": "Arma 2",
+      "status": "Broken",
+      "shortname": "arma2",
+      "ac": "BE"
+    },
+    {
+      "name": "Arma 3",
+      "status": "Working",
+      "shortname": "arma3",
+      "ac": "BE",
+      "notes": [
+	      "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
+      ]
+    },
+    {
+      "name": "ARK: Survival Evolved",
+      "status": "Working",
+      "shortname": "arksurvivalwin",
+      "ac": "BE",
+      "notes": [
+	      "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
+      ]
+    },
+    {
+      "name": "ARK: Survival of the Fittest",
+      "status": "Broken ",
+      "shortname": "arkfittestwin",
+      "ac": "BE",
+      "notes": [
+	      "Listed as pending: https://www.theverge.com/2021/10/5/22709918/valve-steam-deck-supported-games-anti-cheat-proton-eac-battleye-epic"
+      ]
+    },
+    {
+      "name": "Ashes of Creation",
+      "status": "Broken",
+      "shortname": "aoc",
+      "ac": "EAC"
+    },
+    {
+      "name": "Assassin's Creed III",
+      "status": "Unknown",
+      "shortname": "ac3",
+      "ac": "PB"
+    },
+    {
+      "name": "Assassin's Creed IV: Black Flag",
+      "status": "Unknown",
+      "shortname": "ac4",
+      "ac": "PB"
+    },
+    {
+      "name": "Assassin's Creed: Brotherhood",
+      "status": "Unknown",
+      "shortname": "acb",
+      "ac": "PB"
+    },
+    {
+      "name": "Assassin's Creed: Revelations",
+      "status": "Unknown",
+      "shortname": "acr",
+      "ac": "PB"
+    },
+    {
+      "name": "Atlas",
+      "status": "Broken",
+      "shortname": "atlas",
+      "ac": "BE"
+    },
+    {
+      "name": "ATrix",
+      "status": "Unknown",
+      "shortname": "atrix",
+      "ac": "GG"
+    },
+    {
+      "name": "Audition Next Level",
+      "status": "Broken",
+      "shortname": "auditionnl",
+      "ac": "EAC"
+    },
+    {
+      "name": "Audition",
+      "status": "Broken",
+      "shortname": "audition",
+      "ac": "EAC"
+    },
+    {
+      "name": "A.V.A",
+      "status": "Shut down",
+      "shortname": "ava",
+      "ac": "BE"
+    },
+    {
+      "name": "Back 4 Blood",
+      "status": "Working",
+      "shortname": "b4b",
+      "ac": "EAC",
+      "notes": [
+	      "https://back4blood.com/en-us/patch-notes/april-2022-update"
+      ]
+    },
+    {
+      "name": "Battalion 1944",
+      "status": "Broken",
+      "shortname": "batt1944",
+      "ac": "EAC"
+    },
+    {
+      "name": "Battlefield 1",
+      "status": "Working",
+      "shortname": "bf1",
+      "ac": "FF"
+    },
+    {
+      "name": "Battlefield 1942",
+      "status": "Unknown",
+      "shortname": "bf1942",
+      "ac": "PB"
+    },
+    {
+      "name": "Battlefield 2",
+      "status": "Unknown",
+      "shortname": "bf2",
+      "ac": "PB"
+    },
+    {
+      "name": "Battlefield 2042",
+      "status": "Broken",
+      "shortname": "bf2042",
+      "ac": "EAC"
+    },
+    {
+      "name": "Battlefield 2142",
+      "status": "Unknown",
+      "shortname": "bf2142",
+      "ac": "PB"
+    },
+    {
+      "name": "Battlefield 3",
+      "status": "Working",
+      "shortname": "bf3",
+      "ac": "PB"
+    },
+    {
+      "name": "Battlefield 4",
+      "status": "Working",
+      "shortname": "bf4",
+      "ac": "FF+PB"
+    },
+    {
+      "name": "Battlefield: Bad Company 2",
+      "status": "Working",
+      "shortname": "bfbc2",
+      "ac": "PB"
+    },
+    {
+      "name": "Battlefield: Hardline",
+      "status": "Working",
+      "shortname": "bfhardline",
+      "ac": "FF+PB"
+    },
+    {
+      "name": "Battlefield Heroes",
+      "status": "Unknown",
+      "shortname": "bfheroes",
+      "ac": "PB"
+    },
+    {
+      "name": "Battlefield Play4Free",
+      "status": "Unknown",
+      "shortname": "bfp4f",
+      "ac": "PB"
+    },
+    {
+      "name": "Battlefield V",
+      "status": "Working",
+      "shortname": "bfv",
+      "ac": "FF"
+    },
+    {
+      "name": "Battlefield Vietnam",
+      "status": "Unknown",
+      "shortname": "bfvietnam",
+      "ac": "PB"
+    },
+    {
+      "name": "Battlefleet Gothic: Armada",
+      "status": "Working",
+      "shortname": "bfga",
+      "ac": "VAC"
+    },
+    {
+      "name": "Battlefleet Gothic: Armada 2",
+      "status": "Broken",
+      "shortname": "bfga2",
+      "ac": "EAC"
+    },
+    {
+      "name": "Beyond the Wire",
+      "status": "Broken",
+      "shortname": "btw",
+      "ac": "EAC"
+    },
+    {
+      "name": "Black Clover: Quartet Knights",
+      "status": "Broken",
+      "shortname": "bcqk",
+      "ac": "EAC"
+    },
+    {
+      "name": "Black Desert Online",
+      "status": "Broken",
+      "shortname": "bdo",
+      "ac": "EAC"
+    },
+    {
+      "name": "Black Squad",
+      "status": "Broken",
+      "shortname": "blacksquad",
+      "ac": "BE"
+    },
+    {
+      "name": "BlackShot",
+      "status": "Broken",
+      "shortname": "blackshot",
+      "ac": "BE"
+    },
+    {
+      "name": "Blacklight: Retribution",
+      "status": "Broken",
+      "shortname": "blacklight",
+      "ac": "BE"
+    },
+    {
+      "name": "Blade and Soul",
+      "status": "Unknown",
+      "shortname": "bladeandsoul",
+      "ac": "XC3"
+    },
+    {
+      "name": "Blankos: Block Party",
+      "status": "Broken",
+      "shortname": "blankos",
+      "ac": "EAC"
+    },
+    {
+      "name": "Blazing Sails",
+      "status": "Broken",
+      "shortname": "blazingsails",
+      "ac": "EAC"
+    },
+    {
+      "name": "Bleeding Edge",
+      "status": "Broken",
+      "shortname": "bleedingedge",
+      "ac": "EAC"
+    },
+    {
+      "name": "Bless Online",
+      "status": "Broken",
+      "shortname": "blessonline",
+      "ac": "BE"
+    },
+    {
+      "name": "Bless Unleashed",
+      "status": "Broken",
+      "shortname": "blessunleashed",
+      "ac": "EAC"
+    },
+    {
+      "name": "Block N Load",
+      "status": "Broken",
+      "shortname": "blocknload",
+      "ac": "EAC"
+    },
+    {
+      "name": "Bots",
+      "status": "Unknown",
+      "shortname": "bots",
+      "ac": "GG"
+    },
+    {
+      "name": "Brawlhalla",
+      "status": "Working",
+      "shortname": "brawlhalla",
+      "ac": "EAC",
+      "notes": [
+	      "https://www.brawlhalla.com/news/new-legend-munin-and-new-features-patch-6-00/",
+	      "Depends on official Proton sources; select the [tech-tree] beta branch"
+      ]
+    },
+    {
+      "name": "Cabal Online",
+      "status": "Broken",
+      "shortname": "cabalonline",
+      "ac": "EAC"
+    },
+    {
+      "name": "Caliber Ru",
+      "status": "Broken",
+      "shortname": "caliber",
+      "ac": "EAC"
+    },
+    {
+      "name": "Call of Duty",
+      "status": "Unknown",
+      "shortname": "cod",
+      "ac": "PB"
+    },
+    {
+      "name": "Call of Duty 2",
+      "status": "Unknown",
+      "shortname": "cod2",
+      "ac": "PB"
+    },
+    {
+      "name": "Call of Duty: Black Ops",
+      "status": "Working",
+      "shortname": "codblops",
+      "ac": "VAC+PB"
+    },
+    {
+      "name": "Call of Duty: Black Ops II",
+      "status": "Working",
+      "shortname": "codblops2",
+      "ac": "VAC"
+    },
+    {
+      "name": "Call of Duty: Black Ops III",
+      "status": "Working",
+      "shortname": "codblops3",
+      "ac": "VAC"
+    },
+    {
+      "name": "Call of Duty: Ghosts",
+      "status": "Working",
+      "shortname": "codghosts",
+      "ac": "VAC"
+    },
+    {
+      "name": "Call of Duty: Infinite Warfare",
+      "status": "Working",
+      "shortname": "codiw",
+      "ac": "VAC"
+    },
+    {
+      "name": "Call of Duty: Modern Warfare 2",
+      "status": "Working",
+      "shortname": "codmw2",
+      "ac": "VAC"
+    },
+    {
+      "name": "Call of Duty: Modern Warfare 3",
+      "status": "Unknown",
+      "shortname": "codmw3",
+      "ac": "VAC"
+    },
+    {
+      "name": "Call of Duty: Vanguard",
+      "status": "Broken",
+      "shortname": "codvanguard",
+      "ac": "RC"
+    },
+    {
+      "name": "Call of Duty: Warzone",
+      "status": "Broken",
+      "shortname": "warzone",
+      "ac": "RC"
+    },
+    {
+      "name": "Call of Duty: World at War",
+      "status": "Unknown",
+      "shortname": "codwaw",
+      "ac": "PB"
+    },
+    {
+      "name": "Call of Duty: WWII",
+      "status": "Unknown",
+      "shortname": "codww2",
+      "ac": "VAC"
+    },
+    {
+      "name": "Call of Duty 4: Modern Warfare",
+      "status": "Unknown",
+      "shortname": "cod4mw",
+      "ac": "PB"
+    },
+    {
+      "name": "Captain Tsubasa: Rise of New Champions",
+      "status": "Broken",
+      "shortname": "tsubasa",
+      "ac": "EAC"
+    },
+    {
+      "name": "CardLife",
+      "status": "Broken",
+      "shortname": "cardlife",
+      "ac": "EAC"
+    },
+    {
+      "name": "Chivalry 2",
+      "status": "Broken",
+      "shortname": "chivalry2",
+      "ac": "EAC"
+    },
+    {
+      "name": "CityBattle|Virtual Earth",
+      "status": "Broken",
+      "shortname": "citybattle",
+      "ac": "EAC"
+    },
+    {
+      "name": "Closers",
+      "status": "Unknown",
+      "shortname": "closers",
+      "ac": "XC3"
+    },
+    {
+      "name": "CODE 2040",
+      "status": "Broken",
+      "shortname": "code2040",
+      "ac": "EAC"
+    },
+    {
+      "name": "Combat Arms: Reloaded",
+      "status": "Broken",
+      "shortname": "combatarms",
+      "ac": "EAC"
+    },
+    {
+      "name": "COMEONBABY",
+      "status": "Unknown",
+      "shortname": "comeonbaby",
+      "ac": "GG"
+    },
+    {
+      "name": "Conan Exiles",
+      "status": "Broken",
+      "shortname": "conan",
+      "ac": "BE"
+    },
+    {
+      "name": "Conqueror's Blade",
+      "status": "Broken",
+      "shortname": "conquerorsblade",
+      "ac": "MRA"
+    },
+    {
+      "name": "Counter-Strike: Global Offensive (FACEIT)",
+      "status": "Broken",
+      "shortname": "csgofaceit",
+      "ac": "Custom"
+    },
+    {
+      "name": "Counter-Strike: Global Offensive (ESEA)",
+      "status": "Broken",
+      "shortname": "csgoesea",
+      "ac": "Custom"
+    },
+    {
+      "name": "Crazy Arcade",
+      "status": "Unknown",
+      "shortname": "crazyarcade",
+      "ac": "GG"
+    },
+    {
+      "name": "Crossout",
+      "status": "Broken",
+      "shortname": "crossout",
+      "ac": "EAC"
+    },
+    {
+      "name": "Crucible",
+      "status": "Broken",
+      "shortname": "crucible",
+      "ac": "EAC"
+    },
+    {
+      "name": "CRSED: F.O.A.D.",
+      "status": "Broken",
+      "shortname": "crsed",
+      "ac": "EAC"
+    },
+    {
+      "name": "Cry of Fear",
+      "status": "Unknown",
+      "shortname": "cryoffear",
+      "ac": "VAC"
+    },
+    {
+      "name": "Crysis",
+      "status": "Unknown",
+      "shortname": "crysis",
+      "ac": "PB"
+    },
+    {
+      "name": "Crysis: Warhead",
+      "status": "Unknown",
+      "shortname": "crysiswarhead",
+      "ac": "PB"
+    },
+    {
+      "name": "CTRACER ONLINE",
+      "status": "Unknown",
+      "shortname": "ctracer",
+      "ac": "GG"
+    },
+    {
+      "name": "DARKEDEN",
+      "status": "Unknown",
+      "shortname": "darkeden",
+      "ac": "GG"
+    },
+    {
+      "name": "Dance! Online",
+      "status": "Unknown",
+      "shortname": "danceonline",
+      "ac": "GG"
+    },
+    {
+      "name": "Darkfall: Rise of Agon",
+      "status": "Broken",
+      "shortname": "darkfall",
+      "ac": "EAC"
+    },
+    {
+      "name": "Darwin Project",
+      "status": "Broken",
+      "shortname": "darwinproject",
+      "ac": "EAC"
+    },
+    {
+      "name": "Dauntless",
+      "status": "Broken",
+      "shortname": "dauntless",
+      "ac": "EAC"
+    },
+    {
+      "name": "Day of Infamy",
+      "status": "Broken",
+      "shortname": "doiwin",
+      "ac": "BE"
+    },
+    {
+      "name": "DayZ SA",
+      "status": "Working",
+      "shortname": "dayzsa",
+      "ac": "BE",
+      "notes": [
+	      "https://store.steampowered.com/news/group/4145017/view/3104663180636096966",
+	      "DZGUI server launcher: https://github.com/aclist/dztui/tree/dzgui"
+      ]
+    },
+    {
+      "name": "Dead by Daylight",
+      "status": "Broken ",
+      "shortname": "dbd",
+      "ac": "EAC",
+      "notes": [
+	      "https://www.theverge.com/2021/10/5/22709918/valve-steam-deck-supported-games-anti-cheat-proton-eac-battleye-epic"
+      ]
+    },
+    {
+      "name": "Deadside",
+      "status": "Broken",
+      "shortname": "deadside",
+      "ac": "EAC"
+    },
+    {
+      "name": "Dekaron Online TH",
+      "status": "Broken",
+      "shortname": "dekaronth",
+      "ac": "EAC"
+    },
+    {
+      "name": "Dekaron",
+      "status": "Unknown",
+      "shortname": "dekaron",
+      "ac": "GG"
+    },
+    {
+      "name": "Depth",
+      "status": "Working",
+      "shortname": "depth",
+      "ac": "VAC"
+    },
+    {
+      "name": "Destiny 2",
+      "status": "Broken",
+      "shortname": "destiny2",
+      "ac": "BE"
+    },
+    {
+      "name": "Diabotical",
+      "status": "Broken",
+      "shortname": "diabotical",
+      "ac": "EQU8"
+    },
+    {
+      "name": "Digimon Masters Online",
+      "status": "Unknown",
+      "shortname": "dimiononline",
+      "ac": "XC3"
+    },
+    {
+      "name": "DigimonRPG",
+      "status": "Unknown",
+      "shortname": "digimonrpg",
+      "ac": "GG"
+    },
+    {
+      "name": "Dirty Bomb",
+      "status": "Broken",
+      "shortname": "dirtybomb",
+      "ac": "EAC"
+    },
+    {
+      "name": "DJMax Respect V",
+      "status": "Unknown",
+      "shortname": "djmaxv",
+      "ac": "XC3"
+    },
+    {
+      "name": "Doom 3",
+      "status": "Unknown",
+      "shortname": "doom3",
+      "ac": "PB"
+    },
+    {
+      "name": "Dragon Ball Fighter Z",
+      "status": "Broken",
+      "shortname": "dragonballfighterz",
+      "ac": "EAC"
+    },
+    {
+      "name": "Dragon Ball Xenoverse 2",
+      "status": "Broken",
+      "shortname": "dragonballxeno2",
+      "ac": "EAC"
+    },
+    {
+      "name": "Dragon Sky",
+      "status": "Unknown",
+      "shortname": "dragonsky",
+      "ac": "GG"
+    },
+    {
+      "name": "Dread Hunger",
+      "status": "Working",
+      "shortname": "dreadhunger",
+      "ac": "VAC"
+    },
+    {
+      "name": "Dreadnought",
+      "status": "Broken",
+      "shortname": "dreadnought",
+      "ac": "EAC"
+    },
+    {
+      "name": "Dual Universe",
+      "status": "Broken",
+      "shortname": "dualuniverse",
+      "ac": "EAC"
+    },
+    {
+      "name": "Due Process",
+      "status": "Broken",
+      "shortname": "dueprocess",
+      "ac": "EAC"
+    },
+    {
+      "name": "Dungeon & Fighter",
+      "status": "Unknown",
+      "shortname": "dungeonfighter",
+      "ac": "GG"
+    },
+    {
+      "name": "Dying Light: Bad Blood",
+      "status": "Broken",
+      "shortname": "dyinglightbb",
+      "ac": "EAC"
+    },
+    {
+      "name": "Elden Ring",
+      "status": "Working",
+      "shortname": "elden",
+      "ac": "EAC"
+    },
+    {
+      "name": "Elyon",
+      "status": "Unknown",
+      "shortname": "elyon",
+      "ac": "XC3"
+    },
+    {
+      "name": "Empyrion",
+      "status": "Broken",
+      "shortname": "empyrion",
+      "ac": "EAC"
+    },
+    {
+      "name": "Enemy Territory: Quake Wars",
+      "status": "Unknown",
+      "shortname": "etqw",
+      "ac": "PB"
+    },
+    {
+      "name": "Enlisted",
+      "status": "Broken",
+      "shortname": "enlisted",
+      "ac": "EAC"
+    },
+    {
+      "name": "Ernis&Fricky",
+      "status": "Unknown",
+      "shortname": "ernisfricky",
+      "ac": "GG"
+    },
+    {
+      "name": "Escape from Tarkov",
+      "status": "Broken",
+      "shortname": "tarkov",
+      "ac": "BE",
+      "notes": [
+	      "Logging in to the game (trading, hideout management and offline raids) works with BattlEye runtime. Online raids are not implemented, but it's planned to be added by BattlEye."
+      ]
+    },
+    {
+      "name": "ETERNALCITY THE ACCELERATION",
+      "status": "Unknown",
+      "shortname": "eternalcity",
+      "ac": "GG"
+    },
+    {
+      "name": "Extreme Soccer",
+      "status": "Unknown",
+      "shortname": "extremesoccer",
+      "ac": "GG"
+    },
+    {
+      "name": "EX2ON REBOOT:R",
+      "status": "Unknown",
+      "shortname": "ex2onreboot",
+      "ac": "XC3"
+    },
+    {
+      "name": "EZ Fighter",
+      "status": "Unknown",
+      "shortname": "ezfighter",
+      "ac": "GG"
+    },
+    {
+      "name": "Fall Guys: Ultimate Knockout",
+      "status": "Broken",
+      "shortname": "fallguys",
+      "ac": "EAC"
+    },
+    {
+      "name": "Fanta-Tennis",
+      "status": "Unknown",
+      "shortname": "fantatennis",
+      "ac": "GG"
+    },
+    {
+      "name": "Far Cry",
+      "status": "Shut down",
+      "shortname": "fc",
+      "ac": "PB"
+    },
+    {
+      "name": "Far Cry 2",
+      "status": "Shut down",
+      "shortname": "fc2",
+      "ac": "PB"
+    },
+    {
+      "name": "Far Cry 3",
+      "status": "Unknown",
+      "shortname": "fc3",
+      "ac": "PB"
+    },
+    {
+      "name": "Far Cry 5",
+      "status": "Working",
+      "shortname": "fc5",
+      "ac": "EAC",
+      "notes": [
+	      "https://steamdb.info/depot/552521/history/?changeid=M:7117179758041625493"
+      ]
+    },
+    {
+      "name": "F.E.A.R.",
+      "status": "Unknown",
+      "shortname": "fear",
+      "ac": "PB"
+    },
+    {
+      "name": "F.E.A.R. Perseus Mandate",
+      "status": "Unknown",
+      "shortname": "fearperseus",
+      "ac": "PB"
+    },
+    {
+      "name": "Fear the Wolves",
+      "status": "Broken",
+      "shortname": "fearthewolves",
+      "ac": "EAC"
+    },
+    {
+      "name": "Flyff Online",
+      "status": "Broken",
+      "shortname": "flyff",
+      "ac": "EAC"
+    },
+    {
+      "name": "For Honor",
+      "status": "Broken",
+      "shortname": "forhonor",
+      "ac": "EAC"
+    },
+    {
+      "name": "Fortnite Battle Royale",
+      "status": "Broken",
+      "shortname": "fornitebr",
+      "ac": "BE+EAC"
+    },
+    {
+      "name": "Fortnite",
+      "status": "Broken",
+      "shortname": "fortnite",
+      "ac": "BE+EAC"
+    },
+    {
+      "name": "Foxhole",
+      "status": "Working",
+      "shortname": "foxhole",
+      "ac": "VAC"
+    },
+    {
+      "name": "Fractured Lands",
+      "status": "Broken",
+      "shortname": "fracturedlands",
+      "ac": "EAC"
+    },
+    {
+      "name": "Friday the 13th",
+      "status": "Broken",
+      "shortname": "friday13th",
+      "ac": "EAC"
+    },
+    {
+      "name": "Frontlines: Fuel of War",
+      "status": "Unknown",
+      "shortname": "frontlines",
+      "ac": "PB"
+    },
+    {
+      "name": "Gears 5",
+      "status": "Broken",
+      "shortname": "gears5",
+      "ac": "EAC"
+    },
+    {
+      "name": "Genshin Impact",
+      "status": "Broken",
+      "shortname": "genshinimpact",
+      "ac": "MP2"
+    },
+    {
+      "name": "Gersang",
+      "status": "Unknown",
+      "shortname": "gersang",
+      "ac": "GG"
+    },
+    {
+      "name": "Ghost Online TH",
+      "status": "Broken",
+      "shortname": "ghostonlineth",
+      "ac": "EAC"
+    },
+    {
+      "name": "Golf King",
+      "status": "Unknown",
+      "shortname": "golfking",
+      "ac": "GG"
+    },
+    {
+      "name": "Grandchase",
+      "status": "Unknown",
+      "shortname": "grandchase",
+      "ac": "GG"
+    },
+    {
+      "name": "GRASEN",
+      "status": "Unknown",
+      "shortname": "grasen",
+      "ac": "GG"
+    },
+    {
+      "name": "Grey Goo",
+      "status": "Unknown",
+      "shortname": "greygoo",
+      "ac": "VAC"
+    },
+    {
+      "name": "GunBound",
+      "status": "Unknown",
+      "shortname": "gunbound",
+      "ac": "GG"
+    },
+    {
+      "name": "GUNSTER",
+      "status": "Unknown",
+      "shortname": "gunster",
+      "ac": "GG"
+    },
+    {
+      "name": "H-Hour: World Elite",
+      "status": "Broken",
+      "shortname": "h-hour",
+      "ac": "EAC"
+    },
+    {
+      "name": "H1Z1: Just Survive",
+      "status": "Broken",
+      "shortname": "h1z1",
+      "ac": "BE"
+    },
+    {
+      "name": "H1Z1: King of the Kill",
+      "status": "Broken",
+      "shortname": "h1z1kok",
+      "ac": "BE"
+    },
+    {
+      "name": "Halo Infinite",
+      "status": "Unreleased",
+      "shortname": "haloinf",
+      "ac": "Custom"
+    },
+    {
+      "name": "Halo: The Master Chief Collection",
+      "status": "Broken",
+      "shortname": "halomcc",
+      "ac": "EAC"
+    },
+    {
+      "name": "HeatProject",
+      "status": "Unknown",
+      "shortname": "heatproject",
+      "ac": "GG"
+    },
+    {
+      "name": "Heat",
+      "status": "Broken",
+      "shortname": "heat",
+      "ac": "EAC"
+    },
+    {
+      "name": "HELLDIVERS Dive Harder Edition",
+      "status": "Working",
+      "shortname": "helldivers",
+      "ac": "VAC"
+    },
+    {
+      "name": "Hell Let Loose",
+      "status": "Broken",
+      "shortname": "hll",
+      "ac": "EAC"
+    },
+    {
+      "name": "Heroes & Generals",
+      "status": "Broken",
+      "shortname": "heroesgenerals",
+      "ac": "BE"
+    },
+    {
+      "name": "Hide & Hold Out",
+      "status": "Broken",
+      "shortname": "hideandholdout",
+      "ac": "EAC"
+    },
+    {
+      "name": "Hide or Die",
+      "status": "Broken",
+      "shortname": "hideordie",
+      "ac": "EQU8"
+    },
+    {
+      "name": "Hired Ops",
+      "status": "Working",
+      "shortname": "hiredops",
+      "ac": "SC"
+    },
+    {
+      "name": "Homefront",
+      "status": "Unknown",
+      "shortname": "homefront",
+      "ac": "VAC"
+    },
+    {
+      "name": "Honkai Impact 3rd",
+      "status": "Broken",
+      "shortname": "honkai3rd",
+      "ac": "MP2"
+    },
+    {
+      "name": "Hood: Outlaws & Legends",
+      "status": "Broken",
+      "shortname": "hoodoutlaws",
+      "ac": "EAC"
+    },
+    {
+      "name": "Hunt: Showdown",
+      "status": "Broken",
+      "shortname": "huntshowdown",
+      "ac": "EAC"
+    },
+    {
+      "name": "Hurtworld",
+      "status": "Broken",
+      "shortname": "hurtworld",
+      "ac": "EAC"
+    },
+    {
+      "name": "Hyperscape",
+      "status": "Broken",
+      "shortname": "hyperscape",
+      "ac": "BE"
+    },
+    {
+      "name": "HyperRelay",
+      "status": "Unknown",
+      "shortname": "hyperrelay",
+      "ac": "GG"
+    },
+    {
+      "name": "IL-2 Sturmovik: Cliffs of Dover",
+      "status": "Unknown",
+      "shortname": "il2",
+      "ac": "VAC"
+    },
+    {
+      "name": "Infestation: Survivor Stories Classic",
+      "status": "Unknown",
+      "shortname": "infestation",
+      "ac": "PB"
+    },
+    {
+      "name": "Insurgency",
+      "status": "Broken",
+      "shortname": "insurgencywin",
+      "ac": "BE"
+    },
+    {
+      "name": "Insurgency: Sandstorm",
+      "status": "Broken",
+      "shortname": "insurgencysandstorm",
+      "ac": "EAC"
+    },
+    {
+      "name": "Intershelter",
+      "status": "Broken",
+      "shortname": "intershelter",
+      "ac": "EAC"
+    },
+    {
+      "name": "Intruder",
+      "status": "Broken",
+      "shortname": "intruder",
+      "ac": "EAC"
+    },
+    {
+      "name": "Inversion",
+      "status": "Unknown",
+      "shortname": "inversion",
+      "ac": "VAC"
+    },
+    {
+      "name": "iRacing",
+      "status": "Broken",
+      "shortname": "iracing",
+      "ac": "EAC"
+    },
+    {
+      "name": "Ironsight",
+      "status": "Broken",
+      "shortname": "ironsight",
+      "ac": "EAC"
+    },
+    {
+      "name": "Islands of Nyne",
+      "status": "Broken",
+      "shortname": "islandsofnyne",
+      "ac": "BE"
+    },
+    {
+      "name": "Joint Operations: Typhoon Rising",
+      "status": "Unknown",
+      "shortname": "jointops",
+      "ac": "PB"
+    },
+    {
+      "name": "Jump Force",
+      "status": "Broken",
+      "shortname": "jumpforce",
+      "ac": "EAC"
+    },
+    {
+      "name": "KartRider",
+      "status": "Unknown",
+      "shortname": "kartrider",
+      "ac": "GG"
+    },
+    {
+      "name": "Killing Floor 2",
+      "status": "Working",
+      "shortname": "kf2",
+      "ac": "VAC"
+    },
+    {
+      "name": "Kingdom Under Fire 2",
+      "status": "Broken",
+      "shortname": "kuf2",
+      "ac": "EAC"
+    },
+    {
+      "name": "Knight Online",
+      "status": "Unknown",
+      "shortname": "knightonline",
+      "ac": "XC3"
+    },
+    {
+      "name": "Knockout City",
+      "status": "Working",
+      "shortname": "knockoutcity",
+      "ac": "EAC",
+      "notes": [
+	      "https://twitter.com/Plagman2/status/1493854504290119682?t=flJ90SMI7DIniecWO8Slew"
+      ]
+    },
+    {
+      "name": "KOP",
+      "status": "Unknown",
+      "shortname": "kop",
+      "ac": "GG"
+    },
+    {
+      "name": "KovaaK 2.0",
+      "status": "Broken",
+      "shortname": "kovaak2.0",
+      "ac": "EQU8"
+    },
+    {
+      "name": "Kritika Online SEA",
+      "status": "Broken",
+      "shortname": "kritikaonlinesea",
+      "ac": "EAC"
+    },
+    {
+      "name": "Kritika:Reboot",
+      "status": "Unknown",
+      "shortname": "kritikareboot",
+      "ac": "XC3"
+    },
+    {
+      "name": "LaTale",
+      "status": "Unknown",
+      "shortname": "latale",
+      "ac": "GG"
+    },
+    {
+      "name": "Last Chaos TH",
+      "status": "Broken",
+      "shortname": "lastchaosth",
+      "ac": "EAC"
+    },
+    {
+      "name": "Last Chaos",
+      "status": "Unknown",
+      "shortname": "lastchaos",
+      "ac": "GG"
+    },
+    {
+      "name": "Last Oasis",
+      "status": "Broken",
+      "shortname": "lastoasis",
+      "ac": "EAC"
+    },
+    {
+      "name": "Last Year",
+      "status": "Broken",
+      "shortname": "lastyear",
+      "ac": "EAC"
+    },
+    {
+      "name": "Lazeska",
+      "status": "Unknown",
+      "shortname": "lazeska",
+      "ac": "GG"
+    },
+    {
+      "name": "Left 4 Dead",
+      "status": "Working",
+      "shortname": "l4d",
+      "ac": "VAC"
+    },
+    {
+      "name": "Legend of mir2",
+      "status": "Unknown",
+      "shortname": "legendofmir2",
+      "ac": "GG"
+    },
+    {
+      "name": "Legend of mir3",
+      "status": "Unknown",
+      "shortname": "legendofmir3",
+      "ac": "GG"
+    },
+    {
+      "name": "Lemnis Gate",
+      "status": "Broken",
+      "shortname": "lemnisgate",
+      "ac": "EAC"
+    },
+    {
+      "name": "Line of Sight",
+      "status": "Broken",
+      "shortname": "lineofsight",
+      "ac": "BE"
+    },
+    {
+      "name": "Lineage",
+      "status": "Unknown",
+      "shortname": "lineage",
+      "ac": "GG"
+    },
+    {
+      "name": "Lineage II",
+      "status": "Unknown",
+      "shortname": "lineage2",
+      "ac": "GG"
+    },
+    {
+      "name": "Lost Planet: Extreme Condition",
+      "status": "Unknown",
+      "shortname": "lostplanet",
+      "ac": "VAC"
+    },
+    {
+      "name": "Lost Saga Online",
+      "status": "Broken",
+      "shortname": "lostsaga",
+      "ac": "EAC"
+    },
+    {
+      "name": "M.A.R.S.",
+      "status": "Broken",
+      "shortname": "mars",
+      "ac": "EAC"
+    },
+    {
+      "name": "MU Legend PH",
+      "status": "Broken",
+      "shortname": "mulegend",
+      "ac": "EAC"
+    },
+    {
+      "name": "Mabinogi",
+      "status": "Unknown",
+      "shortname": "mabinogi",
+      "ac": "GG"
+    },
+    {
+      "name": "MapleStory",
+      "status": "Unknown",
+      "shortname": "maplestory",
+      "ac": "NGS"
+    },
+    {
+      "name": "Medal of Honor",
+      "status": "Unknown",
+      "shortname": "moh",
+      "ac": "PB"
+    },
+    {
+      "name": "Medal of Honor: Airborne",
+      "status": "Unknown",
+      "shortname": "mohairborne",
+      "ac": "PB"
+    },
+    {
+      "name": "Medal of Honor: Warfighter",
+      "status": "Unknown",
+      "shortname": "mohwarfighter",
+      "ac": "PB"
+    },
+    {
+      "name": "Memories of Mars",
+      "status": "Broken",
+      "shortname": "memoriesofmars",
+      "ac": "EAC"
+    },
+    {
+      "name": "Metin2",
+      "status": "Unknown",
+      "shortname": "metin2",
+      "ac": "GG"
+    },
+    {
+      "name": "minifighter",
+      "status": "Unknown",
+      "shortname": "minifighter",
+      "ac": "GG"
+    },
+    {
+      "name": "Miscreated",
+      "status": "Broken",
+      "shortname": "miscreated",
+      "ac": "EAC"
+    },
+    {
+      "name": "Mission花札",
+      "status": "Unknown",
+      "shortname": "mission",
+      "ac": "GG"
+    },
+    {
+      "name": "Monstrum 2",
+      "status": "Broken",
+      "shortname": "monstrum2",
+      "ac": "EAC"
+    },
+    {
+      "name": "Mordhau",
+      "status": "Working",
+      "shortname": "mordhau",
+      "ac": "VAC"
+    },
+    {
+      "name": "Mount & Blade II: Bannerlord",
+      "status": "Working",
+      "shortname": "bannerlord",
+      "ac": "BE",
+      "notes": [
+	      "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
+      ]
+    },
+    {
+      "name": "Mu Online PH",
+      "status": "Broken",
+      "shortname": "muonline",
+      "ac": "EAC"
+    },
+    {
+      "name": "Mu",
+      "status": "Unknown",
+      "shortname": "mu",
+      "ac": "GG"
+    },
+    {
+      "name": "Naraka: Bladepoint",
+      "status": "Broken",
+      "shortname": "naraka",
+      "ac": "NEAC"
+    },
+    {
+      "name": "NEO STEAM",
+      "status": "Unknown",
+      "shortname": "neosteam",
+      "ac": "GG"
+    },
+    {
+      "name": "Naruto To Boruto: Shinobi Striker",
+      "status": "Broken",
+      "shortname": "naruto",
+      "ac": "EAC"
+    },
+    {
+      "name": "NavyField",
+      "status": "Unknown",
+      "shortname": "navyfield",
+      "ac": "GG"
+    },
+    {
+      "name": "Need for Speed: ProStreet",
+      "status": "Unknown",
+      "shortname": "nfsprostreet",
+      "ac": "PB"
+    },
+    {
+      "name": "Need for Speed: Undercover",
+      "status": "Unknown",
+      "shortname": "nfsundercover",
+      "ac": "PB"
+    },
+    {
+      "name": "Nether: Ressurected",
+      "status": "Unknown",
+      "shortname": "nether",
+      "ac": "VAC"
+    },
+    {
+      "name": "New GUNDAM Breaker",
+      "status": "Broken",
+      "shortname": "newgundam",
+      "ac": "EAC"
+    },
+    {
+      "name": "New World",
+      "status": "Broken",
+      "shortname": "newworld",
+      "ac": "EAC"
+    },
+    {
+      "name": "NewBaseBall",
+      "status": "Unknown",
+      "shortname": "newbaseball",
+      "ac": "GG"
+    },
+    {
+      "name": "Next Day",
+      "status": "Broken",
+      "shortname": "nextday",
+      "ac": "EAC"
+    },
+    {
+      "name": "Ninedragons",
+      "status": "Unknown",
+      "shortname": "ninedragons",
+      "ac": "GG"
+    },
+    {
+      "name": "Nine to Five",
+      "status": "Broken",
+      "shortname": "ninetofive",
+      "ac": "EAC"
+    },
+    {
+      "name": "Nostale",
+      "status": "Unknown",
+      "shortname": "nostale",
+      "ac": "GG"
+    },
+    {
+      "name": "Onair Online",
+      "status": "Unknown",
+      "shortname": "onaironline",
+      "ac": "GG"
+    },
+    {
+      "name": "One Punch Man",
+      "status": "Broken",
+      "shortname": "onepunchman",
+      "ac": "EAC"
+    },
+    {
+      "name": "Onward VR",
+      "status": "Broken",
+      "shortname": "onwardvr",
+      "ac": "EAC"
+    },
+    {
+      "name": "ORION: Prelude",
+      "status": "Working",
+      "shortname": "orionprelude",
+      "ac": "VAC"
+    },
+    {
+      "name": "Outlaws of the Old West",
+      "status": "Broken",
+      "shortname": "outlaws",
+      "ac": "BE"
+    },
+    {
+      "name": "Outriders",
+      "status": "Broken",
+      "shortname": "outriders",
+      "ac": "EAC"
+    },
+    {
+      "name": "Overstep",
+      "status": "Broken",
+      "shortname": "overstep",
+      "ac": "EAC"
+    },
+    {
+      "name": "Phantasy Star Online Blue Burst",
+      "status": "Shut down",
+      "shortname": "psobb",
+      "ac": "GG"
+    },
+    {
+      "name": "Phantasy Star Online 2",
+      "status": "Broken",
+      "shortname": "pso2",
+      "ac": "GG"
+    },
+    {
+      "name": "Phantasy Star Universe",
+      "status": "Shut down",
+      "shortname": "psu",
+      "ac": "GG"
+    },
+    {
+      "name": "Prey",
+      "status": "Unknown",
+      "shortname": "prey",
+      "ac": "PB"
+    },
+    {
+      "name": "PUBG: BATTLEGROUNDS",
+      "status": "Broken",
+      "shortname": "pubg",
+      "ac": "BE"
+    },
+    {
+      "name": "Paladins",
+      "status": "Broken",
+      "shortname": "paladins",
+      "ac": "EAC"
+    },
+    {
+      "name": "Pandemic Express",
+      "status": "Broken",
+      "shortname": "pandemic",
+      "ac": "EAC"
+    },
+    {
+      "name": "Pang Online",
+      "status": "Unknown",
+      "shortname": "pangonline",
+      "ac": "GG"
+    },
+    {
+      "name": "PangYa",
+      "status": "Unknown",
+      "shortname": "pangya",
+      "ac": "GG"
+    },
+    {
+      "name": "Pavlov VR",
+      "status": "Unknown",
+      "shortname": "pavlov",
+      "ac": "XC3"
+    },
+    {
+      "name": "Phantomers",
+      "status": "Broken",
+      "shortname": "phantomers",
+      "ac": "BE"
+    },
+    {
+      "name": "Pixark",
+      "status": "Broken",
+      "shortname": "pixark",
+      "ac": "BE"
+    },
+    {
+      "name": "PlanetSide 2",
+      "status": "Working",
+      "shortname": "planetside2",
+      "ac": "BE",
+      "notes": [
+	      "https://twitter.com/Plagman2/status/1493854504290119682?t=flJ90SMI7DIniecWO8Slew"
+      ]
+    },
+    {
+      "name": "Planetside Arena",
+      "status": "Working",
+      "shortname": "planetsidearena",
+      "ac": "BE",
+      "notes": [
+	      "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
+      ]
+    },
+    {
+      "name": "Plants vs. Zombies: Battle for Neighborville",
+      "status": "Broken",
+      "shortname": "plantsvzombies",
+      "ac": "EAC"
+    },
+    {
+      "name": "PlayNC",
+      "status": "Unknown",
+      "shortname": "plaync",
+      "ac": "GG"
+    },
+    {
+      "name": "POLYGON Online Shooter",
+      "status": "Broken",
+      "shortname": "polygon",
+      "ac": "EAC",
+      "notes": [
+	      "https://twitter.com/RedasterPOLYGON/status/1443057152168325125?s=20"
+      ]
+    },
+    {
+      "name": "Primal Carnage",
+      "status": "Unknown",
+      "shortname": "primalcarnage",
+      "ac": "VAC"
+    },
+    {
+      "name": "Post Scriptum",
+      "status": "Broken",
+      "shortname": "postscriptum",
+      "ac": "EAC"
+    },
+    {
+      "name": "Predator: Hunting Grounds",
+      "status": "Broken",
+      "shortname": "predator",
+      "ac": "EAC"
+    },
+    {
+      "name": "PristonTale",
+      "status": "Unknown",
+      "shortname": "pristontale",
+      "ac": "GG"
+    },
+    {
+      "name": "Project Argo",
+      "status": "Broken",
+      "shortname": "projectargo",
+      "ac": "BE"
+    },
+    {
+      "name": "Qanga",
+      "status": "Broken",
+      "shortname": "qanga",
+      "ac": "EAC"
+    },
+    {
+      "name": "Qplay",
+      "status": "Unknown",
+      "shortname": "qplay",
+      "ac": "GG"
+    },
+    {
+      "name": "Quake Champions",
+      "status": "Working",
+      "shortname": "quakechampions",
+      "ac": "Custom"
+    },
+    {
+      "name": "Quake III Arena",
+      "status": "Working",
+      "shortname": "q3arena",
+      "ac": "PB"
+    },
+    {
+      "name": "Quake Live",
+      "status": "Working",
+      "shortname": "qlive",
+      "ac": "PB"
+    },
+    {
+      "name": "Quake 4",
+      "status": "Unknown",
+      "shortname": "q4",
+      "ac": "PB"
+    },
+    {
+      "name": "Quantum League",
+      "status": "Broken",
+      "shortname": "quantumleague",
+      "ac": "EAC"
+    },
+    {
+      "name": "R2",
+      "status": "Unknown",
+      "shortname": "r2",
+      "ac": "GG"
+    },
+    {
+      "name": "Ragnarok",
+      "status": "Broken",
+      "shortname": "ragnarok",
+      "ac": "EAC"
+    },
+    {
+      "name": "Rakion",
+      "status": "Unknown",
+      "shortname": "rakion",
+      "ac": "GG"
+    },
+    {
+      "name": "Ran Online",
+      "status": "Unknown",
+      "shortname": "ranonline",
+      "ac": "GG"
+    },
+    {
+      "name": "Rappelz Online",
+      "status": "Broken",
+      "shortname": "rappelz",
+      "ac": "EAC"
+    },
+    {
+      "name": "Realm Royale",
+      "status": "Broken",
+      "shortname": "realmroyale",
+      "ac": "EAC"
+    },
+    {
+      "name": "Rec Room",
+      "status": "Broken",
+      "shortname": "recroom",
+      "ac": "EAC"
+    },
+    {
+      "name": "Red Faction: Armageddon",
+      "status": "Unknown",
+      "shortname": "redfaction",
+      "ac": "VAC"
+    },
+    {
+      "name": "Red Orchestra 2: Heroes of Stalingrad",
+      "status": "Working",
+      "shortname": "ro2heroes",
+      "ac": "PB"
+    },
+    {
+      "name": "Reign of Kings",
+      "status": "Broken",
+      "shortname": "reignofkings",
+      "ac": "EAC"
+    },
+    {
+      "name": "Rend",
+      "status": "Broken",
+      "shortname": "rend",
+      "ac": "EAC"
+    },
+    {
+      "name": "Resident Evil Revelations",
+      "status": "Unknown",
+      "shortname": "rerevelations",
+      "ac": "VAC"
+    },
+    {
+      "name": "Return to Castle Wolfenstein",
+      "status": "Working",
+      "shortname": "rtcw",
+      "ac": "PB"
+    },
+    {
+      "name": "Revelations 2012",
+      "status": "Unknown",
+      "shortname": "revelations2012",
+      "ac": "VAC"
+    },
+    {
+      "name": "RF Online",
+      "status": "Broken",
+      "shortname": "rfonline",
+      "ac": "EAC"
+    },
+    {
+      "name": "Ring of Elysium",
+      "status": "Broken",
+      "shortname": "roe",
+      "ac": "TP"
+    },
+    {
+      "name": "Rising Storm 2: Vietnam",
+      "status": "Broken",
+      "shortname": "rs2vietnam",
+      "ac": "EAC"
+    },
+    {
+      "name": "Risk Your Life (RYL Online)",
+      "status": "Unknown",
+      "shortname": "rylonline",
+      "ac": "GG"
+    },
+    {
+      "name": "Robocraft",
+      "status": "Broken",
+      "shortname": "robocraft",
+      "ac": "EAC"
+    },
+    {
+      "name": "Rocket Arena",
+      "status": "Broken",
+      "shortname": "rocketarena",
+      "ac": "EAC"
+    },
+    {
+      "name": "Rogue Company",
+      "status": "Broken",
+      "shortname": "roguecompany",
+      "ac": "EAC"
+    },
+    {
+      "name": "ROHAN",
+      "status": "Unknown",
+      "shortname": "rohan",
+      "ac": "GG"
+    },
+    {
+      "name": "Roller Coaster Rampage",
+      "status": "Unknown",
+      "shortname": "rollercoasterrampage",
+      "ac": "VAC"
+    },
+    {
+      "name": "Rose Online",
+      "status": "Unknown",
+      "shortname": "roseonline",
+      "ac": "GG"
+    },
+    {
+      "name": "Rust",
+      "status": "Broken",
+      "shortname": "rust",
+      "ac": "EAC"
+    },
+    {
+      "name": "S4 League",
+      "status": "Broken",
+      "shortname": "s4league",
+      "ac": "BE+EAC?"
+    },
+    {
+      "name": "Sabotaj TR",
+      "status": "Broken",
+      "shortname": "sabotajtr",
+      "ac": "EAC"
+    },
+    {
+      "name": "Sangokushi Online",
+      "status": "Unknown",
+      "shortname": "sangokushionline",
+      "ac": "GG"
+    },
+    {
+      "name": "SCUM",
+      "status": "Broken",
+      "shortname": "scum",
+      "ac": "EAC"
+    },
+    {
+      "name": "SD gundam",
+      "status": "Unknown",
+      "shortname": "sdgundam",
+      "ac": "GG"
+    },
+    {
+      "name": "Seal Online",
+      "status": "Unknown",
+      "shortname": "sealonline",
+      "ac": "GG"
+    },
+    {
+      "name": "Sector’s Edge",
+      "status": "Broken",
+      "shortname": "sectorsedge",
+      "ac": "EAC"
+    },
+    {
+      "name": "Shadow Arena",
+      "status": "Broken",
+      "shortname": "shadowarena",
+      "ac": "EAC"
+    },
+    {
+      "name": "Shaiya PH",
+      "status": "Broken",
+      "shortname": "shaiyaph",
+      "ac": "EAC"
+    },
+    {
+      "name": "Shaiya",
+      "status": "Unknown",
+      "shortname": "shaiya",
+      "ac": "GG"
+    },
+    {
+      "name": "Shot Online",
+      "status": "Unknown",
+      "shortname": "shotonline",
+      "ac": "GG"
+    },
+    {
+      "name": "Silkroad Online",
+      "status": "Unknown",
+      "shortname": "silkroad",
+      "ac": "GG"
+    },
+    {
+      "name": "SkidRush",
+      "status": "Unknown",
+      "shortname": "skidrush",
+      "ac": "GG"
+    },
+    {
+      "name": "S.K.I.L.L. Special Force 2",
+      "status": "Unknown",
+      "shortname": "skill",
+      "ac": "XC3"
+    },
+    {
+      "name": "Smite",
+      "status": "Broken",
+      "shortname": "smite",
+      "ac": "EAC"
+    },
+    {
+      "name": "Sniper Elite: Nazi Zombie Army",
+      "status": "Unknown",
+      "shortname": "sniperelite-nza",
+      "ac": "VAC"
+    },
+    {
+      "name": "Sniper Ghost Warrior Contracts",
+      "status": "Broken",
+      "shortname": "sniperghostwarrior",
+      "ac": "EAC"
+    },
+    {
+      "name": "Soldier of Fortune II: Double Helix",
+      "status": "Unknown",
+      "shortname": "sof2",
+      "ac": "PB"
+    },
+    {
+      "name": "Soulworker",
+      "status": "Unknown",
+      "shortname": "soulworker",
+      "ac": "XC3"
+    },
+    {
+      "name": "SOS Game",
+      "status": "Broken",
+      "shortname": "sosgame",
+      "ac": "BE"
+    },
+    {
+      "name": "Space Junkies",
+      "status": "Broken",
+      "shortname": "spacejunkies",
+      "ac": "EAC"
+    },
+    {
+      "name": "Special Force 2 - PlayPark PH",
+      "status": "Broken",
+      "shortname": "specialforce2",
+      "ac": "EAC"
+    },
+    {
+      "name": "Spellbreak",
+      "status": "Broken",
+      "shortname": "spellbreak",
+      "ac": "EAC"
+    },
+    {
+      "name": "Splitgate",
+      "status": "Broken",
+      "shortname": "splitgatewin",
+      "ac": "EQU8"
+    },
+    {
+      "name": "Squad",
+      "status": "Broken",
+      "shortname": "squad",
+      "ac": "EAC"
+    },
+    {
+      "name": "Star Citizen",
+      "status": "Broken",
+      "shortname": "squad",
+      "ac": "EAC",
+      "notes": [
+	      "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-3-15-1e-ptu-7876811-patch-notes"
+      ]
+    },
+    {
+      "name": "Star Wars: Battlefront (2015)",
+      "status": "Working",
+      "shortname": "swbf",
+      "ac": "FF"
+    },
+    {
+      "name": "Star Wars: Battlefront II (2017)",
+      "status": "Working",
+      "shortname": "swbf2",
+      "ac": "FF"
+    },
+    {
+      "name": "Star Wars: Squadrons",
+      "status": "Working",
+      "shortname": "sws",
+      "ac": "EAC",
+      "notes": [
+	      "https://twitter.com/Plagman2/status/1493854504290119682?t=flJ90SMI7DIniecWO8Slew"
+      ]
+    },
+    {
+      "name": "StoneAge",
+      "status": "Unknown",
+      "shortname": "stoneage",
+      "ac": "GG"
+    },
+    {
+      "name": "STYLIA",
+      "status": "Unknown",
+      "shortname": "stylia",
+      "ac": "GG"
+    },
+    {
+      "name": "Sudden Attack",
+      "status": "Unknown",
+      "shortname": "suddenattack",
+      "ac": "GG"
+    },
+    {
+      "name": "Super Dragon Ball Heroes: World Mission",
+      "status": "Broken",
+      "shortname": "superdbheroes",
+      "ac": "EAC"
+    },
+    {
+      "name": "Survarium",
+      "status": "Shut down",
+      "shortname": "survivarium",
+      "ac": "BE"
+    },
+    {
+      "name": "Sword Art Online Alicization Lycoris",
+      "status": "Broken",
+      "shortname": "swordartonline-al",
+      "ac": "EAC"
+    },
+    {
+      "name": "Sword Art Online: Fatal Bullet",
+      "status": "Broken",
+      "shortname": "sowrdartonline-fb",
+      "ac": "EAC"
+    },
+    {
+      "name": "Tactic Force",
+      "status": "Broken",
+      "shortname": "tacticforce",
+      "ac": "EAC"
+    },
+    {
+      "name": "Tales Runner",
+      "status": "Broken",
+      "shortname": "talesrunner",
+      "ac": "EAC"
+    },
+    {
+      "name": "The Crew 2",
+      "status": "Broken",
+      "shortname": "thecrew2",
+      "ac": "BE"
+    },
+    {
+      "name": "The Culling",
+      "status": "Shut down",
+      "shortname": "theculling",
+      "ac": "EAC"
+    },
+    {
+      "name": "The Cycle: Frontier",
+      "status": "Broken",
+      "shortname": "thecycle",
+      "ac": "EAC"
+    },
+    {
+      "name": "The Four Kings Casino and Slots",
+      "status": "Unknown",
+      "shortname": "fourkings",
+      "ac": "VAC"
+    },
+    {
+      "name": "The Isle",
+      "status": "Broken",
+      "shortname": "theisle",
+      "ac": "BE"
+    },
+    {
+      "name": "Tibia",
+      "status": "Broken",
+      "shortname": "tibia",
+      "ac": "BE"
+    },
+    {
+      "name": "Titanfall",
+      "status": "Working",
+      "shortname": "tf",
+      "ac": "FF"
+    },
+    {
+      "name": "Titanfall 2",
+      "status": "Working",
+      "shortname": "titan2",
+      "ac": "FF"
+    },
+    {
+      "name": "Tom Clancy’s Rainbow Six Siege",
+      "status": "Broken",
+      "shortname": "siege",
+      "ac": "BE+FF"
+    },
+    {
+      "name": "Tom Clancy’s Ghost Recon: Breakpoint",
+      "status": "Broken",
+      "shortname": "ghostreconbreakpoint",
+      "ac": "BE"
+    },
+    {
+      "name": "Tom Clancy’s Ghost Recon: Future Soldier",
+      "status": "Unknown",
+      "shortname": "ghostreconfs",
+      "ac": "PB"
+    },
+    {
+      "name": "Tom Clancy’s Ghost Recon: Wildlands",
+      "status": "Broken",
+      "shortname": "ghostreconwild",
+      "ac": "EAC"
+    },
+    {
+      "name": "Tom Clancy's Rainbow Six: Lockdown",
+      "status": "Shut down",
+      "shortname": "rslockdown",
+      "ac": "PB"
+    },
+    {
+      "name": "Tom Clancy’s Rainbow Six: Vegas",
+      "status": "Shut down",
+      "shortname": "rsvegas",
+      "ac": "PB"
+    },
+    {
+      "name": "Tom Clancy’s Rainbow Six: Vegas 2",
+      "status": "Shut down",
+      "shortname": "rsvegas2",
+      "ac": "PB"
+    },
+    {
+      "name": "Tom Clancy's Rainbow Six 3: Raven Shield",
+      "status": "Shut down",
+      "shortname": "ravenshield",
+      "ac": "PB"
+    },
+    {
+      "name": "Tom Clancy’s The Division",
+      "status": "Working",
+      "shortname": "div1",
+      "ac": "FF"
+    },
+    {
+      "name": "Tom Clancy’s The Division 2",
+      "status": "Broken",
+      "shortname": "div2",
+      "ac": "EAC"
+    },
+    {
+      "name": "Totally Accurate Battlegrounds",
+      "status": "Broken",
+      "shortname": "tabg",
+      "ac": "EQU8"
+    },
+    {
+      "name": "Tower Wars",
+      "status": "Unknown",
+      "shortname": "towerwars",
+      "ac": "VAC"
+    },
+    {
+      "name": "TOXIKK",
+      "status": "Working",
+      "shortname": "toxikk",
+      "ac": "VAC"
+    },
+    {
+      "name": "Travia",
+      "status": "Unknown",
+      "shortname": "travia",
+      "ac": "GG"
+    },
+    {
+      "name": "Trials Rising",
+      "status": "Broken",
+      "shortname": "trials",
+      "ac": "EAC"
+    },
+    {
+      "name": "Trickster",
+      "status": "Unknown",
+      "shortname": "trickster",
+      "ac": "GG"
+    },
+    {
+      "name": "Twelve Sky",
+      "status": "Unknown",
+      "shortname": "twelvesky",
+      "ac": "GG"
+    },
+    {
+      "name": "Two Moons",
+      "status": "Unknown",
+      "shortname": "twomoons",
+      "ac": "GG"
+    },
+    {
+      "name": "Unturned",
+      "status": "Working",
+      "shortname": "unturnedwin",
+      "ac": "BE",
+      "notes": [
+	      "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
+      ]
+    },
+    {
+      "name": "Valorant",
+      "status": "Broken",
+      "shortname": "valorant",
+      "ac": "VG"
+    },
+    {
+      "name": "Vampire the Masquerade: Bloodhunt",
+      "status": "Broken",
+      "shortname": "bloodhunt",
+      "ac": "ACE"
+    },
+    {
+      "name": "War Rock",
+      "status": "Broken",
+      "shortname": "warrock",
+      "ac": "EAC"
+    },
+    {
+      "name": "War Thunder",
+      "status": "Broken",
+      "shortname": "warthunderwin",
+      "ac": "EAC",
+      "notes": [
+	      "https://www.theverge.com/2021/10/5/22709918/valve-steam-deck-supported-games-anti-cheat-proton-eac-battleye-epic"
+      ]
+    },
+    {
+      "name": "Warface",
+      "status": "Broken",
+      "shortname": "warface",
+      "ac": "EAC"
+    },
+    {
+      "name": "Warhammer 40,000: Eternal Crusade",
+      "status": "Shut down",
+      "shortname": "40kcrusade",
+      "ac": "EAC"
+    },
+    {
+      "name": "Warhammer: Vermintide 2",
+      "status": "Working",
+      "shortname": "vermintide2",
+      "ac": "EAC",
+      "notes": [
+	      "https://support.fatshark.se/hc/en-us/articles/4408080108817--PC-Regarding-Easy-Anti-Cheat-and-Linux-Wine-Proton-Support"
+      ]
+    },
+    {
+      "name": "Watch Dogs 2",
+      "status": "Broken",
+      "shortname": "watchdogs2",
+      "ac": "EAC"
+    },
+    {
+      "name": "Will To Live Online",
+      "status": "Broken",
+      "shortname": "wtlonline",
+      "ac": "EAC"
+    },
+    {
+      "name": "Wolfenstein (2009)",
+      "status": "Shut down (delisted)",
+      "shortname": "wolf07",
+      "ac": "PB"
+    },
+    {
+      "name": "Wolfenstein: Enemy Territory",
+      "status": "Working",
+      "shortname": "wolfet",
+      "ac": "PB"
+    },
+    {
+      "name": "Wolf Team",
+      "status": "Broken",
+      "shortname": "wolfteam",
+      "ac": "EAC"
+    },
+    {
+      "name": "WolfTeam Turkey",
+      "status": "Broken",
+      "shortname": "wolfteamturkey",
+      "ac": "EAC"
+    },
+    {
+      "name": "Wonderking",
+      "status": "Unknown",
+      "shortname": "wonderking",
+      "ac": "GG"
+    },
+    {
+      "name": "World War 3",
+      "status": "Broken",
+      "shortname": "ww3",
+      "ac": "EAC"
+    },
+    {
+      "name": "Worms Rumble",
+      "status": "Broken",
+      "shortname": "wormsrumble",
+      "ac": "EAC"
+    },
+    {
+      "name": "XERA: Survival",
+      "status": "Broken",
+      "shortname": "xera",
+      "ac": "EAC"
+    },
+    {
+      "name": "XNB Online",
+      "status": "Unknown",
+      "shortname": "xnbonline",
+      "ac": "GG"
+    },
+    {
+      "name": "Yaburi",
+      "status": "Unknown",
+      "shortname": "yaburi",
+      "ac": "GG"
+    },
+    {
+      "name": "Yogurting",
+      "status": "Unknown",
+      "shortname": "yogurting",
+      "ac": "GG"
+    },
+    {
+      "name": "Yulgang TH",
+      "status": "Broken",
+      "shortname": "yulgang",
+      "ac": "EAC"
+    },
+    {
+      "name": "Zula",
+      "status": "Broken",
+      "shortname": "zula",
+      "ac": "BE"
+    },
+    {
+      "name": "zzanggu-springs",
+      "status": "Unknown",
+      "shortname": "zzangu",
+      "ac": "GG"
+    },
+    {
+      "name": "大航海時代ONLINE",
+      "status": "Unknown",
+      "shortname": "daikojidaionline",
+      "ac": "GG"
+    },
+    {
+      "name": "新天上碑",
+      "status": "Unknown",
+      "shortname": "tenjouhi",
+      "ac": "GG"
+    }
+  ],
+  "native_ac": [
+    {
+      "code": "BE",
+      "name": "BattlEye"
+    },
+    {
+      "code": "EAC",
+      "name": "Easy Anti-Cheat"
+    },
+    {
+      "code": "VAC",
+      "name": "Valve Anti-Cheat"
+    }
+  ],
+  "wine_ac": [
+    {
+      "code": "ACE",
+      "name": "ACE Guard"
+    },
+    {
+      "code": "BE",
+      "name": "BattlEye"
+    },
+    {
+      "code": "EAC",
+      "name": "Easy Anti-Cheat"
+    },
+    {
+      "code": "EQU8",
+      "name": "EQU8 Anti-Cheat"
+    },
+    {
+      "code": "FF",
+      "name": "Fairfight"
+    },
+    {
+      "code": "GG",
+      "name": "nProtect GameGuard"
+    },
+    {
+      "code": "MP2",
+      "name": "miHoYo Protect 2"
+    },
+    {
+      "code": "MRA",
+      "name": "Mail Ru anticheat"
+    },
+    {
+      "code": "NEAC",
+      "name": "NEAC Protect"
+    },
+    {
+      "code": "NGS",
+      "name": "Nexon Game Security"
+    },
+    {
+      "code": "PB",
+      "name": "PunkBuster"
+    },
+    {
+      "code": "RC",
+      "name": "Ricochet"
+    },
+    {
+      "code": "SC",
+      "name": "Saberclaw"
+    },
+    {
+      "code": "TP",
+      "name": "TenProtect"
+    },
+    {
+      "code": "VG",
+      "name": "Vanguard"
+    },
+    {
+      "code": "XC3",
+      "name": "XIGNCODE3"
+    }
+  ]
+}
