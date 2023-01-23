@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="generator" content="Asciidoctor 2.0.18">
 <meta name="author" content="DayZ official/community server graphical launcher for Linux | Last updated: 2022-10-11">
 <title>DZGUI documentation</title>
 <style>
@@ -443,6 +443,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>DZGUI documentation</h1>
 <div class="details">
 <span id="author" class="author">DayZ official/community server graphical launcher for Linux | Last updated: 2022-10-11</span><br>
+<span id="revdate">=======</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -487,10 +488,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_what_this_is">What this is</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A graphical DayZ server browser/launcher for Linux. Used to list official and community server details and quick connect to preferred servers by staging mods and concatenating launch options automatically.</p>
+<p>A GUI version of <a href="https://github.com/aclist/dztui">DZTUI</a> for Linux. Used to list official and community server details and quick connect to preferred servers by staging mods and concatenating launch options automatically.</p>
 </div>
 <div class="paragraph">
-<p>DZGUI is intended to provide a user-friendly, turnkey solution for graphical desktop environments, and can also be used on the Steam Deck or similar devices.</p>
+<p>DZGUI contains some expanded functionality that will eventually be backported to DZTUI. It is intended to be more of a user-friendly, turnkey solution for graphical desktop environments, and could also be used on the Steam Deck or similar devices.</p>
 </div>
 </div>
 </div>
@@ -532,12 +533,12 @@ the other utilities should ship out of the box with mainstream distributions. Th
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download DZGUI and make it executable:</p>
+<p><strong>Download DZGUI and make it executable:</strong></p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p><strong>Automatic method (skip to 3 below when complete)</strong></p>
+<p>Automatic method: generic OS (skip to step 3 below when complete)</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -545,20 +546,31 @@ the other utilities should ship out of the box with mainstream distributions. Th
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Manual method</strong></p>
+<p>Automatic method: nix-based systems (contributed by lelgenio)</p>
+</div>
+<div class="paragraph">
+<p>Follow the instructions at <a href="https://github.com/lelgenio/dzgui-nix" class="bare">https://github.com/lelgenio/dzgui-nix</a> to ingest the package and dependencies
+into your system using flakes.</p>
+</div>
+<div class="paragraph">
+<p>Manual method</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>chmod +x dzgui.sh</code></pre>
+<pre class="highlight"><code>git clone https://github.com/aclist/dztui.git
+chmod +x dzgui.sh</code></pre>
 </div>
 </div>
+<hr>
 <div class="olist arabic">
 <ol class="arabic" start="2">
 <li>
-<p>Update the <code>vm.max_map_count</code> value (see <a href="https://www.protondb.com/app/221100" class="bare">https://www.protondb.com/app/221100</a>)
-This is handled automatically by DZGUI if you just choose to run the application out of the box.</p>
+<p><strong>Update the <code>vm.max_map_count</code> value (see <a href="https://www.protondb.com/app/221100" class="bare">https://www.protondb.com/app/221100</a>)</strong></p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>This is handled automatically by DZGUI if you just choose to run the application out of the box.</p>
 </div>
 <div class="paragraph">
 <p>Ephemeral method:</p>
@@ -591,10 +603,10 @@ If it detects an incorrect map count value, DZGUI will prompt you to permanently
 <div class="olist arabic">
 <ol class="arabic" start="3">
 <li>
-<p>Steam account with DayZ license</p>
+<p><strong>Prepare a Steam account with a DayZ license</strong></p>
 </li>
 <li>
-<p>Enable a Proton version ≥ <code>6.8</code> (or use Experimental) in the <strong>Compatibility</strong> field of the game&#8217;s right-click options.</p>
+<p><strong>Enable a Proton version ≥ <code>6.8</code> (or use Experimental) in the <code>Compatibility</code> field of the game&#8217;s right-click options.</strong></p>
 </li>
 </ol>
 </div>
