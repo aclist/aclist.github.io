@@ -33,7 +33,7 @@ function setIntOnStart(func, interval) {
 	func();
 	return setInterval(func, interval);
 }
-var countDownDate = new Date("2023-02-06T12:00:00Z").getTime();
+var countDownDate = new Date("2023-04-14T00:00:00Z").getTime();
 var x = setIntOnStart( _ => {
   var now = new Date().getTime();
   var distance = countDownDate - now;
