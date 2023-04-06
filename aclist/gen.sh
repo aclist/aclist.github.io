@@ -167,7 +167,7 @@ notes(){
 }
 record(){
 	url="https://store.steampowered.com/app/$2"
-	case $5 in
+	case "$5" in
 		Working) statuscol=working;
 			if [[ $2 == "null" ]]; then
 				str="$3"
@@ -176,11 +176,15 @@ record(){
 			fi
 			;;
 		Broken) statuscol=broken;
-		       str="$3" ;;
+		       str="$3"
+		       ;;
+
 		Shut*) statuscol=offline;
-			str="$3" ;;
+			str="$3"
+			;;
 		Unknown) statuscol=unknown;
 			str="$3"
+			;;
 	esac
 	cat <<- EOF
 	<tr>
