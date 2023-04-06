@@ -1310,9 +1310,12 @@
     },
     {
       "name": "Halo: The Master Chief Collection",
-      "status": "Broken",
+      "status": "Working",
       "shortname": "halomcc",
-      "ac": "EAC"
+      "ac": "EAC",
+      "notes": [
+	      "Due to a configuration error, you must select 'Anti-Cheat Disabled' to enable anti-cheat: https://support.halowaypoint.com/hc/en-us/articles/14589112499348"
+      ]
     },
     {
       "name": "HeatProject",
