@@ -1341,7 +1341,7 @@
       "shortname": "hll",
       "ac": "EAC",
       "notes": [
-	      "Steam Deck supported scheduled for September 2023: https://www.youtube.com/watch?t=386&v=DJqh61nfuTs"
+	      "Steam Deck support scheduled for September 2023: https://www.youtube.com/watch?t=386&v=DJqh61nfuTs"
       ]
     },
     {
@@ -1784,7 +1784,7 @@
     },
     {
       "name": "New World",
-      "status": "Broken",
+      "status": "Working",
       "shortname": "newworld",
       "ac": "EAC"
     },
@@ -2197,7 +2197,7 @@
       "name": "S4 League",
       "status": "Broken",
       "shortname": "s4league",
-      "ac": "BE+EAC?"
+      "ac": "BE+EAC"
     },
     {
       "name": "Sabotaj TR",
