@@ -26,9 +26,7 @@ meta(){
 	<meta name="author" content="">
 	<title>$title</title>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-	<link rel="stylesheet" href="sortable.min.css" />
 	<link rel="stylesheet" href="$sheet">
-	<script src="sortable.min.js"></script>
 	<script src="copy.js"></script>
 	</head>
 	EOF
@@ -114,7 +112,7 @@ close_table(){
 open_header(){
 	cat <<- EOF
 	<div style="overflow-x:auto">
-	<table class="tableblock frame-all grid-all stretch sortable">
+	<table class="tableblock frame-all grid-all stretch">
 	<colgroup>
 	<col style="width: 5%;">
 	<col style="width: 25%;">
