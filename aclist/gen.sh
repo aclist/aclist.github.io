@@ -87,12 +87,6 @@ open_table(){
 	<col style="width: $1%;">
 	<col style="width: $2%;">
 	</colgroup>
-	<thead>
-	<tr>
-	<th class="tableblock halign-left valign-top">Code</th>
-	<th class="tableblock halign-left valign-top">Meaning</th>
-	</tr>
-	</thead>
 	<tbody>
 	EOF
 }
@@ -186,11 +180,36 @@ record(){
 			str="$3"
 			;;
 	esac
+	declare -A achr
+	achr=(
+		[ACE]="ACE Guard"
+		[BE]="BattlEye"
+		[EAC]="Easy Anti-Cheat"
+		[EQU8]="EQU8 Anti-Cheat"
+		[FF]="FairFight"
+		[GG]="nProtect GameGuard"
+		[MP2]="miHoYo Protect 2"
+		[MRA]="Mail Ru anticheat"
+		[NEAC]="NEAC Protect"
+		[NGS]="Nexon Game Security"
+		[PB]="PunkBuster"
+		[RC]="Ricochet"
+		[SC]="Saberclaw"
+		[TP]="TenProtect"
+		[VAC]="Valve Anti-Cheat"
+		[VG]="Vanguard"
+		[XC3]="XIGNCODE3"
+		[Custom]="Custom"
+		[BE+EAC]="BattlEye + Easy Anti-Cheat"
+		[BE+FF]="BattlEye + FairFight"
+		[FF+PB]="FairFight + PunkBuster"
+		[VAC+PB]="Valve Anti-Cheat + PunkBuster"
+		)
 	cat <<- EOF
 	<tr>
 	<td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=$1 onClick="onClick(this.id)">$anchor</a></td>
 	<td class="tableblock halign-left valign-top blank"><p class="tableblock">${str}</p></td>
-	<td class="tableblock halign-left valign-top blank"><p class="tableblock">$4</p></td>
+	<td class="tableblock halign-left valign-top blank"><p class="tableblock tooltip">$4<span class="tooltiptext">${achr[$4]}</span></p></td>
 	<td class="tableblock halign-left valign-top $statuscol"><p class="tableblock">$5</p></td>
 	</tr>
 	EOF
@@ -233,7 +252,6 @@ main(){
 	preamble
 	section_header native Native
 	open_table 15 65
-	print_codes native_ac
 	close_header
 	open_header
 	print_header
@@ -243,7 +261,6 @@ main(){
 	echo "</div>"
 	section_header wine Wine/Proton
 	open_table 10 30
-	print_codes wine_ac
 	close_table
 	open_header
 	print_header
