@@ -58,7 +58,7 @@ preamble(){
 	<input type="submit" value="Submit report" id="issue-button">
 	</form>
 	<div id="infotable">
-	<p>- Table columns can be sorted by clicking headers</p>
+	<p>- Ctrl-F to search</p>
 	<p>- Click <code>═§═</code> to copy direct record link to clipboard</p>
 	<p>- Games with a passing (working) status receive a link to the game's page</p>
 	</div>
