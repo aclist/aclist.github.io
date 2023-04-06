@@ -7,14 +7,16 @@
 <meta name="author" content="">
 <title>AC compatibility list</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<link rel="stylesheet" href="sortable.min.css" />
 <link rel="stylesheet" href="style.css">
+<script src="sortable.min.js"></script>
 <script src="copy.js"></script>
 </head>
 <body class="article">
 <div id="header">
 <h1>AC compatibility list</h1>
 <div class="details">
-<span id="author" class="author">Last updated: 2023-01-10</span><br>
+<span id="author" class="author">Last updated: 2023-04-06</span><br>
 </div>
 </div>
 <div id="content">
@@ -28,13 +30,14 @@ To the extent possible, all entries are verified with the game developers and in
 <p><a href="#_native">Native (44/44)</a></p>
 </li>
 <li>
-<p><a href="#_wine">Wine/Proton (49/395)</a></p>
+<p><a href="#_wine">Wine/Proton (53/396)</a></p>
 </li>
 </ul>
 <form method="GET" action="https://github.com/aclist/aclist.github.io/issues">
 <input type="submit" value="Submit report" id="issue-button">
 </form>
 <div id="infotable">
+<p>- Table columns can be sorted by clicking headers</p>
 <p>- Click <code>═§═</code> to copy direct record link to clipboard</p>
 <p>- Games with a passing (working) status receive a link to the game's page</p>
 </div>
@@ -70,7 +73,7 @@ To the extent possible, all entries are verified with the game developers and in
 </tr>
 </thead>
 <div style="overflow-x:auto">
-<table class="tableblock frame-all grid-all stretch">
+<table class="tableblock frame-all grid-all stretch sortable">
 <colgroup>
 <col style="width: 5%;">
 <col style="width: 25%;">
@@ -437,7 +440,7 @@ To the extent possible, all entries are verified with the game developers and in
 </table>
 </div>
 <div style="overflow-x:auto">
-<table class="tableblock frame-all grid-all stretch">
+<table class="tableblock frame-all grid-all stretch sortable">
 <colgroup>
 <col style="width: 5%;">
 <col style="width: 25%;">
@@ -1063,7 +1066,7 @@ To the extent possible, all entries are verified with the game developers and in
 <td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=doiwin onClick="onClick(this.id)">═§═</a></td>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock">Day of Infamy</p></td>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock">BE</p></td>
-<td class="tableblock halign-left valign-top broken"><p class="tableblock">Broken</p></td>
+<td class="tableblock halign-left valign-top working"><p class="tableblock">Working</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=dayzsa onClick="onClick(this.id)">═§═</a></td>
@@ -1080,9 +1083,9 @@ To the extent possible, all entries are verified with the game developers and in
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=dbd onClick="onClick(this.id)">═§═</a></td>
-<td class="tableblock halign-left valign-top blank"><p class="tableblock">DayZ SA</p></td>
+<td class="tableblock halign-left valign-top blank"><p class="tableblock">Dead by Daylight</p></td>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock">EAC</p></td>
-<td class="tableblock halign-left valign-top working"><p class="tableblock">Broken </p></td>
+<td class="tableblock halign-left valign-top broken"><p class="tableblock">Broken</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top notes">
@@ -1286,7 +1289,13 @@ To the extent possible, all entries are verified with the game developers and in
 <td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=fallguys onClick="onClick(this.id)">═§═</a></td>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock">Fall Guys: Ultimate Knockout</p></td>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock">EAC</p></td>
-<td class="tableblock halign-left valign-top broken"><p class="tableblock">Broken</p></td>
+<td class="tableblock halign-left valign-top working"><p class="tableblock">Working</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top notes">
+<td class="tableblock halign-left valign-top notes" colspan=4>
+<p class="tableblock-notes">1. Depends on EOS</p>
+</td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=fantatennis onClick="onClick(this.id)">═§═</a></td>
@@ -1505,6 +1514,12 @@ To the extent possible, all entries are verified with the game developers and in
 <td class="tableblock halign-left valign-top broken"><p class="tableblock">Broken</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top notes">
+<td class="tableblock halign-left valign-top notes" colspan=4>
+<p class="tableblock-notes">1. Steam Deck supported scheduled for September 2023: <a href="https://www.youtube.com/watch?t=386&v=DJqh61nfuTs">https://www.youtube.com/watch?t=386&v=DJqh61nfuTs</a></p>
+</td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=heroesgenerals onClick="onClick(this.id)">═§═</a></td>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock">Heroes & Generals</p></td>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock">BE</p></td>
@@ -1550,7 +1565,7 @@ To the extent possible, all entries are verified with the game developers and in
 <td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=huntshowdown onClick="onClick(this.id)">═§═</a></td>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock">Hunt: Showdown</p></td>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock">EAC</p></td>
-<td class="tableblock halign-left valign-top broken"><p class="tableblock">Broken</p></td>
+<td class="tableblock halign-left valign-top working"><p class="tableblock">Working</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=hurtworld onClick="onClick(this.id)">═§═</a></td>
@@ -1592,7 +1607,7 @@ To the extent possible, all entries are verified with the game developers and in
 <td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=insurgencysandstorm onClick="onClick(this.id)">═§═</a></td>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock">Insurgency: Sandstorm</p></td>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock">EAC</p></td>
-<td class="tableblock halign-left valign-top broken"><p class="tableblock">Broken</p></td>
+<td class="tableblock halign-left valign-top working"><p class="tableblock">Working</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=intershelter onClick="onClick(this.id)">═§═</a></td>
@@ -2617,6 +2632,12 @@ To the extent possible, all entries are verified with the game developers and in
 <tr>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=thecycle onClick="onClick(this.id)">═§═</a></td>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock">The Cycle: Frontier</p></td>
+<td class="tableblock halign-left valign-top blank"><p class="tableblock">EAC</p></td>
+<td class="tableblock halign-left valign-top broken"><p class="tableblock">Broken</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=thefinals onClick="onClick(this.id)">═§═</a></td>
+<td class="tableblock halign-left valign-top blank"><p class="tableblock">The Finals</p></td>
 <td class="tableblock halign-left valign-top blank"><p class="tableblock">EAC</p></td>
 <td class="tableblock halign-left valign-top broken"><p class="tableblock">Broken</p></td>
 </tr>

@@ -904,7 +904,7 @@
     },
     {
       "name": "Day of Infamy",
-      "status": "Broken",
+      "status": "Working",
       "shortname": "doiwin",
       "ac": "BE"
     },
@@ -920,7 +920,7 @@
     },
     {
       "name": "Dead by Daylight",
-      "status": "Broken ",
+      "status": "Broken",
       "shortname": "dbd",
       "ac": "EAC",
       "notes": [
@@ -1118,9 +1118,12 @@
     },
     {
       "name": "Fall Guys: Ultimate Knockout",
-      "status": "Broken",
+      "status": "Working",
       "shortname": "fallguys",
-      "ac": "EAC"
+      "ac": "EAC",
+      "notes": [
+	      "Depends on EOS"
+      ]
     },
     {
       "name": "Fanta-Tennis",
@@ -1333,7 +1336,10 @@
       "name": "Hell Let Loose",
       "status": "Broken",
       "shortname": "hll",
-      "ac": "EAC"
+      "ac": "EAC",
+      "notes": [
+	      "Steam Deck supported scheduled for September 2023: https://www.youtube.com/watch?t=386&v=DJqh61nfuTs"
+      ]
     },
     {
       "name": "Heroes & Generals",
@@ -1379,7 +1385,7 @@
     },
     {
       "name": "Hunt: Showdown",
-      "status": "Broken",
+      "status": "Working",
       "shortname": "huntshowdown",
       "ac": "EAC"
     },
@@ -1421,7 +1427,7 @@
     },
     {
       "name": "Insurgency: Sandstorm",
-      "status": "Broken",
+      "status": "Working",
       "shortname": "insurgencysandstorm",
       "ac": "EAC"
     },
@@ -2434,6 +2440,12 @@
       "name": "The Cycle: Frontier",
       "status": "Broken",
       "shortname": "thecycle",
+      "ac": "EAC"
+    },
+    {
+      "name": "The Finals",
+      "status": "Broken",
+      "shortname": "thefinals",
       "ac": "EAC"
     },
     {
