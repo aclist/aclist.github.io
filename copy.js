@@ -12,12 +12,12 @@
 
 function onClick(clicked_id)
 	{
-		var par = '═§═'
-		var tip = 'Copied!'
-		document.getElementById(clicked_id).innerHTML = tip;
+		var par = 'Copy'
+		var tip = '&nbsp;&nbsp;&nbsp;✔&nbsp;&nbsp;&nbsp'
+		document.getElementById(clicked_id).innerHTML = tip ;
 		copy(clicked_id);
 
 		setTimeout(function(){
-			document.getElementById(clicked_id).innerHTML = par;
+			document.getElementById(clicked_id).innerHTML = par ;
 		}, 800);
 	}

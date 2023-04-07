@@ -376,7 +376,7 @@
       "shortname": "arma3",
       "ac": "BE",
       "notes": [
-	      "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
+        "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
       ]
     },
     {
@@ -385,7 +385,7 @@
       "shortname": "arksurvivalwin",
       "ac": "BE",
       "notes": [
-	      "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
+        "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
       ]
     },
     {
@@ -394,7 +394,7 @@
       "shortname": "arkfittestwin",
       "ac": "BE",
       "notes": [
-	      "Listed as pending: https://www.theverge.com/2021/10/5/22709918/valve-steam-deck-supported-games-anti-cheat-proton-eac-battleye-epic"
+        "Listed as pending: https://www.theverge.com/2021/10/5/22709918/valve-steam-deck-supported-games-anti-cheat-proton-eac-battleye-epic"
       ]
     },
     {
@@ -463,7 +463,7 @@
       "shortname": "b4b",
       "ac": "EAC",
       "notes": [
-	      "https://back4blood.com/en-us/patch-notes/april-2022-update"
+        "https://back4blood.com/en-us/patch-notes/april-2022-update"
       ]
     },
     {
@@ -652,8 +652,8 @@
       "shortname": "brawlhalla",
       "ac": "EAC",
       "notes": [
-	      "https://www.brawlhalla.com/news/new-legend-munin-and-new-features-patch-6-00/",
-	      "Depends on official Proton sources; select the [tech-tree] beta branch"
+        "https://www.brawlhalla.com/news/new-legend-munin-and-new-features-patch-6-00/",
+        "Depends on official Proton sources; select the [tech-tree] beta branch"
       ]
     },
     {
@@ -914,8 +914,8 @@
       "shortname": "dayzsa",
       "ac": "BE",
       "notes": [
-	      "https://store.steampowered.com/news/group/4145017/view/3104663180636096966",
-	      "DZGUI server launcher: https://github.com/aclist/dztui/tree/dzgui"
+        "https://store.steampowered.com/news/group/4145017/view/3104663180636096966",
+        "DZGUI server launcher: https://github.com/aclist/dztui/tree/dzgui"
       ]
     },
     {
@@ -924,7 +924,7 @@
       "shortname": "dbd",
       "ac": "EAC",
       "notes": [
-	      "https://www.theverge.com/2021/10/5/22709918/valve-steam-deck-supported-games-anti-cheat-proton-eac-battleye-epic"
+        "https://www.theverge.com/2021/10/5/22709918/valve-steam-deck-supported-games-anti-cheat-proton-eac-battleye-epic"
       ]
     },
     {
@@ -1089,7 +1089,7 @@
       "shortname": "tarkov",
       "ac": "BE",
       "notes": [
-	      "Logging in to the game (trading, hideout management and offline raids) works with BattlEye runtime. Online raids are not implemented, but it's planned to be added by BattlEye."
+        "Logging in to the game (trading, hideout management and offline raids) works with BattlEye runtime. Online raids are not implemented, but it's planned to be added by BattlEye."
       ]
     },
     {
@@ -1122,7 +1122,7 @@
       "shortname": "fallguys",
       "ac": "EAC",
       "notes": [
-	      "Depends on EOS"
+        "Depends on EOS"
       ]
     },
     {
@@ -1155,7 +1155,7 @@
       "shortname": "fc5",
       "ac": "EAC",
       "notes": [
-	      "https://steamdb.info/depot/552521/history/?changeid=M:7117179758041625493"
+        "https://steamdb.info/depot/552521/history/?changeid=M:7117179758041625493"
       ]
     },
     {
@@ -1314,7 +1314,7 @@
       "shortname": "halomcc",
       "ac": "EAC",
       "notes": [
-	      "Due to a configuration error, you must select 'Anti-Cheat Disabled' to enable anti-cheat: https://support.halowaypoint.com/hc/en-us/articles/14589112499348"
+        "Due to a configuration error, you must select 'Anti-Cheat Disabled' to enable anti-cheat: https://support.halowaypoint.com/hc/en-us/articles/14589112499348"
       ]
     },
     {
@@ -1341,7 +1341,7 @@
       "shortname": "hll",
       "ac": "EAC",
       "notes": [
-	      "Steam Deck support scheduled for September 2023: https://www.youtube.com/watch?t=386&v=DJqh61nfuTs"
+        "Steam Deck support scheduled for September 2023: https://www.youtube.com/watch?t=386&v=DJqh61nfuTs"
       ]
     },
     {
@@ -1512,7 +1512,7 @@
       "shortname": "knockoutcity",
       "ac": "EAC",
       "notes": [
-	      "https://twitter.com/Plagman2/status/1493854504290119682?t=flJ90SMI7DIniecWO8Slew"
+        "https://twitter.com/Plagman2/status/1493854504290119682?t=flJ90SMI7DIniecWO8Slew"
       ]
     },
     {
@@ -1719,7 +1719,7 @@
       "shortname": "bannerlord",
       "ac": "BE",
       "notes": [
-	      "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
+        "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
       ]
     },
     {
@@ -1938,7 +1938,7 @@
       "shortname": "planetside2",
       "ac": "BE",
       "notes": [
-	      "https://twitter.com/Plagman2/status/1493854504290119682?t=flJ90SMI7DIniecWO8Slew"
+        "https://twitter.com/Plagman2/status/1493854504290119682?t=flJ90SMI7DIniecWO8Slew"
       ]
     },
     {
@@ -1947,7 +1947,7 @@
       "shortname": "planetsidearena",
       "ac": "BE",
       "notes": [
-	      "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
+        "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
       ]
     },
     {
@@ -1968,7 +1968,7 @@
       "shortname": "polygon",
       "ac": "EAC",
       "notes": [
-	      "https://twitter.com/RedasterPOLYGON/status/1443057152168325125?s=20"
+        "https://twitter.com/RedasterPOLYGON/status/1443057152168325125?s=20"
       ]
     },
     {
@@ -2092,6 +2092,7 @@
       "ac": "VAC"
     },
     {
+      "appid": 35450,
       "name": "Red Orchestra 2: Heroes of Stalingrad",
       "status": "Working",
       "shortname": "ro2heroes",
@@ -2349,7 +2350,7 @@
       "shortname": "squad",
       "ac": "EAC",
       "notes": [
-	      "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-3-15-1e-ptu-7876811-patch-notes"
+        "https://robertsspaceindustries.com/spectrum/community/SC/forum/190048/thread/star-citizen-alpha-3-15-1e-ptu-7876811-patch-notes"
       ]
     },
     {
@@ -2370,7 +2371,7 @@
       "shortname": "sws",
       "ac": "EAC",
       "notes": [
-	      "https://twitter.com/Plagman2/status/1493854504290119682?t=flJ90SMI7DIniecWO8Slew"
+        "https://twitter.com/Plagman2/status/1493854504290119682?t=flJ90SMI7DIniecWO8Slew"
       ]
     },
     {
@@ -2470,12 +2471,14 @@
       "ac": "BE"
     },
     {
+"appid": 1454890,
       "name": "Titanfall",
       "status": "Working",
       "shortname": "tf",
       "ac": "FF"
     },
     {
+	    "appid": 1237970,
       "name": "Titanfall 2",
       "status": "Working",
       "shortname": "titan2",
@@ -2530,6 +2533,7 @@
       "ac": "PB"
     },
     {
+	    "appid": 365590,
       "name": "Tom Clancy’s The Division",
       "status": "Working",
       "shortname": "div1",
@@ -2554,6 +2558,7 @@
       "ac": "VAC"
     },
     {
+	    "appid": 324810,
       "name": "TOXIKK",
       "status": "Working",
       "shortname": "toxikk",
@@ -2590,12 +2595,13 @@
       "ac": "GG"
     },
     {
+	    "appid": 429881,
       "name": "Unturned",
       "status": "Working",
       "shortname": "unturnedwin",
       "ac": "BE",
       "notes": [
-	      "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
+        "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
       ]
     },
     {
@@ -2622,7 +2628,7 @@
       "shortname": "warthunderwin",
       "ac": "EAC",
       "notes": [
-	      "https://www.theverge.com/2021/10/5/22709918/valve-steam-deck-supported-games-anti-cheat-proton-eac-battleye-epic"
+        "https://www.theverge.com/2021/10/5/22709918/valve-steam-deck-supported-games-anti-cheat-proton-eac-battleye-epic"
       ]
     },
     {
@@ -2638,12 +2644,13 @@
       "ac": "EAC"
     },
     {
+	   "appid": 552500,
       "name": "Warhammer: Vermintide 2",
       "status": "Working",
       "shortname": "vermintide2",
       "ac": "EAC",
       "notes": [
-	      "https://support.fatshark.se/hc/en-us/articles/4408080108817--PC-Regarding-Easy-Anti-Cheat-and-Linux-Wine-Proton-Support"
+        "https://support.fatshark.se/hc/en-us/articles/4408080108817--PC-Regarding-Easy-Anti-Cheat-and-Linux-Wine-Proton-Support"
       ]
     },
     {
@@ -2665,6 +2672,7 @@
       "ac": "PB"
     },
     {
+      "appid": 1873030,
       "name": "Wolfenstein: Enemy Territory",
       "status": "Working",
       "shortname": "wolfet",

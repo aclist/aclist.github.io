@@ -1,5 +1,4 @@
 #!/bin/bash
-anchor="═§═"
 title="AC compatibility list"
 json=ac.json
 sheet=style.css
@@ -59,7 +58,7 @@ preamble(){
 	</form>
 	<div id="infotable">
 	<p>- Ctrl-F to search</p>
-	<p>- Click <code>═§═</code> to copy direct record link to clipboard</p>
+	<p>- Click <button>Copy</button> to copy record link to clipboard</p>
 	<p>- Games with a passing (working) status receive a link to the game's page</p>
 	</div>
 	</div>
@@ -69,7 +68,10 @@ preamble(){
 }
 sharelink(){
 	cat <<- EOF
-	<td class="tableblock halign-left valign-top" style="background-color: white;"><p class="tableblock"><a class="sharelink" id="$1" onClick="onClick(this.id)">$anchor</a></td>
+	<td class="tableblock halign-left valign-top" style="background-color: white;">
+	<p class="tableblock">
+	<button class="sharelink" id="$1" onClick="onClick(this.id)">Copy</button>
+	</p></td>
 	EOF
 }
 header(){
@@ -124,7 +126,7 @@ open_header(){
 }
 print_header(){
 	echo "<tr>"
-	for i in "Direct Link" Game AC Status; do
+	for i in "Link" Game AC Status; do
 		header "$i"
 	done
 	echo "</tr>"
@@ -205,7 +207,9 @@ record(){
 		)
 	cat <<- EOF
 	<tr>
-	<td class="tableblock halign-left valign-top blank"><p class="tableblock"><a class="sharelink" id=$1 onClick="onClick(this.id)">$anchor</a></td>
+	EOF
+	sharelink "$1"
+	cat <<- EOF
 	<td class="tableblock halign-left valign-top blank"><p class="tableblock">${str}</p></td>
 	<td class="tableblock halign-left valign-top blank"><p class="tableblock tooltip">$4<span class="tooltiptext">${achr[$4]}</span></p></td>
 	<td class="tableblock halign-left valign-top $statuscol"><p class="tableblock">$5</p></td>
