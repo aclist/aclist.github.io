@@ -347,6 +347,7 @@
       "ac": "BE"
     },
     {
+      "appid": 1172470,
       "name": "Apex Legends",
       "status": "Working",
       "shortname": "apex",
@@ -371,6 +372,7 @@
       "ac": "BE"
     },
     {
+      "appid": 107410,
       "name": "Arma 3",
       "status": "Working",
       "shortname": "arma3",
@@ -380,6 +382,7 @@
       ]
     },
     {
+      "appid": 346110,
       "name": "ARK: Survival Evolved",
       "status": "Working",
       "shortname": "arksurvivalwin",
@@ -458,6 +461,7 @@
       "ac": "BE"
     },
     {
+      "appid": 924970,
       "name": "Back 4 Blood",
       "status": "Working",
       "shortname": "b4b",
@@ -473,6 +477,7 @@
       "ac": "EAC"
     },
     {
+      "appid": 1238840,
       "name": "Battlefield 1",
       "status": "Working",
       "shortname": "bf1",
@@ -503,12 +508,14 @@
       "ac": "PB"
     },
     {
+      "appid": 1238820,
       "name": "Battlefield 3",
       "status": "Working",
       "shortname": "bf3",
       "ac": "PB"
     },
     {
+      "appid": 1238860,
       "name": "Battlefield 4",
       "status": "Working",
       "shortname": "bf4",
@@ -516,11 +523,12 @@
     },
     {
       "name": "Battlefield: Bad Company 2",
-      "status": "Working",
+      "status": "Shut down",
       "shortname": "bfbc2",
       "ac": "PB"
     },
     {
+	    "appid": 1238880,
       "name": "Battlefield: Hardline",
       "status": "Working",
       "shortname": "bfhardline",
@@ -539,6 +547,7 @@
       "ac": "PB"
     },
     {
+	    "appid": 1238810,
       "name": "Battlefield V",
       "status": "Working",
       "shortname": "bfv",
@@ -551,6 +560,7 @@
       "ac": "PB"
     },
     {
+	    "appid": 363680,
       "name": "Battlefleet Gothic: Armada",
       "status": "Working",
       "shortname": "bfga",
@@ -647,6 +657,7 @@
       "ac": "GG"
     },
     {
+	    "appid": 291550,
       "name": "Brawlhalla",
       "status": "Working",
       "shortname": "brawlhalla",
@@ -903,12 +914,14 @@
       "ac": "EAC"
     },
     {
+      "appid": 447820,
       "name": "Day of Infamy",
       "status": "Working",
       "shortname": "doiwin",
       "ac": "BE"
     },
     {
+	    "appid": 221100,
       "name": "DayZ SA",
       "status": "Working",
       "shortname": "dayzsa",
@@ -919,12 +932,12 @@
       ]
     },
     {
+      "appid": 381210,
       "name": "Dead by Daylight",
-      "status": "Broken",
+      "status": "Working",
       "shortname": "dbd",
       "ac": "EAC",
       "notes": [
-        "https://www.theverge.com/2021/10/5/22709918/valve-steam-deck-supported-games-anti-cheat-proton-eac-battleye-epic"
       ]
     },
     {
@@ -946,6 +959,7 @@
       "ac": "GG"
     },
     {
+	    "appid": 274940,
       "name": "Depth",
       "status": "Working",
       "shortname": "depth",
@@ -1048,6 +1062,7 @@
       "ac": "EAC"
     },
     {
+	    "appid": 1245620,
       "name": "Elden Ring",
       "status": "Working",
       "shortname": "elden",
@@ -1117,6 +1132,7 @@
       "ac": "GG"
     },
     {
+	    "appid": 1097150,
       "name": "Fall Guys: Ultimate Knockout",
       "status": "Working",
       "shortname": "fallguys",
@@ -1150,13 +1166,11 @@
       "ac": "PB"
     },
     {
+	    "appid": 552520,
       "name": "Far Cry 5",
       "status": "Working",
       "shortname": "fc5",
-      "ac": "EAC",
-      "notes": [
-        "https://steamdb.info/depot/552521/history/?changeid=M:7117179758041625493"
-      ]
+      "ac": "EAC"
     },
     {
       "name": "F.E.A.R.",
@@ -1201,6 +1215,7 @@
       "ac": "BE+EAC"
     },
     {
+	    "appid": 505460,
       "name": "Foxhole",
       "status": "Working",
       "shortname": "foxhole",
@@ -1330,7 +1345,8 @@
       "ac": "EAC"
     },
     {
-      "name": "HELLDIVERS Dive Harder Edition",
+	    "appid": 394510,
+      "name": "HELLDIVERS",
       "status": "Working",
       "shortname": "helldivers",
       "ac": "VAC"
@@ -1363,6 +1379,7 @@
       "ac": "EQU8"
     },
     {
+	    "appid": 374280,
       "name": "Hired Ops",
       "status": "Working",
       "shortname": "hiredops",
@@ -1387,6 +1404,7 @@
       "ac": "EAC"
     },
     {
+	    "appid": 594650,
       "name": "Hunt: Showdown",
       "status": "Working",
       "shortname": "huntshowdown",
@@ -1423,6 +1441,7 @@
       "ac": "PB"
     },
     {
+	    "appid": 581320,
       "name": "Insurgency",
       "status": "Broken",
       "shortname": "insurgencywin",
@@ -1489,6 +1508,7 @@
       "ac": "GG"
     },
     {
+	    "appid": 232090,
       "name": "Killing Floor 2",
       "status": "Working",
       "shortname": "kf2",
@@ -1507,6 +1527,7 @@
       "ac": "XC3"
     },
     {
+	    "appid": 1301210,
       "name": "Knockout City",
       "status": "Working",
       "shortname": "knockoutcity",
@@ -1708,12 +1729,14 @@
       "ac": "EAC"
     },
     {
+	    "appid": 629760,
       "name": "Mordhau",
       "status": "Working",
       "shortname": "mordhau",
       "ac": "VAC"
     },
     {
+	    "appid": 261550,
       "name": "Mount & Blade II: Bannerlord",
       "status": "Working",
       "shortname": "bannerlord",
@@ -1783,6 +1806,7 @@
       "ac": "EAC"
     },
     {
+	    "appid": 1063730,
       "name": "New World",
       "status": "Working",
       "shortname": "newworld",
@@ -1837,6 +1861,7 @@
       "ac": "EAC"
     },
     {
+	    "appid": 104900,
       "name": "ORION: Prelude",
       "status": "Working",
       "shortname": "orionprelude",
@@ -1933,6 +1958,7 @@
       "ac": "BE"
     },
     {
+	    "appid": 218230,
       "name": "PlanetSide 2",
       "status": "Working",
       "shortname": "planetside2",
@@ -1943,12 +1969,9 @@
     },
     {
       "name": "Planetside Arena",
-      "status": "Working",
+      "status": "Shut down",
       "shortname": "planetsidearena",
-      "ac": "BE",
-      "notes": [
-        "https://store.steampowered.com/news/group/4145017/view/3104663180636096966"
-      ]
+      "ac": "BE"
     },
     {
       "name": "Plants vs. Zombies: Battle for Neighborville",
@@ -2014,18 +2037,21 @@
       "ac": "GG"
     },
     {
+	    "appid": 611500,
       "name": "Quake Champions",
       "status": "Working",
       "shortname": "quakechampions",
       "ac": "Custom"
     },
     {
-      "name": "Quake III Arena",
+	    "appid": 2200,
+      "name": "Quake III: Arena",
       "status": "Working",
       "shortname": "q3arena",
       "ac": "PB"
     },
     {
+	    "appid": 282440,
       "name": "Quake Live",
       "status": "Working",
       "shortname": "qlive",
@@ -2117,6 +2143,7 @@
       "ac": "VAC"
     },
     {
+	    "appid": 9010,
       "name": "Return to Castle Wolfenstein",
       "status": "Working",
       "shortname": "rtcw",
@@ -2253,6 +2280,12 @@
       "status": "Unknown",
       "shortname": "shaiya",
       "ac": "GG"
+    },
+    {
+      "name": "Shatterline",
+      "status": "Working",
+      "shortname": "shatterline",
+      "ac": "EAC"
     },
     {
       "name": "Shot Online",
