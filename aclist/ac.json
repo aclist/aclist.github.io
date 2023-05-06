@@ -1441,13 +1441,13 @@
       "ac": "PB"
     },
     {
-	    "appid": 581320,
       "name": "Insurgency",
       "status": "Broken",
       "shortname": "insurgencywin",
       "ac": "BE"
     },
     {
+	    "appid": 581320,
       "name": "Insurgency: Sandstorm",
       "status": "Working",
       "shortname": "insurgencysandstorm",
