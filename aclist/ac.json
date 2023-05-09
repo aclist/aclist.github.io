@@ -392,8 +392,9 @@
       ]
     },
     {
+      "appid": 407530,
       "name": "ARK: Survival of the Fittest",
-      "status": "Broken ",
+      "status": "Broken",
       "shortname": "arkfittestwin",
       "ac": "BE",
       "notes": [
@@ -528,7 +529,7 @@
       "ac": "PB"
     },
     {
-	    "appid": 1238880,
+      "appid": 1238880,
       "name": "Battlefield: Hardline",
       "status": "Working",
       "shortname": "bfhardline",
@@ -547,7 +548,7 @@
       "ac": "PB"
     },
     {
-	    "appid": 1238810,
+      "appid": 1238810,
       "name": "Battlefield V",
       "status": "Working",
       "shortname": "bfv",
@@ -560,7 +561,7 @@
       "ac": "PB"
     },
     {
-	    "appid": 363680,
+      "appid": 363680,
       "name": "Battlefleet Gothic: Armada",
       "status": "Working",
       "shortname": "bfga",
@@ -657,7 +658,7 @@
       "ac": "GG"
     },
     {
-	    "appid": 291550,
+      "appid": 291550,
       "name": "Brawlhalla",
       "status": "Working",
       "shortname": "brawlhalla",
@@ -921,7 +922,7 @@
       "ac": "BE"
     },
     {
-	    "appid": 221100,
+      "appid": 221100,
       "name": "DayZ SA",
       "status": "Working",
       "shortname": "dayzsa",
@@ -937,8 +938,7 @@
       "status": "Working",
       "shortname": "dbd",
       "ac": "EAC",
-      "notes": [
-      ]
+      "notes": []
     },
     {
       "name": "Deadside",
@@ -959,7 +959,7 @@
       "ac": "GG"
     },
     {
-	    "appid": 274940,
+      "appid": 274940,
       "name": "Depth",
       "status": "Working",
       "shortname": "depth",
@@ -1062,7 +1062,7 @@
       "ac": "EAC"
     },
     {
-	    "appid": 1245620,
+      "appid": 1245620,
       "name": "Elden Ring",
       "status": "Working",
       "shortname": "elden",
@@ -1132,7 +1132,7 @@
       "ac": "GG"
     },
     {
-	    "appid": 1097150,
+      "appid": 1097150,
       "name": "Fall Guys: Ultimate Knockout",
       "status": "Working",
       "shortname": "fallguys",
@@ -1166,7 +1166,7 @@
       "ac": "PB"
     },
     {
-	    "appid": 552520,
+      "appid": 552520,
       "name": "Far Cry 5",
       "status": "Working",
       "shortname": "fc5",
@@ -1215,7 +1215,7 @@
       "ac": "BE+EAC"
     },
     {
-	    "appid": 505460,
+      "appid": 505460,
       "name": "Foxhole",
       "status": "Working",
       "shortname": "foxhole",
@@ -1345,7 +1345,7 @@
       "ac": "EAC"
     },
     {
-	    "appid": 394510,
+      "appid": 394510,
       "name": "HELLDIVERS",
       "status": "Working",
       "shortname": "helldivers",
@@ -1379,7 +1379,7 @@
       "ac": "EQU8"
     },
     {
-	    "appid": 374280,
+      "appid": 374280,
       "name": "Hired Ops",
       "status": "Working",
       "shortname": "hiredops",
@@ -1404,7 +1404,7 @@
       "ac": "EAC"
     },
     {
-	    "appid": 594650,
+      "appid": 594650,
       "name": "Hunt: Showdown",
       "status": "Working",
       "shortname": "huntshowdown",
@@ -1447,7 +1447,7 @@
       "ac": "BE"
     },
     {
-	    "appid": 581320,
+      "appid": 581320,
       "name": "Insurgency: Sandstorm",
       "status": "Working",
       "shortname": "insurgencysandstorm",
@@ -1508,7 +1508,7 @@
       "ac": "GG"
     },
     {
-	    "appid": 232090,
+      "appid": 232090,
       "name": "Killing Floor 2",
       "status": "Working",
       "shortname": "kf2",
@@ -1527,7 +1527,7 @@
       "ac": "XC3"
     },
     {
-	    "appid": 1301210,
+      "appid": 1301210,
       "name": "Knockout City",
       "status": "Working",
       "shortname": "knockoutcity",
@@ -1729,14 +1729,14 @@
       "ac": "EAC"
     },
     {
-	    "appid": 629760,
+      "appid": 629760,
       "name": "Mordhau",
       "status": "Working",
       "shortname": "mordhau",
       "ac": "VAC"
     },
     {
-	    "appid": 261550,
+      "appid": 261550,
       "name": "Mount & Blade II: Bannerlord",
       "status": "Working",
       "shortname": "bannerlord",
@@ -1806,7 +1806,7 @@
       "ac": "EAC"
     },
     {
-	    "appid": 1063730,
+      "appid": 1063730,
       "name": "New World",
       "status": "Working",
       "shortname": "newworld",
@@ -1861,7 +1861,7 @@
       "ac": "EAC"
     },
     {
-	    "appid": 104900,
+      "appid": 104900,
       "name": "ORION: Prelude",
       "status": "Working",
       "shortname": "orionprelude",
@@ -1958,7 +1958,7 @@
       "ac": "BE"
     },
     {
-	    "appid": 218230,
+      "appid": 218230,
       "name": "PlanetSide 2",
       "status": "Working",
       "shortname": "planetside2",
@@ -2037,21 +2037,21 @@
       "ac": "GG"
     },
     {
-	    "appid": 611500,
+      "appid": 611500,
       "name": "Quake Champions",
       "status": "Working",
       "shortname": "quakechampions",
       "ac": "Custom"
     },
     {
-	    "appid": 2200,
+      "appid": 2200,
       "name": "Quake III: Arena",
       "status": "Working",
       "shortname": "q3arena",
       "ac": "PB"
     },
     {
-	    "appid": 282440,
+      "appid": 282440,
       "name": "Quake Live",
       "status": "Working",
       "shortname": "qlive",
@@ -2143,7 +2143,7 @@
       "ac": "VAC"
     },
     {
-	    "appid": 9010,
+      "appid": 9010,
       "name": "Return to Castle Wolfenstein",
       "status": "Working",
       "shortname": "rtcw",
@@ -2282,6 +2282,7 @@
       "ac": "GG"
     },
     {
+      "appid": 2087030,
       "name": "Shatterline",
       "status": "Working",
       "shortname": "shatterline",
@@ -2504,14 +2505,14 @@
       "ac": "BE"
     },
     {
-"appid": 1454890,
+      "appid": 1454890,
       "name": "Titanfall",
       "status": "Working",
       "shortname": "tf",
       "ac": "FF"
     },
     {
-	    "appid": 1237970,
+      "appid": 1237970,
       "name": "Titanfall 2",
       "status": "Working",
       "shortname": "titan2",
@@ -2566,7 +2567,7 @@
       "ac": "PB"
     },
     {
-	    "appid": 365590,
+      "appid": 365590,
       "name": "Tom Clancy’s The Division",
       "status": "Working",
       "shortname": "div1",
@@ -2591,7 +2592,7 @@
       "ac": "VAC"
     },
     {
-	    "appid": 324810,
+      "appid": 324810,
       "name": "TOXIKK",
       "status": "Working",
       "shortname": "toxikk",
@@ -2628,7 +2629,7 @@
       "ac": "GG"
     },
     {
-	    "appid": 429881,
+      "appid": 429881,
       "name": "Unturned",
       "status": "Working",
       "shortname": "unturnedwin",
@@ -2677,7 +2678,7 @@
       "ac": "EAC"
     },
     {
-	   "appid": 552500,
+      "appid": 552500,
       "name": "Warhammer: Vermintide 2",
       "status": "Working",
       "shortname": "vermintide2",

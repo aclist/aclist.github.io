@@ -162,21 +162,25 @@ notes(){
 record(){
 	url="https://store.steampowered.com/app/$2"
 	case "$5" in
-		Working) statuscol=working;
+		Working)
+			statuscol=working
 			if [[ $2 == "null" ]]; then
 				str="$3"
 			else
 				str="<a href=\"$url\">$3</a>"
 			fi
 			;;
-		Broken) statuscol=broken;
-		       str="$3"
-		       ;;
-
-		Shut*) statuscol=offline;
+		Broken)
+			statuscol=broken
 			str="$3"
 			;;
-		Unknown) statuscol=unknown;
+
+		Shut*)
+			statuscol=offline
+			str="$3"
+			;;
+		Unknown)
+			statuscol=unknown
 			str="$3"
 			;;
 	esac
@@ -210,7 +214,7 @@ record(){
 	EOF
 	sharelink "$1"
 	cat <<- EOF
-	<td class="tableblock halign-left valign-top blank"><p class="tableblock">${str}</p></td>
+	<td class="tableblock halign-left valign-top blank"><p class="tableblock">$str</p></td>
 	<td class="tableblock halign-left valign-top blank"><p class="tableblock tooltip">$4<span class="tooltiptext">${achr[$4]}</span></p></td>
 	<td class="tableblock halign-left valign-top $statuscol"><p class="tableblock">$5</p></td>
 	</tr>
