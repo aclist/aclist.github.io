@@ -693,36 +693,42 @@
       "ac": "PB"
     },
     {
+      "appid": 42700,
       "name": "Call of Duty: Black Ops",
       "status": "Working",
       "shortname": "codblops",
       "ac": "VAC+PB"
     },
     {
+      "appid": 202970,
       "name": "Call of Duty: Black Ops II",
       "status": "Working",
       "shortname": "codblops2",
       "ac": "VAC"
     },
     {
+      "appid": 311210,
       "name": "Call of Duty: Black Ops III",
       "status": "Working",
       "shortname": "codblops3",
       "ac": "VAC"
     },
     {
+      "appid": 209160,
       "name": "Call of Duty: Ghosts",
       "status": "Working",
       "shortname": "codghosts",
       "ac": "VAC"
     },
     {
+      "appid": 292730,
       "name": "Call of Duty: Infinite Warfare",
       "status": "Working",
       "shortname": "codiw",
       "ac": "VAC"
     },
     {
+      "appid": 1938090,
       "name": "Call of Duty: Modern Warfare 2",
       "status": "Working",
       "shortname": "codmw2",
@@ -1026,6 +1032,7 @@
       "ac": "GG"
     },
     {
+      "appid": 1418630,
       "name": "Dread Hunger",
       "status": "Working",
       "shortname": "dreadhunger",
@@ -1324,6 +1331,7 @@
       "ac": "Custom"
     },
     {
+      "appid": 976730,
       "name": "Halo: The Master Chief Collection",
       "status": "Working",
       "shortname": "halomcc",
@@ -1597,6 +1605,7 @@
       "ac": "GG"
     },
     {
+      "appid": 500,
       "name": "Left 4 Dead",
       "status": "Working",
       "shortname": "l4d",
@@ -2388,19 +2397,22 @@
       ]
     },
     {
-      "name": "Star Wars: Battlefront (2015)",
+      "appid": 1237980,
+      "name": "STAR WARS™ Battlefront™",
       "status": "Working",
       "shortname": "swbf",
       "ac": "FF"
     },
     {
-      "name": "Star Wars: Battlefront II (2017)",
+      "appid": 1237950,
+      "name": "STAR WARS™ Battlefront™ II",
       "status": "Working",
       "shortname": "swbf2",
       "ac": "FF"
     },
     {
-      "name": "Star Wars: Squadrons",
+      "appid": 1222730,
+      "name": "STAR WARS™: Squadrons",
       "status": "Working",
       "shortname": "sws",
       "ac": "EAC",
