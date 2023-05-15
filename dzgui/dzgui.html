@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
-<meta name="author" content="DayZ official/community server graphical launcher for Linux | Last updated: 2022-10-11">
+<meta name="author" content="DayZ official/community server graphical launcher for Linux | Last updated: 2023-05-15">
 <title>DZGUI documentation</title>
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -442,8 +442,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>DZGUI documentation</h1>
 <div class="details">
-<span id="author" class="author">DayZ official/community server graphical launcher for Linux | Last updated: 2022-10-11</span><br>
-<span id="revdate">=======</span>
+<span id="author" class="author">DayZ official/community server graphical launcher for Linux | Last updated: 2023-05-15</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -466,20 +465,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_my_servers">My servers</a></li>
 <li><a href="#_quick_connect_to_favorite_server">Quick connect to favorite server</a></li>
 <li><a href="#_connect_by_ip">Connect by IP</a></li>
+<li><a href="#_recent_servers">Recent servers</a></li>
 <li><a href="#_add_server_by_id">Add server by ID</a></li>
-<li><a href="#_add_favorite_server">Add favorite server</a></li>
+<li><a href="#_add_change_favorite_server">Add (change) favorite server</a></li>
 <li><a href="#_delete_server">Delete server</a></li>
 <li><a href="#_list_installed_mods">List installed mods</a></li>
-<li><a href="#_toggle_debug_mode">Toggle debug mode</a></li>
-<li><a href="#_report_bug">Report bug</a></li>
-<li><a href="#_help_file">Help file</a></li>
 <li><a href="#_view_changelog">View changelog</a></li>
-<li><a href="#_debug_options">Debug options</a></li>
+<li><a href="#_advanced_options">Advanced options</a></li>
+<li><a href="#_help_file">Help file</a></li>
+<li><a href="#_report_bug">Report bug</a></li>
+<li><a href="#_forum">Forum</a></li>
 </ul>
 </li>
 <li><a href="#_config_file_keyvalue_pairs">Config file key/value pairs</a></li>
 <li><a href="#_troubleshootingfaq">Troubleshooting/FAQ</a></li>
-<li><a href="#_testers_wanted">Testers wanted</a></li>
 </ul>
 </div>
 </div>
@@ -488,10 +487,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_what_this_is">What this is</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A GUI version of <a href="https://github.com/aclist/dztui">DZTUI</a> for Linux. Used to list official and community server details and quick connect to preferred servers by staging mods and concatenating launch options automatically.</p>
+<p>A GUI version of <a href="https://github.com/aclist/dztui">DZTUI</a> for Linux.
+Used to list official and community server details and quick connect to preferred servers
+by staging mods and concatenating launch options automatically.</p>
 </div>
 <div class="paragraph">
-<p>DZGUI contains some expanded functionality that will eventually be backported to DZTUI. It is intended to be more of a user-friendly, turnkey solution for graphical desktop environments, and could also be used on the Steam Deck or similar devices.</p>
+<p>Development on DZTUI (terminal client) has stopped at this time.
+Instead, DZGUI brings numerous functionality and security improvements and is intended to be a more user-friendly,
+turnkey solution for graphical desktop environments, and can also be used on the Steam Deck or similar devices.</p>
 </div>
 </div>
 </div>
@@ -501,9 +504,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_dependencies">Dependencies</h3>
 <div class="paragraph">
-<p>If not already installed, the below can be found in your system&#8217;s package manager.
-With the exception of Steam (which presumably you already have), in 99% of cases,
-the other utilities should ship out of the box with mainstream distributions. They are provided here merely as a reference.</p>
+<p>If not already installed, the below can be found in your system&#8217;s package manager.</p>
 </div>
 <div class="paragraph">
 <p>If any dependencies are missing when the application starts, it will warn you, so you need not take any preemptive measures here.</p>
@@ -542,7 +543,7 @@ the other utilities should ship out of the box with mainstream distributions. Th
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>curl -s "https://raw.githubusercontent.com/aclist/dztui/dzgui/install.sh" | bash</code></pre>
+<pre class="highlight"><code>curl -s "https://raw.githubusercontent.com/aclist/dztui/main/install.sh" | bash</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -570,23 +571,20 @@ chmod +x dzgui.sh</code></pre>
 </ol>
 </div>
 <div class="paragraph">
-<p>This is handled automatically by DZGUI if you just choose to run the application out of the box.</p>
+<p><strong>Automatic method:</strong></p>
 </div>
 <div class="paragraph">
-<p>Ephemeral method:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>sudo sysctl -w vm.max_map_count=1048576</code></pre>
-</div>
+<p>This is handled automatically by DZGUI if you just choose to run the application out of the box.
+You will be prompted for your sudo password in order to check whether the system map count is too small.
+This is a one-time check that will not be triggered again once the map count is updated.
+If you used the automatic method, you can skip to Step 3 below.</p>
 </div>
 <div class="paragraph">
-<p>Persistent method:</p>
+<p>This process writes the count to the file <code>/etc/sysctl.d/dayz.conf</code>.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>echo 'vm.max_map_count=1048576' | sudo tee /etc/sysctl.d/dayz.conf</code></pre>
-</div>
+<div class="paragraph">
+<p>If the map count was lower than the threshold, it is updated to 1048576.
+If the system map count was already higher, that value is interpolated into this file as a redundancy check.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -595,10 +593,28 @@ chmod +x dzgui.sh</code></pre>
 <div class="title">Note</div>
 </td>
 <td class="content">
-If it detects an incorrect map count value, DZGUI will prompt you to permanently update the map count value when starting up.
+If, for reasons unrelated to DayZ, you choose at a later time to raise your system map count higher than it originally was and
+you find that the count is not sticking, check for the presence of the <code>dayz.conf</code> file to see if it is taking precedence and delete it accordingly.
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p><strong>Ephemeral method:</strong>
+the map count will revert after the system is rebooted.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo sysctl -w vm.max_map_count=1048576</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Persistent method:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>echo 'vm.max_map_count=1048576' | sudo tee /etc/sysctl.d/dayz.conf</code></pre>
+</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="3">
@@ -632,25 +648,7 @@ If it detects an incorrect map count value, DZGUI will prompt you to permanently
 <li>
 <p>Copy the access token for later use (see below). This is the unique token you will use to query servers.</p>
 </li>
-<li>
-<p>Use the <a href="https://www.battlemetrics.com/servers/dayz">DayZ server browser</a> to find servers of interest (proximity, player count, rules, etc.)</p>
-</li>
-<li>
-<p>Each server has a unique ID. This is the string of numbers at the end of the URL. Copy these IDs. For example, in the URL <a href="https://www.battlemetrics.com/servers/dayz/8039514" class="bare">https://www.battlemetrics.com/servers/dayz/8039514</a>, the ID is <code>8039514</code>.</p>
-</li>
 </ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-You will be prompted to enter these IDs when starting the app, so you could refer to them in another window while you complete setup. More IDs can be added later.
-</td>
-</tr>
-</table>
 </div>
 </div>
 <div class="sect3">
@@ -658,13 +656,13 @@ You will be prompted to enter these IDs when starting the app, so you could refe
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Register for a <a href="https://steamcommunity.com/dev/apikey">Steam API key</a> using your Steam account. You will be asked for a unique URL for your app when registering.</p>
+<p>Register for a <a href="https://steamcommunity.com/dev/apikey">Steam API key</a> (free) using your Steam account. You will be asked for a unique URL for your app when registering.</p>
 </li>
 <li>
-<p>Since this key is for a personal use application and does not actually call back anywhere, set a generic local identifier here like "127.0.0.1".</p>
+<p>Since this key is for a personal use application and does not actually call back anywhere, set a generic local identifier here like "127.0.0.1" or some other name that is meaningful to you.</p>
 </li>
 <li>
-<p>Once configured, you can insert this key in the app when launching the "Connect by IP" feature for the first time.</p>
+<p>Once configured, you can insert this key in the app when launching it for the first time.</p>
 </li>
 </ol>
 </div>
@@ -674,6 +672,9 @@ You will be prompted to enter these IDs when starting the app, so you could refe
 <h3 id="_first_time_launch">First-time launch</h3>
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p>It is always advised to have Steam running in the background. DayZ is meant to run "on top of" Steam.</p>
+</li>
 <li>
 <p>DZGUI can be launched one of two ways.</p>
 </li>
@@ -688,13 +689,11 @@ You will be prompted to enter these IDs when starting the app, so you could refe
 </div>
 </div>
 <div class="paragraph">
-<p>Launching from the terminal gives more verbose information, and can be a good way of troubleshooting problems.</p>
+<p>Launching from the terminal gives more verbose information in the event of a crash,
+and can be a good way of troubleshooting problems.</p>
 </div>
 <div class="paragraph">
-<p><strong>From the shortcut shipped with the application:</strong></p>
-</div>
-<div class="paragraph">
-<p>*If using a desktop environment based on the Freedesktop specification</p>
+<p><strong>From the shortcut shipped with the application</strong> (if using a desktop environment based on the Freedesktop specification):</p>
 </div>
 <div class="ulist">
 <ul>
@@ -713,33 +712,46 @@ You will be prompted to enter these IDs when starting the app, so you could refe
 <div class="ulist">
 <ul>
 <li>
-<p>API key (see above)</p>
-</li>
-<li>
 <p>Player name (a generic handle, required by some servers)</p>
 </li>
 <li>
-<p>At least one server ID</p>
+<p>BM API key (see above)</p>
+</li>
+<li>
+<p>Steam API key</p>
 </li>
 </ul>
 </div>
 </li>
 </ol>
 </div>
+<div class="sect3">
+<h4 id="_steam_path_discovery">Steam path discovery</h4>
 <div class="paragraph">
-<p>DZGUI will then attempt to locate your default Steam installation and DayZ path. If it detects multiple paths, you will be given a list to choose from.</p>
+<p>DZGUI will then attempt to locate your default Steam installation and DayZ path. You <strong>must</strong> have DayZ installed in your Steam library in order to proceed. (It can be installed to any drive of your choosing.)
+If DZGUI cannot find Steam or cannot find DayZ installed at the detected Steam path, it will prompt you to manually specify the path to your Steam installation.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-If the path was not detected correctly, you can manually edit the config file at <code>$HOME/.config/dztui/dztuirc</code>.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Specify the top-level entry point to Steam, not DayZ. E.g.,</p>
+</div>
+<div class="paragraph">
+<p><code>/media/mydrive/Steam</code>, not <code>/media/mydrive/Steam/steamapps/common/DayZ</code></p>
+</div>
+<div class="paragraph">
+<p>If your Steam installation is in a hidden folder but the file picker dialog does not show hidden folders, ensure that your GTK settings are set to show hidden files.</p>
+</div>
+<div class="paragraph">
+<p>For GTK 2, edit the file below so that <code>ShowHidden=true</code>:</p>
+</div>
+<div class="paragraph">
+<p><code>~/.config/gtk-2.0/gtkfilechooser.ini</code></p>
+</div>
+<div class="paragraph">
+<p>For GTK 3, invoke the command:</p>
+</div>
+<div class="paragraph">
+<p><code>gsettings set org.gtk.Settings.FileChooser show-hidden true</code></p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -910,7 +922,8 @@ Steam Deck: you must switch to "Desktop Mode" and launch Steam from the desktop.
 <div class="sect2">
 <h3 id="_updating_the_app">Updating the app</h3>
 <div class="paragraph">
-<p>If DZGUI detects a new upstream version, it will prompt you to download it automatically. It backs up the original version before fetching the new one, then updates your config file with your existing values. Once finished, it will ask you to relaunch the app.</p>
+<p>If DZGUI detects a new upstream version, it will prompt you to download it automatically.
+It backs up the original version before fetching the new one, then updates your config file with your existing values. Once finished, it will ask you to relaunch the app.</p>
 </div>
 <div class="paragraph">
 <p>If you decline to upgrade to the new version, DZGUI will continue to the main menu with the current version.</p>
@@ -922,13 +935,16 @@ Steam Deck: you must switch to "Desktop Mode" and launch Steam from the desktop.
 <div class="title">Note</div>
 </td>
 <td class="content">
-New versions may include changes to bugs that could prevent you from playing on certain servers. Upgrading is always advised.
+New versions may include changes to bugs that could prevent you from playing on certain servers.
+Upgrading is always advised.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>If you experience a problem or need to restore the prior version of DZGUI and/or your configs, it is enough to simply replace the new version with the old one and relaunch the app. The files can be found at:</p>
+<p>If you experience a problem or need to restore the prior version of DZGUI and/or your configs,
+it is enough to simply replace the new version with the old one and relaunch the app.
+The files can be found at:</p>
 </div>
 <div class="paragraph">
 <p>Script:</p>
@@ -955,7 +971,7 @@ New versions may include changes to bugs that could prevent you from playing on 
 </div>
 </div>
 <div class="paragraph">
-<p>Backup config files:</p>
+<p>Backup config file:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -969,10 +985,14 @@ New versions may include changes to bugs that could prevent you from playing on 
 <h2 id="_usage">Usage</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Select <a href="#_my_servers">My servers</a> to fetch details for the server IDs you provided. Select the server you wish to connect to and click OK.</p>
+<p>Select from among the <a href="#_menu_options">Menu options</a> below.</p>
 </div>
 <div class="paragraph">
-<p>DZGUI will check the server&#8217;s modset against your local mods. If you are missing any, it will prompt you to download them through the Steam Workshop and open a window in the background in the system browser.</p>
+<p>Connecting to a server consists of fetching metadata for the server IDs you have previously saved/are searching for.</p>
+</div>
+<div class="paragraph">
+<p>DZGUI will check the server&#8217;s modset against your local mods. If you are missing any,
+it will prompt you to download them through the Steam Workshop and open a window in the background in the system browser.</p>
 </div>
 <div class="paragraph">
 <p>Open each link and click Subscribe to schedule these for download.</p>
@@ -984,13 +1004,15 @@ New versions may include changes to bugs that could prevent you from playing on 
 <div class="title">Note</div>
 </td>
 <td class="content">
-You must be logged into Steam for mod change to take effect. It can take some time for the subscribed mods to download and update. You can continue clicking Next to regenerate the list, or wait for all of them to complete.
+You must be logged into Steam for mod changes to take effect.
+It can take some time for the subscribed mods to download and update.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Once all of the mods are downloaded and staged, DZGUI will notify you that it is ready to connect. The app hands the launch parameters to Steam and exits.</p>
+<p>Once all of the mods are downloaded and staged, DZGUI will notify you that it is ready to connect.
+The app hands the launch parameters to Steam and exits.</p>
 </div>
 </div>
 </div>
@@ -1005,13 +1027,6 @@ These servers can be filtered by various parameters in order to display a more g
 </div>
 <div class="paragraph">
 <p>After a server is selected from the list, the application continues to the mod validation step.</p>
-</div>
-<div class="paragraph">
-<p>In order to use this feature, you must have a <a href="https://steamcommunity.com/dev/apikey">Steam API key</a>. You will be asked for a unique URL for your app when registering.
-Since this key is for a personal use application and does not actually call back anywhere, set a generic local identifier here like "127.0.0.1".</p>
-</div>
-<div class="paragraph">
-<p>You will be prompted to insert this key into the app when launching the server browser for the first time.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1049,7 +1064,7 @@ You must have a minimum of one filter active to return any results.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">All maps</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Return all available map types being served.
-Note: disabling this option will present a list from which you can select one specific map type (e.g., namalsk)</p></td>
+Note: unticking this filter will present a list from which you can select one specific map type (e.g., namalsk)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Daytime</p></td>
@@ -1074,7 +1089,7 @@ Note: disabling this option will present a list from which you can select one sp
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non-ASCII titles</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Include servers with special symbols, Unicode, or text in the title.
-Note: disabling this filter will also exclude CJK languages, Cyrillic, and other special character sets.</p></td>
+Note: unticking this filter will also exclude CJK languages, Cyrillic, and other special character sets.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Keyword</p></td>
@@ -1087,7 +1102,8 @@ Note: disabling this filter will also exclude CJK languages, Cyrillic, and other
 <h5 id="_table_details">Table details</h5>
 <div class="paragraph">
 <p>After retrieval, the browser presents a table of results with the following parameters.
-Due to the density of information, the table will try to render at a minimum of 1920x1080 on a desktop or at fullscreen on a Steam Deck.</p>
+Due to the density of information, the table will try to render at a minimum of 1920x1080
+on a desktop or at fullscreen on a Steam Deck.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1113,7 +1129,7 @@ Due to the density of information, the table will try to render at a minimum of 
 <p>Max players: this is zero-padded for sorting purposes</p>
 </li>
 <li>
-<p>Distance: the physical distance to the server in kilometers is calculated by geolocation</p>
+<p>Distance: the physical distance to the server in kilometers, calculated by geolocation</p>
 </li>
 <li>
 <p>IP: the IP address and port</p>
@@ -1128,7 +1144,8 @@ Due to the density of information, the table will try to render at a minimum of 
 <div class="sect3">
 <h4 id="_my_servers">My servers</h4>
 <div class="paragraph">
-<p>Fetches detailed server information on the list of servers saved in the config file. This is the main place you interact with DZGUI when choosing a server from your list. These details are:</p>
+<p>Fetches detailed server information on the list of servers saved by <a href="#_add_server_by_id">Add server by ID</a>.
+Outside of the server browser, this is the main place you interact with DZGUI when choosing a server from your list. These details are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1155,37 +1172,49 @@ Due to the density of information, the table will try to render at a minimum of 
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>In the event that a server has multiple maps behind different ports, these will all be displayed
+after selecting the initial server.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_quick_connect_to_favorite_server">Quick connect to favorite server</h4>
 <div class="paragraph">
-<p>Bypasses the server list and quick-connects to a single favorite server specified in advance using the <a href="#_add_favorite_server">Add favorite server</a> option.</p>
+<p>Bypasses the server list and quick-connects to a single favorite server specified in advance using the <a href="#Add favorite server">[Add favorite server]</a> option.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_connect_by_ip">Connect by IP</h4>
 <div class="paragraph">
-<p>Instead of relying on server IDs, returns the list of maps behind a given IP. Provide only the IP; no port is necessary. This returns the server metadata for you to verify before connecting.</p>
+<p>Instead of relying on server IDs, returns the list of maps behind a given IP.
+Provide only the IP; no port is necessary. This returns the server metadata for you to verify before connecting.</p>
 </div>
 <div class="paragraph">
 <p>If there are multiple maps hosted behind an IP (e.g. different maps on varying ports), the application will list all of them.</p>
 </div>
-<div class="paragraph">
-<p>In order to use this feature, you must have a <a href="https://steamcommunity.com/dev/apikey">Steam API key</a>. You will be asked for a unique URL for your app when registering.
-Since this key is for a personal use application and does not actually call back anywhere, set a generic local identifier here like "127.0.0.1".</p>
 </div>
+<div class="sect3">
+<h4 id="_recent_servers">Recent servers</h4>
 <div class="paragraph">
-<p>You will be prompted to insert this key into the app when launching the "Connect by IP" feature for the first time.</p>
+<p>This feature queries the history file for the last 10 servers connected to by any means
+(server browser, favorite servers, connect-by-IP, etc.).</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_add_server_by_id">Add server by ID</h4>
 <div class="paragraph">
-<p>Prompts you to add servers to the config file by ID. An indefinite number of servers can be added. These will be listed when using the <a href="#Launch server list">[Launch server list]</a> option.</p>
+<p>Use the <a href="https://www.battlemetrics.com/servers/dayz">BattleMetrics site</a> to find servers of interest (proximity, player count, rules, etc.)</p>
+</div>
+<div class="paragraph">
+<p>Each server has a unique ID. This is the string of numbers at the end of the URL. Copy these IDs.
+For example, in the URL <a href="https://www.battlemetrics.com/servers/dayz/8039514" class="bare">https://www.battlemetrics.com/servers/dayz/8039514</a>, the ID is <code>8039514</code>.</p>
+</div>
+<div class="paragraph">
+<p>An indefinite number of servers can be added. These will be listed when using the <a href="#_my_servers">My servers</a> option.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_add_favorite_server">Add favorite server</h4>
+<h4 id="_add_change_favorite_server">Add (change) favorite server</h4>
 <div class="paragraph">
 <p>Prompts you to add/change a favorite server to the config file by ID. The name of the server will be updated in the header of the app. This server is used when selecting the <a href="#_quick_connect_to_favorite_server">Quick connect to favorite server</a> option. If a favorite server is already enabled, this option switches to "Change favorite server."</p>
 </div>
@@ -1199,42 +1228,31 @@ Since this key is for a personal use application and does not actually call back
 <div class="sect3">
 <h4 id="_list_installed_mods">List installed mods</h4>
 <div class="paragraph">
-<p>Prints a scrollable dialog containing all locally-installed mods and their corresponding symlinks IDs.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_toggle_debug_mode">Toggle debug mode</h4>
-<div class="paragraph">
-<p>Toggles debug mode, which is used to perform dry-runs and output what parameters would have been used to connect to a server. Enabling debug mode also exposes the <a href="#_debug_options">Debug options</a> menu, which contains some settings for advanced use.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_report_bug">Report bug</h4>
-<div class="paragraph">
-<p>Using the system browser, opens the project&#8217;s GitHub issues page to submit a report.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_help_file">Help file</h4>
-<div class="paragraph">
-<p>Using the system browser, opens this document.</p>
+<p>Prints a scrollable dialog containing all locally-installed mods and their corresponding symlink IDs and directory names.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_view_changelog">View changelog</h4>
 <div class="paragraph">
-<p>Prints the entire changelog up to the current version (and unreleased changes) in-app.</p>
+<p>Prints the entire changelog up to the current version in-app.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_debug_options">Debug options</h4>
+<h4 id="_advanced_options">Advanced options</h4>
 <div class="paragraph">
 <p>If enabled, this menu contains a sub-menu with various advanced features, enumerated below.</p>
 </div>
 <div class="sect4">
 <h5 id="_toggle_branch">Toggle branch</h5>
 <div class="paragraph">
-<p>Used to toggle the branch to fetch DZGUI from between <code>stable</code> and <code>testing</code>. The app ships with the stable branch enabled, with the testing branch being used to elaborate various experimental features.</p>
+<p>Used to toggle the branch to fetch DZGUI from between <code>stable</code> and <code>testing</code>.
+The app ships with the stable branch enabled, with the testing branch being used to elaborate various experimental features.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_toggle_debug_mode">Toggle debug mode</h5>
+<div class="paragraph">
+<p>Toggles debug mode, which is used to perform dry-runs and output what parameters would have been used to connect to a server.</p>
 </div>
 </div>
 <div class="sect4">
@@ -1243,6 +1261,55 @@ Since this key is for a personal use application and does not actually call back
 <p>Writes a list of your current settings to a local file that can be pasted into bug reports.</p>
 </div>
 </div>
+<div class="sect4">
+<h5 id="_toggle_auto_mod_install">Toggle auto mod install</h5>
+<div class="paragraph">
+<p>This feature is experimental. It attempts to queue the mods requested for download
+automatically, rather than prompting the user to subscribe to each one.</p>
+</div>
+<div class="paragraph">
+<p>Both <code>wmctrl</code> and <code>xdotool</code> must be installed to use this feature.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+When using auto mod installation, the mods will not appear as subscribed to in the Steam Workshop.
+DZGUI tracks their version internally and will trigger an update if necessary the next time you
+attempt to connect.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_force_update_local_mods">Force update local mods</h5>
+<div class="paragraph">
+<p>A convenience function that attempts to redownload all local mods. Can be used in the event of corruption
+or file integrity issues. In conjunction with the <a href="#_toggle_auto_mod_install">Toggle auto mod install</a> feature, this feature is experimental.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_help_file">Help file</h4>
+<div class="paragraph">
+<p>Uses xdg-open to open this documentation in the system browser.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_report_bug">Report bug</h4>
+<div class="paragraph">
+<p>Uses xdg-open to open the <a href="https://github.com/aclist/dztui/issues">bug tracker</a> in the system browser.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_forum">Forum</h4>
+<div class="paragraph">
+<p>Uses xdg-open to open the <a href="https://github.com/aclist/dztui/discussions">discussion forum</a> in the system browser.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1250,7 +1317,7 @@ Since this key is for a personal use application and does not actually call back
 <h2 id="_config_file_keyvalue_pairs">Config file key/value pairs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Under normal usage, these values are populated and toggled automatically in-app. This config file is partially compatible DZTUI.</p>
+<p>Under normal usage, these values are populated and toggled automatically in-app. This config file is partially compatible with DZTUI.</p>
 </div>
 <table class="tableblock frame-all grid-all fit-content">
 <colgroup>
@@ -1290,7 +1357,27 @@ Since this key is for a personal use application and does not actually call back
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>seen_news</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">stores a hash of the news item last seen by the client. This is used to suppress news messages until a new one is posted.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stores a hash of the news item last seen by the client. This is used to suppress news messages until a new one is posted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>term</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the preferred terminal emulator. This key is deprecated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>auto_install</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">permissible values are 0, 1, and 2. These are set internally depending on if the user enabled auto mod installation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>staging_dir</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a directory used to stage mods while downloading. This feature is deprecated and is no longer user-configurable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>default_steam_path</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the path to the default Steam client installation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>preferred_client</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">whether the user prefers native Steam or Flatpak. This value is only set if concurrent installations are found on the system</p></td>
 </tr>
 </tbody>
 </table>
@@ -1301,7 +1388,8 @@ Since this key is for a personal use application and does not actually call back
 <div class="sectionbody">
 <div class="paragraph">
 <div class="title">Mods take a long time to synchronize when subscribing from Workshop</div>
-<p>Steam schedules the downloads in the background and processes them as they are subscribed to. This process is not instantaneous and can take some time. Check the <strong>Downloads</strong> pane of Steam to see live progress.</p>
+<p>Steam schedules the downloads in the background and processes them as they are subscribed to.
+This process is not instantaneous and can take some time.</p>
 </div>
 <div class="paragraph">
 <div class="title">Game does not launch through Steam</div>
@@ -1309,38 +1397,19 @@ Since this key is for a personal use application and does not actually call back
 </div>
 <div class="paragraph">
 <div class="title">Game launches, but throws a "mod missing/check PBO file" error when connecting</div>
-<p>In rare cases, the server may be using misconfigured, malformed, or obsolete mods. This is out of our control and depends on server operators checking their mods for integrity. If you believe the mods are correct and this is a bug, please report it.</p>
+<p>In rare cases, the server may be using misconfigured, malformed, or obsolete mods.
+This depends on server operators checking their mods for integrity.</p>
 </div>
 <div class="paragraph">
 <div class="title">Game and server launches, but when joining the game world, an error occurs</div>
 <p>A mod is corrupted or the issue lies with the server. Replace the mods in question and reconnect.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_testers_wanted">Testers wanted</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>If any of the below apply to you, your <a href="https://github.com/aclist/dztui/issues">reports</a> are encouraged:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Using a high resolution (4K) monitor</p>
-</li>
-<li>
-<p>Own a Steam Deck</p>
-</li>
-<li>
-<p>Seeking DZTUI functionality in DZGUI, or vice versa</p>
-</li>
-<li>
-<p>Playing on a server with an enormous amount of mods</p>
-</li>
-<li>
-<p>Playing on a server with non-English mod names (?)</p>
-</li>
-</ul>
+<div class="title">The game is slow or prone to crashing</div>
+<p>DayZ does not manipulate the game itself and does not contribute to/degrade its performance.
+If you are experiencing performance degradation, it can be caused by too many mods installed or
+by a server-side problem (underpowered server, misconfiguration, etc.) Contract the server administrator
+for assistance.</p>
 </div>
 </div>
 </div>
