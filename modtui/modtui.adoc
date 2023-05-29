@@ -1,0 +1,297 @@
+:nofooter:
+:toc: left
+:stylesheet: custom.css
+
+= modTUI
+native Linux mod manager for Wine games | Last updated: {d}
+
+Click https://aclist.github.io/modtui/modtui_dark.html[here] for dark mode
+
+== Preamble
+A perennial problem with mod management is that simply copying mod files into a game's root directory clobbers the original files,
+making it impossible to restore the original state or move mods in and out on the fly in order to enable/disable them. As the complexity
+and volume of mods being used grows, keeping track of the "vanilla" state of the game becomes next to impossible.
+
+Mod managers like https://github.com/ModOrganizer2/modorganizer[MO2] attempt to resolve this by
+injecting a https://github.com/ModOrganizer2/usvfs[virtualized userspace filesystem]
+that "overlays" the desired directories on top of the game's own so that the system "sees" the new mods as the actual files. Predictably,
+this allows for "hotswapping" mods and changing the order in which they are overlayed, letting the user give priority to different mods in the
+hierarchy in order to resolve conflicts between them. Though seamless, this method comes with performance overhead, the need to use specialized dlls,
+and dependence on a Windows program.
+
+Other solutions like https://github.com/mguegan/ovgme[JSGME/OvGME] opt for a brute-force approach in which the target files are
+compared with those at the destination and physically copied/backed up accordingly. Though more generic, this method comes with
+its own time complexity costs in that large files are being manually written between sectors, so a limiting factor is physical size of the files.
+
+Traditionally there has been no native Linux solution to this problem, with users relying on running Windows-native mod managers through Wine or other
+arcana.
+
+Although FUSE and https://wiki.archlinux.org/title/Overlay_filesystem[overlayfs] present a possible systemic solution, they introduce other setup
+and teardown challenges due to the need for privilege escalation, having available partitions allocated for the new FS, and potential complexity
+vis-a-vis the end-user.
+
+modTUI seeks to provide a naive, generic implementation of mod management and sorting (referred to as "load order" in mod manager speak) that
+sits somewhere between JSGME and MO2 on the performance curve. modTUI does not physically copy any files, using symlinks and hashes instead.
+The net benefit is that there are no setup issues associated with instantiating or overlaying a special filesystem, and the symlinks can be rapidly destroyed
+when done. In terms of time complexity, this is roughly O(n). Size of the mod has no impact on performance, but loading speed is bounded by the number of
+atomic files within the mod, as we have to walk through the tree and compare each one and link it if necessary.
+
+This is appreciably faster than rote copying, although not instantaneous. On a low-spec system, time to load 20 mods with collectively 7,000 files was
+approximately 20s; time to tear down was approximately 2s. This method may not scale if using 1,000+ mods, but should be reasonably fast up to a few
+hundred, particularly with mods that just change a few files, and may be a lot faster on current-gen systems.
+
+The algorithm also attempts to save time by not triggering any changes if the hash of the mods has not changed (i.e., if the mod order was not moved).
+There are other areas where further speed gains could be clawed back, such as conditionally making changes depending on whether prior-ordered mods in the
+hierarchy have been touched, indexing the files, parallelization when linking files (currently they are linked in serial fashion in the order requested),
+and so forth. The first and the last option are easy to implement and can and should be added to a later revision.
+
+The net benefit of this is that for most general use cases, modTUI enables loading mods in a vernacular fashion within Linux without external dependencies.
+
+In addition to the above, modTUI sanitizes incoming mod files through a variety of routines, such as case-folding, to remove Windowsisms and prevent collisions.
+
+Lastly, it provides interoperability with the MO2 modlist.txt specification by allowing conversion between it and modTUI's JSON format.
+
+== Specifications
+
+Mod managers generally expose some sort of "mod list," a flat text file listing the order mods should be loaded in. In the case of modpacks, mod makers
+sometimes create a larger manifest with additional metadata. In both cases, these were rife with Windowsisms and under-specified. A number of problems I
+observed were:
+
+- Lack of consistency in syntax
+- Use of Windows-style backslashes for directory separators
+- Ambiguous declaration of mod subdirectory entry points
+- No unified metadata on the mods themselves, since most mods are packaged bare
+
+Many mods are not intended to be copied rote, but contain various optional files or directories (entry points) that the user can choose between.
+These need to be granularly specified by the user or the author of a modpack.
+
+As a third and lesser point, many of the mods contained peculiar character encoding and end-of-line delimiters in the filenames themselves.
+
+Seeking to massage this into a more structured format that is still human readable and allows for easily preparing large modpacks, modTUI defines a new
+JSON specification that is enumerated below.
+
+Another important step modTUI takes is sanitizing files and enforcing case-folding of the game's root directory and the mod directory at boot.
+
+=== JSON
+
+Mod lists consist of a masthead object listing the tool used to create the file, its version, and a Linux epoch timestamp indicating the creation date.
+
+----
+  "meta": {
+    "tool": "modTUI",
+    "version": "0.1.0",
+    "date": "1685297302"
+  }
+----
+
+This is followed by an array of objects structured as follows:
+
+----
+"mods": [
+    {
+      "name": "",
+      "type": "",
+      "state": "",
+      "dir": "",
+      "author": "",
+      "entry_point": [],
+      "dl_url": "",
+      "human_url": "",
+      "notes": ""
+    }
+]
+----
+
+[%autowidth]
+|===
+|Key|Value
+
+|name|human-readable name of the mod. This can be changed at will in the application.
+During the initial setup routine, underscores in mod directory names are converted to spaces.
+|type|`mod` or `separator`. Separators are category headings used to semantically identify groups of mods
+and reside at their own index within the array. Separators are always set to state `disabled`.
+|state|one of `enabled`, `disabled`, `missing`, or `empty`. These values are checked at creation and runtime and updated accordingly.
+Missing and empty mods cannot be launched and are displayed with ANSI color 1 in the table.^Note^
+|dir|the base directory name of the mod. Distinguished from the name key above in that it shows the verbatim relative path name.
+|author|the author, if applicable. Used when creating modpacks.
+|entry_point|an array of sub-directories within the mod's root directory from which files should be sourced. This value is very important
+when loading malformed mods or mods expecting you to load only specific subdirs. If no entry point is set, the mod is loaded starting from the root directory.
+Entry points should be manually set by the user if necessary.
+|dl_url|the machine-readable URL to the upstream mod file.
+|human_url|the human-readable URL to the mod's information page.
+|notes|a human-readable string of notes, editable in the application.
+|===
+
+[NOTE]
+The missing state indicates that the mod is present in the list but its directory could no longer be found. The empty state indicates that the mod
+directory is present, but contains no files.
+
+These files are auto-generated by modTUI when pointed to a mod directory and updated on each subsequent boot. Using this format, it is also
+possible to specify a modlist a priori and ship it with a modpack. modTUI also provides a convert method that converts between JSON and MO2's
+modlist.txt format, retaining the mod names, enabled/disabled state, and separators.
+
+Metadata such as author, URL, and notes is shown in modTUI's sidebar window when inside the mod manager.
+
+When adding new games via the CLI, each game receives its own JSON modlist in the format <game>.json.
+
+
+== Installation
+
+----
+git clone https://github.com/aclist/modtui.git
+sudo make install
+----
+
+To uninstall:
+
+----
+sudo make uninstall
+----
+
+The installation routine looks for the existence of the `XDG_CACHE_HOME` `XDG_STATE_HOME`, and `XDG_USER_HOME` environment variables.
+
+If these are unset, it reverts to this hierarchy:
+
+State/logs: `$HOME/.local/state/modtui`
+
+Cache: `$HOME/.cache/modtui`
+
+Config files are not written until first boot.
+
+== Usage
+
+=== Command-line interface
+If invoked with no arguments, modtui will print usage instructions and a list of available commands.
+
+.add
+Simply invoke with no additional arguments. modTUI will present an interactive prompt (tab-completion supported) asking you to then input:
+
+- Game name: the name of the game config. Must be unique to avoid collisions.
+- Game path: the absolute path path to the game root.
+- Mods path: the absolute path to the root mod dir containing mods within it, one per subdir.
+- Wine prefix: the absolute path to a working Wine prefix used to launch the game.
+- Executable: the aboslute path to the game launch executable.
+
+Assuming each directory within the mods path is an atomic mod, the process will then prepare a config file with the name <game>.json.
+The `dir` keys used in this file correspond to the basename of the subdirectory, and the `name` keys correspond to a human-readable rendering of
+that path, with underscores converted to spaces for readability.
+
+.list
+Lists the available configs in the following format:
+
+----
+	anomaly-vanilla
+	 ├───── G /media/nvme/gamma/anomaly-vanilla
+	 ├───── M /media/nvme/gamma/mods
+	 ├───── W /home/me/.anomaly
+	 └───── R /media/nvme/gamma/anomaly-vanilla/anomalylauncher.exe
+	gamma
+	 ├───── G /media/nvme/gamma/gamma
+	 ├───── M /media/nvme/gamma/mods
+	 ├───── W /home/me/.anomaly
+	 └───── R /media/nvme/gamma/anomalybak/anomalylauncher.exe
+----
+
+Directories are prefixed with these codes:
+
+- G: absolute path to the game root
+- M: absolute path to the mod dir root
+- W: absolute path to the Wine prefix
+- R: absolute path to the game runtime
+
+You can also add the argument `short` to this mode to print a condensed list of config names without paths.
+
+.launch
+Supply the name of the game config to launch. This boots into the TUI mod manager after a series of pre-launch checks.
+
+.rename
+Supply the name of the game config to rename and the target name as positional arguments. This change is merely cosmetic.
+
+.remove
+Supply the name of the game config to remove. This removes the config metadata but does not clean the mods themselves.
+
+.clean
+Supply the name of a game to clean as an argument. This removes all mods and restores it to the original state, but does not remove
+the config itself.
+
+.convert
+This is a convenience fuction used to convert between MO2's modlist.txt format and modTUI's JSON format.
+Supply the source filename as an argument. The file must be of MIME type `text/plain` or `application/json`.
+In the case of JSON, it must not be malformed.
+
+.help
+Supply the name of a command as an argument to see further information.
+
+=== TUI interface
+
+Once launched, presents a view consisting of a header, main view, and sidebar.
+
+The header appears at the top and changes into a query prompt if the user invokes a mode used to edit metadata.
+
+The main view is a list of mods and separators that indicates their enabled/disabled (or invalid) status.
+Mods can be moved up and down within this list and toggled on the fly.
+
+Lastly, the sidebar present various metadata about the global mod configuration, as well as atomic data about the mod currently focused, such
+as size, number of files, and, where applicable, the README, author, URL metadata, and notes.
+
+==== Navigation
+
+Use the `Up/Down` keys and `PgUp/PgDn` to navigate the list, and `Space` to select/deselect a mod.
+
+Use `C-j/C-k` to move a mod up or down in the priority order.
+
+You can also use `Tab` to mark a mod for bulk selection, then use `Space` to toggle the state on all of these mods at once.
+
+Bulk selection currently only applies to the toggle action and does not have any effect in other modes. If you bulk select a list of mods
+and then trigger some other action, the action will execute on the row currently focused.
+
+Use the `?` key to toggle the help menu and legend.
+
+Use the `j/k` keys to scroll the sidebar text up and down if its length exceeds the window, such as long README files.
+
+Use `C-q/C-c/Esc` to quit.
+
+==== Meta keys
+
+Use `C-e` to edit the note metadata on the currently focused mod.
+
+Use `C-t` to add a named separator above the current row. Like mods, separators can be moved in the list.
+
+Use `C-e` to edit the mod's human-readable name or add parenthetical remarks.
+
+Finally, use `C-l` to trigger a Wine launch action for the game runtime and prefix defined when you first added the game.
+
+==== Launch process
+
+Upon invocation of `C-l`, modTUI will, if applicable, clean the game root of residual files, then stage the mods to be loaded.
+Finally, it enables the Wine prefix and launches the game.
+
+[NOTE]
+It is a known issue that the game process currently pins to the TUI interface,
+so navigating off of a particular menu entry may terminate the launched process.
+
+== Advanced features
+
+=== .modignore file
+
+You can specify a list of atomic filenames (basename, not path) to be ignored when loading mods. This would typically be files like
+`readme.txt`, `readme.md`, `meta.ini`, and `license`, and could also be user config files you don't want mods to change.
+
+Place the file under modTUI's config path with the name `.modignore`. This file applies globally to all games.
+
+The modignore file does not currently support wildcards. Ignored filenames are verbatim.
+
+== Roadmap
+
+[%autowidth]
+|===
+|Feature|Status
+
+|Resolve inter-mod conflicts|feasibility testing
+|FOMOD XML support|feasibility testing
+|BSA file handling|feasibility testing
+|Bulk move mod order|in development
+|Enable/disable all mods|in development
+|Command line tab expansion|in development
+|Cache sidebar metadata|in development
+|===
