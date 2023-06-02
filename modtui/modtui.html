@@ -525,8 +525,7 @@ hundred, particularly with mods that just change a few files, and may be a lot f
 <div class="paragraph">
 <p>The algorithm also attempts to save time by not triggering any changes if the hash of the mods has not changed (i.e., if the mod order was not moved).
 There are other areas where further speed gains could be clawed back, such as conditionally making changes depending on whether prior-ordered mods in the
-hierarchy have been touched, indexing the files, parallelization when linking files (currently they are linked in serial fashion in the order requested),
-and so forth. The first and the last option are easy to implement and can and should be added to a later revision.</p>
+hierarchy have been touched, indexing the files, and parallelization when linking files. Preliminary parallelization has been added in version 0.2.0.</p>
 </div>
 <div class="paragraph">
 <p>The net benefit of this is that for most general use cases, modTUI enables loading mods in a vernacular fashion within Linux without external dependencies.</p>
