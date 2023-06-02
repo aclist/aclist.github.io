@@ -713,7 +713,7 @@ The load order of mod components is itself sequential based on the array index.<
 <div class="content">
 <pre>	mymod
 	 ├───── addons
-	 │        └── addon1
+	 │        ├── addon1
 	 │        └── addon2
 	 ├───── options
 	 └───── gamedata</pre>
@@ -933,8 +933,13 @@ as size, number of files, and, where applicable, the README, author, URL metadat
 <p>You can also use <code>Tab</code> to mark a mod for bulk selection, then use <code>Space</code> to toggle the state on all of these mods at once.</p>
 </div>
 <div class="paragraph">
-<p>Bulk selection currently only applies to the toggle action and does not have any effect in other modes. If you bulk select a list of mods
+<p>Bulk selection applies to the toggle action and the bulk move action, described below. Outside of those modes, if you bulk select a list of mods
 and then trigger some other action, the action will execute on the row currently focused.</p>
+</div>
+<div class="paragraph">
+<p>Use <code>C-b</code> to enter bulk move mode after Tab-selecting a group of mods. You will be asked for the zero-indexed position you wish to move them to.
+Note that, for integrity purposes, bulk move actions must be executed on contiguous rows of mods; if you select mods that are not adjacent to each other and attempt to bulk
+move them, the action will fail.</p>
 </div>
 <div class="paragraph">
 <p>Use the <code>?</code> key to toggle the help menu and legend.</p>
