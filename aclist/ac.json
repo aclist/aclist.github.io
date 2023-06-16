@@ -482,7 +482,10 @@
       "name": "Battlebit Remastered",
       "status": "Working",
       "shortname": "battlebit",
-      "ac": "EAC"
+      "ac": "EAC",
+      "notes": [
+        "Official servers use FACEIT anticheat"
+      ]
     },
     {
       "appid": 1238840,
