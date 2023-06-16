@@ -6,4 +6,6 @@ This repository currently hosts two documents:
 
 [DZGUI documentation](https://aclist.github.io/dzgui/dzgui.html)
 
-- Help files and installation instructions for DZGUI
+- Help files and installation instructions for [DZGUI](https://github.com/aclist/dztui)
+
+- Help files and installation instructions for [modtui](https://github.com/aclist/modtui)
