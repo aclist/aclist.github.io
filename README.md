@@ -1,4 +1,4 @@
-This repository currently hosts two documents:
+This repository currently hosts these documents:
 
 [AC Compatibility List](https://aclist.github.io/)
 
@@ -11,3 +11,7 @@ This repository currently hosts two documents:
 [modtui documentation](https://aclist.github.io/modtui/modtui.html)
 
 - Help files and installation instructions for [modtui](https://github.com/aclist/modtui)
+
+[KES documentation](https://aclist.github.io/modtui/modtui.html)
+
+- Help files and installation instructions for [KES](https://github.com/aclist/kbin-kes)
