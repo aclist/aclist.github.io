@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<meta name="author" content="Add-on manager for kbin enhancement scripts | Last updated: 2023-07-12">
+<meta name="author" content="Add-on manager for kbin enhancement scripts | Last updated: 2023-07-18">
 <title>kbin Enhancement Suite (KES)</title>
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,13 +437,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
 <h1>kbin Enhancement Suite (KES)</h1>
 <div class="details">
-<span id="author" class="author">Add-on manager for kbin enhancement scripts | Last updated: 2023-07-12</span><br>
+<span id="author" class="author">Add-on manager for kbin enhancement scripts | Last updated: 2023-07-18</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -454,7 +454,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_usage">Usage</a>
 <ul class="sectlevel2">
 <li><a href="#_main_menu">Main menu</a></li>
+<li><a href="#_header_and_footer_buttons">Header and footer buttons</a></li>
 <li><a href="#_settings">Settings</a></li>
+<li><a href="#_troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 <li><a href="#_developers">Developers</a>
@@ -465,6 +467,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_script_calling_logic">Script calling logic</a></li>
 <li><a href="#_retrieving_custom_settings">Retrieving custom settings</a></li>
 <li><a href="#_handling_infinite_scrolling">Handling infinite scrolling</a></li>
+<li><a href="#_compatibility_api">Compatibility API</a></li>
 <li><a href="#_submitting_a_pr">Submitting a PR</a></li>
 <li><a href="#_precautions_and_best_practices">Precautions and best practices</a></li>
 </ul>
@@ -585,10 +588,59 @@ out of the way in order to see changes that would otherwise be occluded by the m
 </div>
 </div>
 <div class="sect2">
+<h3 id="_header_and_footer_buttons">Header and footer buttons</h3>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-flask"></i></span> <strong>Changelog</strong>: a link to the KES changelog, listing all user-facing changes to date.</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-eye-slash"></i></span> <strong>Transparent Mode</strong>: hides the KES menu so that you can "see through" to the rest of the page and inspect how changes were applied.
+This mode draws a thin border around the screen edge to indicate you are in a special mode. Click anywhere on the screen to revert to
+the KES menu.</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-arrow-down"></i></span> <strong>Docked Mode</strong>: docks the KES menu to the bottom of the screen in a smaller size.</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-times"></i></span> <strong>Close</strong>: closes the KES menu.</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-clipboard"></i></span> <strong>Copy system info</strong>: click to copy system information to the clipboard for use when submitting a bug report. The information copied is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Operating system</p>
+</li>
+<li>
+<p>User agent (identifies the type of browser)</p>
+</li>
+<li>
+<p>KES version number</p>
+</li>
+<li>
+<p>Script handler (GreaseMonkey, TamperMonkey, etc.)</p>
+</li>
+<li>
+<p>Incognito: whether private browsing is on (used to troubleshoot issues)</p>
+</li>
+<li>
+<p>Settings: the currently saved KES settings, such as which options are on, and what settings they have</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Reset button: prompts the user to confirm whether they would like to reset all internal KES settings to the default. This reverts the state of toggles to
+OFF and flushes any custom settings.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_settings">Settings</h3>
 <div class="paragraph">
 <p>The toggle state of a modification and its settings will be saved and persist across browser sessions.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_troubleshooting">Troubleshooting</h3>
 <div class="paragraph">
 <p>To submit a bug report/feature request or visit the KES home page, follow the links shown within the KES menu itself, or navigate
 <a href="https://github.com/aclist/kbin-kes/issues/new/choose">here</a>.</p>
@@ -620,7 +672,8 @@ whether the user has toggled the script on or off</p>
 </li>
 <li>
 <p>If the script defines custom input fields, use the <code>getModSettings()</code> function exposed by KES
-with your script&#8217;s namespace as the argument (See <a href="#_retrieving_custom_settings">Retrieving custom settings</a>)</p>
+with your script&#8217;s namespace as the argument (See <a href="#_retrieving_custom_settings">Retrieving custom settings</a>). If you wish to call internal GreaseMonkey API
+functions, see <a href="#_compatibility_api">Compatibility API</a> for details on cross-compatibility and some utility functions that facilitate this.</p>
 </li>
 <li>
 <p>Parse the resulting settings object for your desired keys and use these settings in the business
@@ -796,7 +849,7 @@ As far as KES is concerned, functionality of one field does not depend on anothe
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">author</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">single author: string; multiple authors: array of strings</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The author of the add-on. This is user-facing and links back to the named profile on kbin. If you are on an instance other than kbin.social, include the full <code>@&lt;user&gt;@&lt;instance&gt;</code> designation here</p>
 </div></div></td>
@@ -899,7 +952,7 @@ This namespace is used when parsing localStorage</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The input field type. Available types are <code>select</code>, <code>radio</code>, <code>checkbox</code>, and miscellaneous single-value types defined <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">here</a></p>
+<p>The input field type. Available types are <code>select</code>, <code>radio</code>, <code>checkbox</code>, <code>reset</code>, and miscellaneous single-value types defined <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">here</a>. If using <code>reset</code>, limit to one per script.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -918,7 +971,7 @@ This namespace is used when parsing localStorage</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A descriptive label of what the setting does, printed above the input field</p></td>
 </tr>
@@ -937,6 +990,45 @@ This namespace is used when parsing localStorage</p></td>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A user-facing label printed to the right of a checkbox</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">min</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>required if <code>type</code> is <code>range</code> or <code>number</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The minimum value in the range</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">max</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>required if <code>type</code> is <code>range</code> or <code>number</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum value in the range</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">step</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>optional if <code>type</code> is <code>number</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The interval by which to increment/decrement the range</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show_value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">required if <code>type</code> is <code>range</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to print the current numerical value of the range slider</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">catch_reset</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>required if <code>type</code> is <code>reset</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">array of strings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The verbatim names of input field keys that should respond to reset button events. When a reset
+button is pressed, those named fields will reset to their <code>initial</code> values</p></td>
 </tr>
 </tbody>
 </table>
@@ -1028,6 +1120,87 @@ at the top level by KES.</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="_compatibility_api">Compatibility API</h3>
+<div class="paragraph">
+<p>For compatibility between *monkey extensions, KES provides a shim function called <code>safeGM()</code> into which GM API commands can be passed.
+safeGM accepts the name of a GM API function and its respective arguments. Under the hood, safeGM merely passes the function call to the respective
+GM API prefix depending on whether the extension uses the underscore namespace or the GM 4.0 Promise API.</p>
+</div>
+<div class="paragraph">
+<p>In addition, safeGM natively reimplements some function calls that were dropped in GM 4.0 but are available in other extensions (as of this
+writing, <code>GM_addStyle</code>).</p>
+</div>
+<div class="listingblock">
+<div class="title">addStyle()</div>
+<div class="content">
+<pre>function addCustomCSS (css) {
+    const style = document.createElement('style');
+    style.innerHTML = css;
+    document.head.appendChild(style);
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These changes happen invisibly when calling safeGM, so it is enough to pass one of the function names below with the arguments you would typically pass
+to such a function:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>setValue</p>
+</li>
+<li>
+<p>getValue</p>
+</li>
+<li>
+<p>addStyle</p>
+</li>
+<li>
+<p>xmlhttpRequest</p>
+</li>
+<li>
+<p>setClipboard</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These are the functions currently supported, but more may be added if necessary. Given that KES handles the setting and fetching of configs, we have not
+seen many scripts need to leverage extra functionality through GreaseMonkey itself.</p>
+</div>
+<div class="paragraph">
+<p>Additional, <code>GM_info</code> can be invoked using <code>safeGM("info")</code> and the properties of the resulting object parsed out, e.g., <code>safeGM("info").script.version</code>.</p>
+</div>
+<div class="paragraph">
+<p>Note that if using <code>setValue</code>, <code>getValue</code>, and <code>xmlHttpRequest</code>, you will need to call safeGM asynchronously and await the results to support GM 4.0. This
+should generally not be necessary, as KES handles storage of settings.</p>
+</div>
+<div class="paragraph">
+<p>Also note that getResourceText is not available in GM 4.0, so in the unlikely event that you need to use this function in a script, rather than defining
+<code>@resource</code> fields, you should fall back on <code>xmlhttpRequest</code>, or in this case, <code>genericXMLRequest</code> (outlined below), and parse the results on callback.</p>
+</div>
+<div class="paragraph">
+<p>Lastly, KES provides a utility function called <code>genericXMLRequest()</code> that wraps <code>xmlhttpRequest</code> to perform a GET request and obviates setting
+up an object: simply pass the remote URL and callback function as arguments and process the response in your callback function.</p>
+</div>
+<div class="listingblock">
+<div class="title">genericXMLRequest()</div>
+<div class="content">
+<pre>function genericXMLRequest (url, callback) {
+    safeGM("xmlhttpRequest", {
+        method: 'GET',
+        url: url,
+        onload: callback,
+        headers: {
+            "User-Agent": "Mozilla/5.0",
+            "Accept": "text/xml"
+        },
+
+    });
+};</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_submitting_a_pr">Submitting a PR</h3>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1044,14 +1217,15 @@ Limit features to small functionality changes that leverage the advantages of JS
 KES works best in the aggregate, when its add-ons synergize with each other.</p>
 </li>
 <li>
-<p>For testing purposes, you can define remote resources in the <code>@require</code> fields of the <code>kes.user.js</code> headers when debugging, but the PR itself must not include any
+<p>For testing purposes, you can define remote resources in the <code>@require</code> fields of your local copy of the <code>kes.user.js</code> headers when debugging, but the PR itself must not include any
 modifications to this file or to the <code>VERSION</code> file. Only submit a modified <code>manifest.json</code> and add your script to the <code>/mods</code> directory.</p>
 </li>
 <li>
 <p>Ensure that the <code>entrypoint</code> and <code>namespace</code> (if applicable) defined in <code>manifest.json</code> are globally unique.</p>
 </li>
 <li>
-<p>If your script has external dependencies (<code>@require</code>) that are not included in KES, please request these to be added when making the PR. Note that jQuery is provided by default and can be used to reduce the verbosity of your script.</p>
+<p>If your script has external dependencies (<code>@require</code>) that are not included in KES, please request these to be added when making the PR so that they
+can be added at the top level. Note that jQuery is provided by default and can be used to reduce the verbosity of your script.</p>
 </li>
 </ol>
 </div>
@@ -1111,13 +1285,35 @@ complex workflows; scripts that make highly opinionated changes or themselves cr
 <div class="ulist">
 <ul>
 <li>
-<p>Prefer 4-space indentation</p>
+<p>MUST: 4-space indentation on *.js files</p>
 </li>
 <li>
-<p>Prefer <a href="https://www.conventionalcommits.org/en/v1.0.0/">conventional commits</a></p>
+<p>MUST: 2-space indentation on *.json files</p>
 </li>
 <li>
-<p>Linting with ESLint is encouraged but not required</p>
+<p>MUST: space before function paren</p>
+</li>
+<li>
+<p>MUST: space before code blocks</p>
+</li>
+<li>
+<p>MUST NOT: comma dangle</p>
+</li>
+<li>
+<p>MUST NOT: spaces in curly objects</p>
+</li>
+<li>
+<p>PREFER: 80 line width</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <code>.eslintrc.json</code> in the repository root for details.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>PREFER: <a href="https://www.conventionalcommits.org/en/v1.0.0/">conventional commits</a></p>
 </li>
 </ul>
 </div>
