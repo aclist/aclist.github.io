@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<meta name="author" content="Add-on manager for kbin enhancement scripts | Last updated: 2023-07-18">
+<meta name="author" content="Add-on manager for kbin enhancement scripts | Last updated: 2023-07-26">
 <title>kbin Enhancement Suite (KES)</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -136,7 +136,7 @@ a:hover,#toc.toc2 a:hover{
 <div id="header">
 <h1>kbin Enhancement Suite (KES)</h1>
 <div class="details">
-<span id="author" class="author">Add-on manager for kbin enhancement scripts | Last updated: 2023-07-18</span><br>
+<span id="author" class="author">Add-on manager for kbin enhancement scripts | Last updated: 2023-07-26</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -263,8 +263,11 @@ seamlessly, and KES will notify you if there is a new version available.</p>
 <div class="sect2">
 <h3 id="_main_menu">Main menu</h3>
 <div class="paragraph">
-<p>To open the KES settings menu, press <code>Ctrl-Shift-?</code> or click the wrench icon in the top right corner of the page.
-Pressing <code>Ctrl-Shift-?</code> again, <code>Escape</code>, or clicking on the close button or anywhere outside of the menu will close it.</p>
+<p>To open the KES settings menu, press <code>Ctrl-Shift-?</code> or click the wrench icon in the top right corner of the page. On mobile devices narrower than
+512px, the icon can be found inside of the hamburger menu on the top left of the screen, next to the kbin logo.</p>
+</div>
+<div class="paragraph">
+<p>Pressing <code>Ctrl-Shift-?</code> again, <code>Escape</code>, or clicking on the close button or anywhere outside of the menu will close it.</p>
 </div>
 <div class="paragraph">
 <p>The menu is divided into pages; each page contains a list of modifications.
@@ -664,9 +667,9 @@ This namespace is used when parsing localStorage</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">label</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A descriptive label of what the setting does, printed above the input field</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A descriptive label of what the setting does, printed above the input field. If stacking multiple options above each other, such as checkboxes, omitting the label field and adding a single one in the first object is supported.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">values</p></td>
@@ -972,6 +975,16 @@ handles this for you and will apply your changes accordingly in the event of inf
 equation, allowing many small mods to be incorporated and synergize with each other. It is enough to create an entrypoint function that triggers some
 changes, request the desired UI via the JSON manifest, and the rest should work out of the box. Therefore, think of scripts as atomic features rather than
 complex workflows; scripts that make highly opinionated changes or themselves create complex menus may be difficult to adapt.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If changing colors on a page, it is best to respect kbin&#8217;s internal themes by using the variables provided. These can be explored under the <code>var(--kbin-*)</code> prefix.
+A number of variables for success, alerts, backgrounds, text, hover, etc. are provided. These map to different colors within the theme a user has selected. If you hardcode
+an element to a specific color, there is a high likelihood it may not be visible on a dark or light theme, respectively. Similarly, do not set fonts verbatim, but use the
+<code>var(--kbin-body-font-family)</code> for a set of fallback fonts.</p>
+</li>
+</ul>
 </div>
 <div class="sect3">
 <h4 id="_conventions">Conventions</h4>
