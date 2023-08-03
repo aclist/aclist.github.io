@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<meta name="author" content="Add-on manager for kbin enhancement scripts | Last updated: 2023-07-26">
+<meta name="author" content="Add-on manager for kbin enhancement scripts | Last updated: 2023-08-03">
 <title>kbin Enhancement Suite (KES)</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -136,7 +136,7 @@ a:hover,#toc.toc2 a:hover{
 <div id="header">
 <h1>kbin Enhancement Suite (KES)</h1>
 <div class="details">
-<span id="author" class="author">Add-on manager for kbin enhancement scripts | Last updated: 2023-07-26</span><br>
+<span id="author" class="author">Add-on manager for kbin enhancement scripts | Last updated: 2023-08-03</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -161,6 +161,7 @@ a:hover,#toc.toc2 a:hover{
 <li><a href="#_retrieving_custom_settings">Retrieving custom settings</a></li>
 <li><a href="#_handling_infinite_scrolling">Handling infinite scrolling</a></li>
 <li><a href="#_compatibility_api">Compatibility API</a></li>
+<li><a href="#_utility_functions">Utility functions</a></li>
 <li><a href="#_submitting_a_pr">Submitting a PR</a></li>
 <li><a href="#_precautions_and_best_practices">Precautions and best practices</a></li>
 </ul>
@@ -852,6 +853,9 @@ to such a function:</p>
 <p>addStyle</p>
 </li>
 <li>
+<p>removeStyle*</p>
+</li>
+<li>
 <p>xmlhttpRequest</p>
 </li>
 <li>
@@ -864,19 +868,51 @@ to such a function:</p>
 seen many scripts need to leverage extra functionality through GreaseMonkey itself.</p>
 </div>
 <div class="paragraph">
-<p>Additional, <code>GM_info</code> can be invoked using <code>safeGM("info")</code> and the properties of the resulting object parsed out, e.g., <code>safeGM("info").script.version</code>.</p>
+<p>Additionaly, <code>GM_info</code> can be invoked using <code>safeGM("info")</code> and the properties of the resulting object parsed out, e.g., <code>safeGM("info").script.version</code>.</p>
 </div>
 <div class="paragraph">
-<p>Note that if using <code>setValue</code>, <code>getValue</code>, and <code>xmlHttpRequest</code>, you will need to call safeGM asynchronously and await the results to support GM 4.0. This
-should generally not be necessary, as KES handles storage of settings.</p>
+<p>Note that if using <code>setValue</code>, <code>getValue</code>, and <code>xmlHttpRequest</code>, you will need to call safeGM asynchronously and await the results to support GM 4.0.
+However, using these methods should generally not be necessary, as KES handles storage of settings.</p>
 </div>
 <div class="paragraph">
-<p>Also note that getResourceText is not available in GM 4.0, so in the unlikely event that you need to use this function in a script, rather than defining
+<p>Also note that <code>getResourceText</code> is not available in GM 4.0, so in the unlikely event that you need to use this function in a script, rather than defining
 <code>@resource</code> fields, you should fall back on <code>xmlhttpRequest</code>, or in this case, <code>genericXMLRequest</code> (outlined below), and parse the results on callback.</p>
 </div>
 <div class="paragraph">
-<p>Lastly, KES provides a utility function called <code>genericXMLRequest()</code> that wraps <code>xmlhttpRequest</code> to perform a GET request and obviates setting
-up an object: simply pass the remote URL and callback function as arguments and process the response in your callback function.</p>
+<p><code>removeStyle</code> is not a native GM function, but is provided by KES to extend the functionality of <code>addStyle</code> with its logical counterpart: this method
+is mapped to the underlying function <code>removeCustomCSS</code>, but is called by the argument <code>removeStyle</code> to safeGM for semantic purposes, given that it is
+intended to do the opposite.</p>
+</div>
+<div class="listingblock">
+<div class="title">removeCustomCSS()</div>
+<div class="content">
+<pre>function removeCustomCSS (id) {
+    const toRemove = document.getElementById(id);
+    if (toRemove) {
+        document.head.removeChild(toRemove);
+    } else {
+        return
+    }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this way, <code>removeStyle</code> removes a named stylesheet from the document head; when used in conjunction with <code>addStyle</code>, it allows for
+seamlessly inserting and cleaning up rules to ensure that changes to the page occur on the fly, and obviating more brute-force methods like
+DOM manipulation or show/hide with jQuery. It is generally good practice to call <code>removeStyle</code> before <code>addStyle</code> in order to clean up
+any previously existing stylesheets by that name before re-inserting them.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_utility_functions">Utility functions</h3>
+<div class="paragraph">
+<p>Lastly, KES provides a set of utility functions.</p>
+</div>
+<div class="paragraph">
+<p>The first is <code>genericXMLRequest()</code>, which wraps <code>xmlhttpRequest</code> to perform a GET request and obviates setting
+up an object: simply pass the remote URL and callback function as arguments and process the response in your callback function.
+This is generally not needed by scripts, but is used when fetching, e.g., the contents of another page within the same instance,
+such as for pagination purposes.</p>
 </div>
 <div class="listingblock">
 <div class="title">genericXMLRequest()</div>
@@ -890,9 +926,34 @@ up an object: simply pass the remote URL and callback function as arguments and 
             "User-Agent": "Mozilla/5.0",
             "Accept": "text/xml"
         },
-
     });
 };</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The second is <code>getHex()</code>, which supports translation of internal kbin theme variables into their corresponding hex color values.
+This allows you to set sane defaults which, instead of hardcoding color values, respect the user&#8217;s theme settings. For example, setting
+<code>initial: var(--kbin-upvoted-color)</code> for the value of a custom field will ensure that whatever color is being used by the current theme is
+interpolated correctly.</p>
+</div>
+<div class="paragraph">
+<p><code>getHex()</code> is also used internally by KES, and can be used by scripts when passing around settings information in order to parse the incoming value
+without resorting to hardcoding.</p>
+</div>
+<div class="listingblock">
+<div class="title">getHex()</div>
+<div class="content">
+<pre>function getHex (value) {
+    let realHex;
+    const firstChar = Array.from(value)[0];
+    const theme = document.querySelector('body');
+    if (firstChar === "-") {
+        realHex = getComputedStyle(theme).getPropertyValue(value);
+    } else {
+        realHex = value;
+    }
+    return realHex;
+}</pre>
 </div>
 </div>
 </div>
@@ -982,7 +1043,8 @@ complex workflows; scripts that make highly opinionated changes or themselves cr
 <p>If changing colors on a page, it is best to respect kbin&#8217;s internal themes by using the variables provided. These can be explored under the <code>var(--kbin-*)</code> prefix.
 A number of variables for success, alerts, backgrounds, text, hover, etc. are provided. These map to different colors within the theme a user has selected. If you hardcode
 an element to a specific color, there is a high likelihood it may not be visible on a dark or light theme, respectively. Similarly, do not set fonts verbatim, but use the
-<code>var(--kbin-body-font-family)</code> for a set of fallback fonts.</p>
+<code>var(--kbin-body-font-family)</code> for a set of fallback fonts. Refer to <code>getHex()</code> in the section <a href="#_utility_functions">Utility functions</a> above for details on how to convert
+color abstractions into hex values on the fly.</p>
 </li>
 </ul>
 </div>
@@ -990,6 +1052,12 @@ an element to a specific color, there is a high likelihood it may not be visible
 <h4 id="_conventions">Conventions</h4>
 <div class="ulist">
 <ul>
+<li>
+<p>PREFER: <a href="https://www.conventionalcommits.org/en/v1.0.0/">conventional commits</a></p>
+</li>
+<li>
+<p>PREFER: 100 line width</p>
+</li>
 <li>
 <p>MUST: 4-space indentation on *.js files</p>
 </li>
@@ -1008,20 +1076,10 @@ an element to a specific color, there is a high likelihood it may not be visible
 <li>
 <p>MUST NOT: spaces in curly objects</p>
 </li>
-<li>
-<p>PREFER: 80 line width</p>
-</li>
 </ul>
 </div>
 <div class="paragraph">
 <p>See <code>.eslintrc.json</code> in the repository root for details.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>PREFER: <a href="https://www.conventionalcommits.org/en/v1.0.0/">conventional commits</a></p>
-</li>
-</ul>
 </div>
 </div>
 </div>
