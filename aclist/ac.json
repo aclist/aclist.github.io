@@ -1370,13 +1370,11 @@
       "ac": "VAC"
     },
     {
+      "appid": 686810,
       "name": "Hell Let Loose",
-      "status": "Broken",
+      "status": "Working",
       "shortname": "hll",
-      "ac": "EAC",
-      "notes": [
-        "Steam Deck support scheduled for September 2023: https://www.youtube.com/watch?t=386&v=DJqh61nfuTs"
-      ]
+      "ac": "EAC"
     },
     {
       "name": "Heroes & Generals",
