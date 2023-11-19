@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<meta name="author" content="Add-on manager for kbin enhancement scripts | Last updated: 2023-08-03">
+<meta name="author" content="Add-on manager for kbin enhancement scripts | Last updated: 2023-11-19">
 <title>kbin Enhancement Suite (KES)</title>
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -443,7 +443,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>kbin Enhancement Suite (KES)</h1>
 <div class="details">
-<span id="author" class="author">Add-on manager for kbin enhancement scripts | Last updated: 2023-08-03</span><br>
+<span id="author" class="author">Add-on manager for kbin enhancement scripts | Last updated: 2023-11-19</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -594,6 +594,9 @@ out of the way in order to see changes that would otherwise be occluded by the m
 <div class="sect2">
 <h3 id="_header_and_footer_buttons">Header and footer buttons</h3>
 <div class="paragraph">
+<p><span class="icon"><i class="fa fa-search"></i></span> <strong>Search</strong>: opens a keyword search field; search for add-ons using partial string match. Click the returned results to jump to the corresponding add-on&#8217;s settings page.</p>
+</div>
+<div class="paragraph">
 <p><span class="icon"><i class="fa fa-flask"></i></span> <strong>Changelog</strong>: a link to the KES changelog, listing all user-facing changes to date.</p>
 </div>
 <div class="paragraph">
@@ -633,8 +636,23 @@ the KES menu.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Reset button: prompts the user to confirm whether they would like to reset all internal KES settings to the default. This reverts the state of toggles to
-OFF and flushes any custom settings.</p>
+<p><strong>SETTINGS</strong> button: opens a submenu exposing the following options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Export: exports the toggle state and sub-settings of each KES feature to a timestamped backup file (JSON). Used to backup your settings from a given point in time.</p>
+</li>
+<li>
+<p>Import: imports a file generated using the above Export button and applies those settings to KES. Used to restore your settings from a given point in time.</p>
+</li>
+<li>
+<p>Reset: flushes the toggle state and sub-settings of each KES feature and resets them to the defaults.</p>
+</li>
+<li>
+<p>Close: closes the settings sub-menu.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -662,7 +680,7 @@ OFF and flushes any custom settings.</p>
 makes adaptation and PR submission easy:</p>
 </div>
 <div class="paragraph">
-<p>The metadata related to a script is defined a priori in the file <code>manifest.json</code>. KES automatically populates
+<p>The metadata related to a script is defined a priori in the file <code>manifest.json</code>, which itself is a concatenation of JSON objects sourced from each script&#8217;s self-named directory. KES automatically populates
 its pages and assigns your add-on to the category requested, filling its contents with the fields and values you set.</p>
 </div>
 <div class="olist arabic">
@@ -698,12 +716,43 @@ Add-ons must be given a globally unique entrypoint function name and, if using c
 a globally unique namespace.</p>
 </div>
 <div class="paragraph">
+<p><code>manifest.json</code> is not manipulated by hand, being created automatically during the build process by maintainers.
+When submitting a script, the author is solely responsible for creating their own JSON file defining settings for their script.</p>
+</div>
+<div class="paragraph">
+<p>Ensure that you submit your add-on using the following directory tree, with all files prefixed with the name of the parent directory.
+Given a mod named <code>softblock</code>, the submitted files should be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>softblock/ <i class="conum" data-value="1"></i><b>(1)</b>
+├── softblock.json <i class="conum" data-value="2"></i><b>(2)</b>
+└── softblock.user.js <i class="conum" data-value="3"></i><b>(3)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The parent directory</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The JSON object for your script</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The script itself</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
 <p>If the add-on requires custom input fields like select, radio, or
 other <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">input types</a>, they can be added under
 the <code>fields</code> array, one custom field per object.</p>
 </div>
 <div class="paragraph">
-<p>The namespace is used to store settings under a localStorage object, which is used to share
+<p>The <code>namespace</code> is used to store settings under a localStorage object, which is used to share
 settings between KES and third-party add-ons, or between third-party add-ons.</p>
 </div>
 <div class="listingblock">
@@ -764,7 +813,7 @@ their own settings in custom namespaces. (The other three add-ons did not reques
 </ul>
 </div>
 <div class="listingblock">
-<div class="title">manifest.json</div>
+<div class="title">mail.json</div>
 <div class="content">
 <pre>  {
     "name": "Add mail",
@@ -804,7 +853,7 @@ their own settings in custom namespaces. (The other three add-ons did not reques
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>If the user has enabled lazy loading (infinite scroll) and the add-on is expected to modify these new threads and/or comments, setting this value to true will ensure that the script is applied again.</td>
+<td>If the user has enabled infinite scroll and the add-on is expected to modify these new threads and/or comments, setting this value to true will ensure that the script is applied again.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -1273,7 +1322,7 @@ without resorting to hardcoding.</p>
 </li>
 <li>
 <p>If you are submitting a userscript, limit PRs to one per atomic script. If a collection of functions in the script are semantically related to each other, you may
-choose to group them into one script, but they must be given unique objects, entrypoints, and namespaces within <code>manifest.json</code> (one feature per add-on). Generally speaking, different features should be limited to atomic scripts.</p>
+choose to group them into one script, but they must be given unique objects, entrypoints, and namespaces within your JSON object (one feature per add-on). Generally speaking, different features should be limited to atomic scripts.</p>
 </li>
 <li>
 <p>Scripts should not wantonly change the appearance and style of the page in the way a CSS theme would.
@@ -1282,10 +1331,10 @@ KES works best in the aggregate, when its add-ons synergize with each other.</p>
 </li>
 <li>
 <p>For testing purposes, you can define remote resources in the <code>@require</code> fields of your local copy of the <code>kes.user.js</code> headers when debugging, but the PR itself must not include any
-modifications to this file or to the <code>VERSION</code> file. Only submit a modified <code>manifest.json</code> and add your script to the <code>/mods</code> directory.</p>
+modifications to this file or to the <code>VERSION</code> file. Only submit a named directory containing a JSON object and a js file in the <code>/mods</code> directory.</p>
 </li>
 <li>
-<p>Ensure that the <code>entrypoint</code> and <code>namespace</code> (if applicable) defined in <code>manifest.json</code> are globally unique.</p>
+<p>Ensure that the <code>entrypoint</code> and <code>namespace</code> (if applicable) defined in your manifest object are globally unique.</p>
 </li>
 <li>
 <p>If your script has external dependencies (<code>@require</code>) that are not included in KES, please request these to be added when making the PR so that they
