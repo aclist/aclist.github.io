@@ -2710,6 +2710,13 @@
       "ac": "EAC"
     },
     {
+      "appid": 1361210,
+      "name": "Warhammer 40,000: Darktide",
+      "status": "Unknown",
+      "shortname": "40kdarktide",
+      "ac": "EAC"
+    },
+    {
       "name": "Warhammer 40,000: Eternal Crusade",
       "status": "Shut down",
       "shortname": "40kcrusade",
