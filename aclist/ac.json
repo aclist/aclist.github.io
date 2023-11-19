@@ -739,16 +739,28 @@
     },
     {
       "appid": 1938090,
-      "name": "Call of Duty: Modern Warfare 2",
+      "name": "Call of Duty: Modern Warfare 2 (2009)",
       "status": "Working",
       "shortname": "codmw2",
       "ac": "VAC"
+    },
+    {
+      "name": "Call of Duty: Modern Warfare 2 (2022)",
+      "status": "Broken",
+      "shortname": "codmw2reboot",
+      "ac": "RC"
     },
     {
       "name": "Call of Duty: Modern Warfare 3",
       "status": "Unknown",
       "shortname": "codmw3",
       "ac": "VAC"
+    },
+    {
+      "name": "Call of Duty: Modern Warfare 3 (2023)",
+      "status": "Broken",
+      "shortname": "codmw3reboot",
+      "ac": "RC"
     },
     {
       "name": "Call of Duty: Vanguard",
