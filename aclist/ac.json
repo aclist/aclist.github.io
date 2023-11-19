@@ -847,6 +847,12 @@
       "ac": "BE"
     },
     {
+      "name": "Contract Wars",
+      "status": "Working",
+      "shortname": "contractwars",
+      "ac": "SC"
+    },
+    {
       "name": "Conqueror's Blade",
       "status": "Broken",
       "shortname": "conquerorsblade",
