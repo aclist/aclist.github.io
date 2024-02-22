@@ -1388,6 +1388,13 @@
       "ac": "VAC"
     },
     {
+      "appid": 553850,
+      "name": "HELLDIVERS 2",
+      "status": "Working",
+      "shortname": "hldmsrc",
+      "ac": "GG"
+    },
+    {
       "appid": 686810,
       "name": "Hell Let Loose",
       "status": "Working",
