@@ -33,7 +33,7 @@ You must be logged in to your accounts on both tabs. For example, if you are exp
 8. Now, repeat steps 2-6 on the destination tab, but when you reach step 4, use the button below to copy the *Import Tool* code:
 [pass]
 <button id="copy-export" onclick="copyOut('#import-subs code', this)">Copy import tool to clipboard</button>
-9. This completes initial setup, and you are now ready to interact with the dialogs you just created. You should have the Import Tool open on the origin tab and the Export Tool open on the destination tab.
+9. This completes initial setup, and you are now ready to interact with the dialogs you just created. You should have the Export Tool open on the origin tab and the Import Tool open on the destination tab.
 10. Proceed to <<Exporting subscriptions>>.
 
 [NOTE]
