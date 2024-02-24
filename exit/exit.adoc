@@ -65,7 +65,7 @@ You can use this as a final confirmation to make sure you are importing from and
 4. After the subscription process is complete, two buttons will appear:
     - `Click to exit`: closes the dialog and navigates to the subscriptions page, where you can visually confirm that the subscriptions were imported
     - `View log`: expands a list of subscriptions and indicates their pass/fail status (whether or not the magazine could be subscribed to). In rare cases, the magazine may not be federated on the 
-      destination instance, or a communication error could have occurred, so this list servers as a breakdown of which, if any, subscriptions may be missing.
+      destination instance, or a communication error could have occurred, so this list serves as a breakdown of which, if any, subscriptions may be missing.
 
 == Reference
 .Click to expand export tool code
