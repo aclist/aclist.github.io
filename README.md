@@ -15,3 +15,6 @@ This repository currently hosts these documents:
 [KES documentation](https://aclist.github.io/modtui/modtui.html)
 
 - Help files and installation instructions for [KES](https://github.com/aclist/kbin-kes)
+
+[EXIT documentation](https://aclist.github.io/exit/exit.html)
+- Help files and installation instructions for Kbin/Mbin export tool

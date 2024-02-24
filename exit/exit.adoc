@@ -1,0 +1,89 @@
+= EXIT: Export Across Instances Tool
+Last updated: {d}
+:nofooter:
+:stylesheet: dark.css
+:docinfo: private-head
+
+== Description
+
+This is a self-contained page consisting of a pair of client-side scripts used to export/import subscriptions from and to Kbin/Mbin instances.
+
+- Uses vanilla JavaScript with no additional dependencies
+- Tested on Firefox/Chromium
+
+== Setup
+
+1. Open two browser tabs: one for the origin instance (site you are exporting subscriptions from) and one for the destination (site you are importing subscriptions to).
+You must be logged in to your accounts on both tabs. For example, if you are exporting subscriptions from `kbin.social` to `fedia.io`, the "origin tab" is `kbin.social` and the "destination tab" is `fedia.io`.
+
+2. In the origin tab, open the browser console using one of the keybindings below:
+
+    - Firefox: `Ctrl + Shift + k` (Mac: `Cmd + Option + k`)
+    - Chromium: `Ctrl + Shift + j` (Mac: `Cmd + Shift + j`)
+
+3. Click the button below to copy the *Export Tool* code to the clipboard:
+[pass]
+<button id="copy-import" onclick="copyOut('#export-subs code', this)">Copy export tool to clipboard</button>
+
+4. Navigate to the browser console you just opened on the origin tab and paste the contents of the clipboard from step 3 above.
+5. Push the Enter key to execute the code.
+6. This will spawn a dialog window that you will revisit later.
+7. You can now close the browser console that you executed the code in, leaving the Kbin/Mbin instance open with a dialog window in it.
+
+8. Now, repeat steps 2-6 on the destination tab, but when you reach step 4, use the button below to copy the *Import Tool* code:
+[pass]
+<button id="copy-export" onclick="copyOut('#import-subs code', this)">Copy import tool to clipboard</button>
+9. This completes initial setup, and you are now ready to interact with the dialogs you just created. You should have the Import Tool open on the origin tab and the Export Tool open on the destination tab.
+10. Proceed to <<Exporting subscriptions>>.
+
+[NOTE]
+This process is intended to be used to migrate subscriptions from an account on one instance to an account on another, different instance.
+However, you can also use it to copy subscriptions between two accounts on the same instance. Because of the way browsers generally handle sessions,
+you will probably need to open the destination instance in a separate browser, or log out of the first account before importing subscriptions.
+You cannot migrate subscriptions to the same account on the same instance.
+
+== Exporting subscriptions
+On the origin tab, the *Export Tool* should have detected the origin instance and username and displayed them for you.
+
+If this is not a valid Kbin/Mbin instance or you are not logged in, a warning will appear.
+
+1. Click the `Export subscriptions` button in the dialog to begin exporting. If you have over 48 subscriptions, it may take a moment to fetch the entire list.
+2. Once complete, the dialog will inform you of how many subscriptions it detected and will copy the relevant information to the clipboard.
+As soon as this process completes, your system clipboard will contain the relevant data that you will use in the next step.
+3. Upon clicking the exit button, the page will reload (this is done for convenience, in order to clear out the code you just ran)
+4. Proceed to <<Importing subscriptions>>.
+
+
+== Importing subscriptions
+
+Navigate to the destination tab, making sure you are logged in to the desired account.
+
+1. Paste the clipboard contents of the step above into the field and click `Submit`.
+2. The *Import Tool* will detect the origin instance and username and the destination instance and username and list these.
+You can use this as a final confirmation to make sure you are importing from and to the right accounts.
+3. Upon clicking `Import subscriptions`, the tool will begin subscribing to each of them in sequence, informing you of its progress.
+4. After the subscription process is complete, two buttons will appear:
+    - `Click to exit`: closes the dialog and navigates to the subscriptions page, where you can visually confirm that the subscriptions were imported
+    - `View log`: expands a list of subscriptions and indicates their pass/fail status (whether or not the magazine could be subscribed to). In rare cases, the magazine may not be federated on the 
+      destination instance, or a communication error could have occurred, so this list servers as a breakdown of which, if any, subscriptions may be missing.
+
+== Reference
+.Click to expand export tool code
+[%collapsible]
+====
+[#export-subs]
+[source, javascript]
+----
+include::export.js[]
+----
+====
+
+.Click to expand import tool code
+[%collapsible]
+====
+[#import-subs]
+[source, javascript]
+----
+include::import.js[]
+----
+====

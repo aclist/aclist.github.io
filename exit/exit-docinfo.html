@@ -1,0 +1,16 @@
+<script>
+    function copyOut(el, button){
+        const oldText = button.innerText
+        const code = document.querySelector(el).textContent
+        navigator.clipboard.writeText(code)
+        .then(() => {
+            button.innerText = 'Copied!'
+            setTimeout(function(){
+                button.innerText = oldText
+            }, 1000);
+        })
+        .catch((error) => {
+            console.error(`Failed to copy (${error})`)
+        })
+    }
+</script>
