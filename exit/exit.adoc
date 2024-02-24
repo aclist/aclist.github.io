@@ -19,7 +19,7 @@ You must be logged in to your accounts on both tabs. For example, if you are exp
 2. In the origin tab, open the browser console using one of the keybindings below:
 
     - Firefox: `Ctrl + Shift + k` (Mac: `Cmd + Option + k`)
-    - Chromium: `Ctrl + Shift + j` (Mac: `Cmd + Shift + j`)
+    - Chromium: `Ctrl + Shift + j` (Mac: `Cmd + Option + j`)
 
 3. Click the button below to copy the *Export Tool* code to the clipboard:
 [pass]
