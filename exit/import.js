@@ -7,7 +7,7 @@ const modalHTML = `
 <div id="pasteField">
     <input id="pasteBox" type="text"></input>
     <br>
-    <button value="null" id="importButton">Import</button>
+    <button value="null" id="importButton">Import subscriptions</button>
 </div>
 <div id="holder">
     <div>
