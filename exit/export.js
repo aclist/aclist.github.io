@@ -40,8 +40,13 @@ function setupModal () {
     migrationModal.querySelector('#close-button').addEventListener('click', () =>{
         migrationModal.remove();
     })
-    const outer = document.body.firstElementChild
-    outer.appendChild(migrationModal);
+    const header = document.querySelector('#header')
+    if (header){
+        header.appendChild(migrationModal);
+    } else {
+        const outer = document.body.firstElementChild
+        outer.appendChild(migrationModal);
+    }
     migrationModal.showModal();
     init();
 }
