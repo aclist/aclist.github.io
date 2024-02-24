@@ -9,6 +9,7 @@ Latest version: 0.1.1 | Last updated: {d}
 This is a self-contained page consisting of a pair of client-side scripts used to export/import subscriptions from and to Kbin/Mbin instances.
 
 - Uses vanilla JavaScript with no additional dependencies
+- Ephemeral, one-time invocation: code runs locally in browser and is discarded upon use
 - Tested on Firefox/Chromium
 
 == Setup
