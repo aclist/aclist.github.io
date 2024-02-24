@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<meta name="author" content="Last updated: 2024-02-24">
+<meta name="author" content="Latest version: 0.1.1 | Last updated: 2024-02-24">
 <title>EXIT: Export Across Instances Tool</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -160,7 +160,7 @@ button {
 <div id="header">
 <h1>EXIT: Export Across Instances Tool</h1>
 <div class="details">
-<span id="author" class="author">Last updated: 2024-02-24</span><br>
+<span id="author" class="author">Latest version: 0.1.1 | Last updated: 2024-02-24</span><br>
 </div>
 </div>
 <div id="content">
@@ -321,7 +321,8 @@ destination instance, or a communication error could have occurred, so this list
 <div class="content">
 <div id="export-subs" class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-javascript" data-lang="javascript">const modalHTML = `
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">//0.1.1
+const modalHTML = `
 &lt;span id="close-button" style="float: right;font-size:15px; cursor:pointer"&gt;✖&lt;/span&gt;
 &lt;br&gt;
 &lt;h3&gt;Export subscriptions&lt;/h3&gt;
@@ -363,8 +364,13 @@ function setupModal () {
     migrationModal.querySelector('#close-button').addEventListener('click', () =&gt;{
         migrationModal.remove();
     })
-    const outer = document.body.firstElementChild
-    outer.appendChild(migrationModal);
+    const header = document.querySelector('#header')
+    if (header){
+        header.appendChild(migrationModal);
+    } else {
+        const outer = document.body.firstElementChild
+        outer.appendChild(migrationModal);
+    }
     migrationModal.showModal();
     init();
 }
@@ -491,7 +497,8 @@ setupModal();</code></pre>
 <div class="content">
 <div id="import-subs" class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-javascript" data-lang="javascript">const modalHTML = `
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">//0.1.1
+const modalHTML = `
 &lt;span id="close-button" style="float: right;font-size:15px; cursor:pointer"&gt;✖&lt;/span&gt;
 &lt;br&gt;
 &lt;h3&gt;Import subscriptions&lt;/h3&gt;
