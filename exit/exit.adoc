@@ -1,5 +1,5 @@
 = EXIT: Export Across Instances Tool
-Latest version: 0.1.1 | Last updated: {d}
+Latest version: 0.1.2 | Last updated: {d}
 :nofooter:
 :stylesheet: dark.css
 :docinfo: private-head
@@ -49,17 +49,17 @@ On the origin tab, the *Export Tool* should have detected the origin instance an
 If this is not a valid Kbin/Mbin instance or you are not logged in, a warning will appear.
 
 1. Click the `Export subscriptions` button in the dialog to begin exporting. If you have over 48 subscriptions, it may take a moment to fetch the entire list.
-2. Once complete, the dialog will inform you of how many subscriptions it detected and will copy the relevant information to the clipboard.
-As soon as this process completes, your system clipboard will contain the relevant data that you will use in the next step.
-3. Upon clicking the exit button, the page will reload (this is done for convenience, in order to clear out the code you just ran)
-4. Proceed to <<Importing subscriptions>>.
+2. Once complete, the dialog will inform you of how many subscriptions it detected and will prompt you to copy the relevant information to the clipboard via a button.
+3. Upon clicking the button, your system clipboard will contain the relevant data that you will use in the next step.
+4. After clicking exit button, the page will reload (this is done for convenience, in order to clear out the code you just ran)
+5. Proceed to <<Importing subscriptions>>.
 
 
 == Importing subscriptions
 
 Navigate to the destination tab, making sure you are logged in to the desired account.
 
-1. Paste the clipboard contents of the step above into the field and click `Submit`.
+1. Paste the clipboard contents from the step above into the field and click `Submit`.
 2. The *Import Tool* will detect the origin instance and username and the destination instance and username and list these.
 You can use this as a final confirmation to make sure you are importing from and to the right accounts.
 3. Upon clicking `Import subscriptions`, the tool will begin subscribing to each of them in sequence, informing you of its progress.

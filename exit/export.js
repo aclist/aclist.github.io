@@ -1,4 +1,4 @@
-//0.1.1
+//0.1.2
 const modalHTML = `
 <span id="close-button" style="float: right;font-size:15px; cursor:pointer">✖</span>
 <br>
@@ -105,9 +105,21 @@ async function fetchSubs (host, username, page) {
         }
 
         const j = JSON.stringify(obj)
-        navigator.clipboard.writeText(j);
 
-        updateTooltip('#status-msg', `Copied ${sorted.length} subscriptions to clipboard`)
+        const copyButton = document.createElement('button')
+        const separator = document.createElement('br')
+        const modal = document.querySelector('#exit-modal')
+        copyButton.innerText = "Copy subscriptions"
+        copyButton.style.cssText = "margin-bottom: 5px"
+        modal.appendChild(copyButton)
+        modal.appendChild(separator)
+
+        copyButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(j);
+            updateTooltip('#status-msg', `Copied to clipboard. Paste contents into Import Tool`)
+        });
+
+        updateTooltip('#status-msg', `Found ${sorted.length} subscriptions. Click below to copy to clipboard`)
         disableButton(true)
         addExitButton()
     } catch (e) {
