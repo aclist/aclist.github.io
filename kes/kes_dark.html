@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.20">
-<meta name="author" content="Add-on manager for kbin enhancement scripts | Last updated: 2023-11-19">
+<meta name="generator" content="Asciidoctor 2.0.21">
+<meta name="author" content="Add-on manager for kbin enhancement scripts | Last updated: 2024-04-08">
 <title>kbin Enhancement Suite (KES)</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -136,7 +136,7 @@ a:hover,#toc.toc2 a:hover{
 <div id="header">
 <h1>kbin Enhancement Suite (KES)</h1>
 <div class="details">
-<span id="author" class="author">Add-on manager for kbin enhancement scripts | Last updated: 2023-11-19</span><br>
+<span id="author" class="author">Add-on manager for kbin enhancement scripts | Last updated: 2024-04-08</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -160,8 +160,9 @@ a:hover,#toc.toc2 a:hover{
 <li><a href="#_script_calling_logic">Script calling logic</a></li>
 <li><a href="#_retrieving_custom_settings">Retrieving custom settings</a></li>
 <li><a href="#_handling_infinite_scrolling">Handling infinite scrolling</a></li>
+<li><a href="#_prototyping_local_code">Prototyping local code</a></li>
 <li><a href="#_compatibility_api">Compatibility API</a></li>
-<li><a href="#_utility_functions">Utility functions</a></li>
+<li><a href="#_api_reference">API reference</a></li>
 <li><a href="#_submitting_a_pr">Submitting a PR</a></li>
 <li><a href="#_precautions_and_best_practices">Precautions and best practices</a></li>
 </ul>
@@ -249,7 +250,7 @@ browser extensions in the *monkey family to run:</p>
 <h2 id="_installation">Installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Navigate to <a href="https://github.com/aclist/kbin-kes/raw/main/kes.user.js">the install script</a> and
+<p>Navigate to <a href="https://raw.githubusercontent.com/aclist/kbin-kes/main/kes.user.js">the install script</a> and
 follow your browser extension&#8217;s onscreen prompts to install it. Subsequent updates should be handled
 seamlessly, and KES will notify you if there is a new version available.</p>
 </div>
@@ -287,7 +288,7 @@ out of the way in order to see changes that would otherwise be occluded by the m
 <div class="sect2">
 <h3 id="_header_and_footer_buttons">Header and footer buttons</h3>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-search"></i></span> <strong>Search</strong>: opens a keyword search field; search for add-ons using partial string match. Click the returned results to jump to the corresponding add-on&#8217;s settings page.</p>
+<p><span class="icon"><i class="fa fa-search"></i></span> <strong>Search</strong>: opens a keyword search field; search for add-ons using partial string match. Click the returned results to jump to the corresponding add-on&#8217;s settings page. You can also use the button that appears at the top of the search menu to search for any new add-ons that have been added as of the current major version of KES you are using. If new add-ons were incorporated in that release, this button will return a list of candidate add-ons.</p>
 </div>
 <div class="paragraph">
 <p><span class="icon"><i class="fa fa-flask"></i></span> <strong>Changelog</strong>: a link to the KES changelog, listing all user-facing changes to date.</p>
@@ -334,7 +335,8 @@ the KES menu.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Export: exports the toggle state and sub-settings of each KES feature to a timestamped backup file (JSON). Used to backup your settings from a given point in time.</p>
+<p>Export: exports the toggle state and sub-settings of each KES feature to a timestamped backup file (JSON). Used to backup your settings from a given point in time. Note that this includes global KES
+settings and per-add-on settings, but does not currently include storage internal to specific add-ons, such as blocklists.</p>
 </li>
 <li>
 <p>Import: imports a file generated using the above Export button and applies those settings to KES. Used to restore your settings from a given point in time.</p>
@@ -382,12 +384,12 @@ its pages and assigns your add-on to the category requested, filling its content
 <p>Set up an entrypoint function in the script which enables/disables it (See <a href="#_script_calling_logic">Script calling logic</a>)</p>
 </li>
 <li>
-<p>Receive a boolean toggle argument from KES passed to the above function indicating
+<p>Receive a boolean toggle parameter from KES passed to the above function indicating
 whether the user has toggled the script on or off</p>
 </li>
 <li>
 <p>If the script defines custom input fields, use the <code>getModSettings()</code> function exposed by KES
-with your script&#8217;s namespace as the argument (See <a href="#_retrieving_custom_settings">Retrieving custom settings</a>). If you wish to call internal GreaseMonkey API
+with your script&#8217;s namespace as the function parameter (See <a href="#_retrieving_custom_settings">Retrieving custom settings</a>). If you wish to call internal GreaseMonkey API
 functions, see <a href="#_compatibility_api">Compatibility API</a> for details on cross-compatibility and some utility functions that facilitate this.</p>
 </li>
 <li>
@@ -413,14 +415,14 @@ a globally unique namespace.</p>
 When submitting a script, the author is solely responsible for creating their own JSON file defining settings for their script.</p>
 </div>
 <div class="paragraph">
-<p>Ensure that you submit your add-on using the following directory tree, with all files prefixed with the name of the parent directory.
+<p>Ensure that you submit your add-on using the following directory hierarchy, with all files prefixed with the name of the parent directory.
 Given a mod named <code>softblock</code>, the submitted files should be:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre>softblock/ <i class="conum" data-value="1"></i><b>(1)</b>
 ├── softblock.json <i class="conum" data-value="2"></i><b>(2)</b>
-└── softblock.user.js <i class="conum" data-value="3"></i><b>(3)</b></pre>
+└── softblock.js <i class="conum" data-value="3"></i><b>(3)</b></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -538,7 +540,11 @@ their own settings in custom namespaces. (The other three add-ons did not reques
         "label": "Link label"
       }
     ],
-    "page": "general" <i class="conum" data-value="5"></i><b>(5)</b>
+    "new_since": "4.0", <i class="conum" data-value="5"></i><b>(5)</b>
+    "depends_on": [
+        "init_softblock" <i class="conum" data-value="6"></i><b>(6)</b>
+    ],
+    "page": "general" <i class="conum" data-value="7"></i><b>(7)</b>
   }</pre>
 </div>
 </div>
@@ -565,16 +571,24 @@ As far as KES is concerned, functionality of one field does not depend on anothe
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Indicates what major/minor version this mod has been available since. This is used to show new mods particular to a given release when users navigate the search menu within KES. This key should not be manually defined by mod authors, but is added by the maintainer when integrating mods into a new release.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>If the script depends on another KES script being loaded first, specify that script&#8217;s entrypoint function here. Analogously, <code>depends_off</code> provides functionality for dependencies that must also be disabled when the calling script is turned off.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
 <td>The contents of the metadata and custom fields will be added to the 'General' page of the sidebar under the feature label 'Add mail icon'. Available pages can be seen within the file <code>ui.json</code>.</td>
 </tr>
 </table>
 </div>
-<table class="tableblock frame-all grid-all fit-content">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. basic metadata</caption>
 <colgroup>
 <col>
 <col>
-<col>
+<col style="width: 25%;">
 <col>
 </colgroup>
 <thead>
@@ -617,7 +631,7 @@ functions as the "name" of the feature seen by users</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">desc</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A user-facing description of what the feature does</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A user-facing description of what the feature does. JSON newline escapes will be interpolated into a <code>&lt;br&gt;</code> element at runtime, but raw HTML must not be used.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">login</p></td>
@@ -641,7 +655,7 @@ to the content area, such as new posts or threads when lazy load (infinite scrol
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A globally unique entrypoint function in the recipient script used to toggle the feature
-on or off.</p></td>
+on or off. This value is auto-populated by build scripts.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">namespace</p></td>
@@ -668,13 +682,25 @@ This namespace is used when parsing localStorage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An array of objects containing custom input fields</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">depends_on</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">array of strings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The qualified names of entrypoint functions used by other KES mods. These functions will be called in sequential order when the parent mod is going to be enabled, after which the parent mod is enabled.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">depends_off</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">array of strings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The qualified names of entrypoint functions used by other KES mods. These functions will be called in sequential order when the parent mod is going to be disabled, after which the parent mod is disabled.</p></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
 <h3 id="_adding_custom_input_fields">Adding custom input fields</h3>
 <div class="paragraph">
-<p>Custom input fields are themselves optional, but if the <code>fields</code> array above has been declared, it must be filled with the requisite keys below.</p>
+<p>Custom input fields are themselves optional, but if the <code>fields</code> array above has been declared, it must be filled with some or all of the keys below.</p>
 </div>
 <table class="tableblock frame-all grid-all fit-content">
 <caption class="title">Table 2. The fields array</caption>
@@ -789,20 +815,21 @@ button is pressed, those named fields will reset to their <code>initial</code> v
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>function toggleOn(){
-   let el = document.querySelector('.myelement')
-   if (!el) {
-       document.body.appendChild(el);
-   }
-}
-function toggleOff(){
-   $('.myelement').hide();
-}
-function myEntryPoint(toggle) {
-    if (toggle)
+<pre>function myEntryPoint (toggle) {
+    function toggleOn(){
+       let el = document.querySelector('.myelement')
+       if (!el) {
+           document.body.appendChild(el);
+       }
+    }
+    function toggleOff () {
+       $('.myelement').hide();
+    }
+    if (toggle) {
         toggleOn();
     } else {
         toggleOff();
+    }
 }</pre>
 </div>
 </div>
@@ -854,7 +881,7 @@ within the KES menu and see them updated immediately.</p>
 <h3 id="_handling_infinite_scrolling">Handling infinite scrolling</h3>
 <div class="paragraph">
 <p>The <code>recurs</code> boolean (see <a href="#_json_manifest">JSON manifest</a>) is used to specify whether the script&#8217;s entrypoint function should be called again when
-the thread (<code>'[data-controller="subject-list"]'</code>) or post content area (<code>'#comments'</code>) have DOM changes. This allows your mod to be applied again in the event of post replies, new threads being loaded in,
+the thread (<code>'[data-controller="subject-list"]'</code>) or post comments area (<code>'#comments'</code>) have DOM changes. This allows your mod to be applied again in the event of post replies, new threads being loaded in,
 et cetera.</p>
 </div>
 <div class="paragraph">
@@ -866,25 +893,50 @@ at the top level by KES.</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="_prototyping_local_code">Prototyping local code</h3>
+<div class="paragraph">
+<p>To facilitate prototyping local changes without committing code, two build scripts are provided in <code>/build/scripts</code>. Both of these tools use relative paths and should be invoked from the repository root. You could also chain these scripts together into one if you so desire.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>concat-funcs</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This is the same script used by the KES build routine to concatenate the contents of each mod into a global functions file. Prior to running the script below, this should be run in order to ingest the latest changes to all functions.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>gen_gist.sh</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Requires the environment variable KES_GIST_GEN to be set. Navigate to <a href="https://github.com/settings/tokens?type=beta">this page</a> to set up a fine-grained personal access token.</p>
+</div>
+<div class="paragraph">
+<p>Uploads a copy of the functions file above as a Gist to GitHub, then inserts this URL into the KES script headers as a remote resource.</p>
+</div>
+<div class="paragraph">
+<p>If the tool <code>xclip</code> is available on your system, the contents are then copied to the system clipboard. Otherwise, the contents are written to stdout, where they can be redirected into a file.</p>
+</div>
+<div class="paragraph">
+<p>These contents can then be pasted directly into your *monkey extension to test any changes. To obviate the need to manage multiple Gists, only one copy of the file will be uploaded at a given time; the same remote file is subsequently overwritten each time the script is invoked, and the new ID is stored in the file <code>.gist_id</code> in the scripts directory.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_compatibility_api">Compatibility API</h3>
 <div class="paragraph">
 <p>For compatibility between *monkey extensions, KES provides a shim function called <code>safeGM()</code> into which GM API commands can be passed.
-safeGM accepts the name of a GM API function and its respective arguments. Under the hood, safeGM merely passes the function call to the respective
+safeGM accepts the name of a GM API function and its respective parameters. Under the hood, safeGM merely passes the function call to the respective
 GM API prefix depending on whether the extension uses the underscore namespace or the GM 4.0 Promise API.</p>
 </div>
 <div class="paragraph">
 <p>In addition, safeGM natively reimplements some function calls that were dropped in GM 4.0 but are available in other extensions (as of this
-writing, <code>GM_addStyle</code>).</p>
-</div>
-<div class="listingblock">
-<div class="title">addStyle()</div>
-<div class="content">
-<pre>function addCustomCSS (css) {
-    const style = document.createElement('style');
-    style.innerHTML = css;
-    document.head.appendChild(style);
-}</pre>
-</div>
+writing, <code>GM_addStyle</code>). See <a href="#_api_reference">API reference</a>.</p>
 </div>
 <div class="paragraph">
 <p>These changes happen invisibly when calling safeGM, so it is enough to pass one of the function names below with the arguments you would typically pass
@@ -917,6 +969,9 @@ to such a function:</p>
 seen many scripts need to leverage extra functionality through GreaseMonkey itself.</p>
 </div>
 <div class="paragraph">
+<p>Implementation details of GM API functions can be found in your respective script manager&#8217;s documentation.</p>
+</div>
+<div class="paragraph">
 <p>Additionally, <code>GM_info</code> can be invoked using <code>safeGM("info")</code> and the properties of the resulting object parsed out, e.g., <code>safeGM("info").script.version</code>.</p>
 </div>
 <div class="paragraph">
@@ -925,62 +980,145 @@ However, using these methods should generally not be necessary, as KES handles s
 </div>
 <div class="paragraph">
 <p>Also note that <code>getResourceText</code> is not available in GM 4.0, so in the unlikely event that you need to use this function in a script, rather than defining
-<code>@resource</code> fields, you should fall back on <code>xmlhttpRequest</code>, or in this case, <code>genericXMLRequest</code> (outlined below), and parse the results on callback.</p>
+<code>@resource</code> fields, you should use the utility function, <code>genericXMLRequest()</code>, and parse the results on callback.</p>
 </div>
-<div class="paragraph">
-<p><code>removeStyle</code> is not a native GM function, but is provided by KES to extend the functionality of <code>addStyle</code> with its logical counterpart: this method
-is mapped to the underlying function <code>removeCustomCSS</code>, but is called by the argument <code>removeStyle</code> to safeGM for semantic purposes, given that it is
-intended to do the opposite.</p>
-</div>
-<div class="listingblock">
-<div class="title">removeCustomCSS()</div>
-<div class="content">
-<pre>function removeCustomCSS (id) {
-    const toRemove = document.getElementById(id);
-    if (toRemove) {
-        document.head.removeChild(toRemove);
-    } else {
-        return
-    }
-}</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In this way, <code>removeStyle</code> removes a named stylesheet from the document head; when used in conjunction with <code>addStyle</code>, it allows for
-seamlessly inserting and cleaning up rules to ensure that changes to the page occur on the fly, and obviating more brute-force methods like
-DOM manipulation or show/hide with jQuery. It is generally good practice to call <code>removeStyle</code> before <code>addStyle</code> in order to clean up
-any previously existing stylesheets by that name before re-inserting them.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>removeStyle</code> is not a native GM function, but is provided by KES to extend the functionality of <code>addStyle</code> with its logical counterpart: this method
+is mapped to the underlying function <code>removeCustomCSS</code>, but is called by the parameter <code>removeStyle</code> to safeGM for semantic purposes, given that it is
+intended to do the opposite.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_utility_functions">Utility functions</h3>
-<div class="paragraph">
-<p>Lastly, KES provides a set of utility functions.</p>
+<h3 id="_api_reference">API reference</h3>
+<div class="listingblock">
+<div class="title">addStyle()</div>
+<div class="content">
+<pre>function addStyle (<em>string</em> css, <em>string</em> stylesheet) -&gt; void</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>The first is <code>genericXMLRequest()</code>, which wraps <code>xmlhttpRequest</code> to perform a GET request and obviates setting
-up an object: simply pass the remote URL and callback function as arguments and process the response in your callback function.
-This is generally not needed by scripts, but is used when fetching, e.g., the contents of another page within the same instance,
-such as for pagination purposes.</p>
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>css&#8201;&#8212;&#8201;the concatenated block of CSS to apply to the document head</p>
+</li>
+<li>
+<p>stylesheet&#8201;&#8212;&#8201;a stringwise identifier used for later lookup of the stylesheet</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Return value: none</p>
+</div>
+<div class="paragraph">
+<p>Appends a stylesheet to the document head. Used to add ad-hoc style changes to elements on a page and remove this sheet later by calling <code>removeStyle()</code> with the identifier as its parameter.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This function can only be called via <code>safeGM()</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">removeStyle()</div>
+<div class="content">
+<pre>function removeStyle (<em>string</em> stylesheet) -&gt; void</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stylesheet&#8201;&#8212;&#8201;a stringwise identifier used to remove the stylesheet by name</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Removes a named stylesheet from the document head. When used in conjunction with <code>addStyle()</code>, allows for
+seamlessly inserting and cleaning up rules to ensure that changes to the page occur on the fly, and obviating more brute-force methods like
+DOM manipulation or show/hide with jQuery. When stepping through your script, it is generally good practice to call <code>removeStyle</code> before <code>addStyle</code> in order to clean up
+any previously existing stylesheets by that name before re-inserting them.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This function can only be called via <code>safeGM()</code>.
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="title">genericXMLRequest()</div>
 <div class="content">
-<pre>function genericXMLRequest (url, callback) {
-    safeGM("xmlhttpRequest", {
-        method: 'GET',
-        url: url,
-        onload: callback,
-        headers: {
-            "User-Agent": "Mozilla/5.0",
-            "Accept": "text/xml"
-        },
-    });
-};</pre>
+<pre>function genericXMLRequest (<em>string</em> url, <em>function</em> callback) -&gt; void</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The second is <code>getHex()</code>, which supports translation of internal kbin theme variables into their corresponding hex color values.
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>url&#8201;&#8212;&#8201;the URL to fetch</p>
+</li>
+<li>
+<p>callback&#8201;&#8212;&#8201;the function to call back upon completion of the GET request; this function will receive the response data</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Return value: none</p>
+</div>
+<div class="paragraph">
+<p>Wraps <code>xmlhttpRequest</code> to perform a GET request and obviates setting
+up a complex object: simply pass the remote URL and callback function as parameters and process the response in your callback function.
+This is generally not needed by scripts, but is used when fetching, e.g., the contents of another page within the same instance,
+such as for pagination purposes.</p>
+</div>
+<div class="listingblock">
+<div class="title">getHex()</div>
+<div class="content">
+<pre>function getHex (<em>string</em> variable) -&gt; string</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>variable&#8201;&#8212;&#8201;the stringwise variable name of a theme color</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Return value: string</p>
+</div>
+<div class="paragraph">
+<p>Translates internal kbin theme variables to their corresponding hex color values.
 This allows you to set sane defaults which, instead of hardcoding color values, respect the user&#8217;s theme settings. For example, setting
 <code>initial: var(--kbin-upvoted-color)</code> for the value of a custom field will ensure that whatever color is being used by the current theme is
 interpolated correctly.</p>
@@ -990,20 +1128,19 @@ interpolated correctly.</p>
 without resorting to hardcoding.</p>
 </div>
 <div class="listingblock">
-<div class="title">getHex()</div>
+<div class="title">getInstanceType()</div>
 <div class="content">
-<pre>function getHex (value) {
-    let realHex;
-    const firstChar = Array.from(value)[0];
-    const theme = document.querySelector('body');
-    if (firstChar === "-") {
-        realHex = getComputedStyle(theme).getPropertyValue(value);
-    } else {
-        realHex = value;
-    }
-    return realHex;
-}</pre>
+<pre>function getInstanceType() -&gt; string</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Parameters: none</p>
+</div>
+<div class="paragraph">
+<p>Return value: string</p>
+</div>
+<div class="paragraph">
+<p>Returns either "kbin" or "mbin", depending on what type of instance the domain is running. Used by scripts to disambiguate between instance types and apply changes that may require certain compatibility adjustments on a particular instance type.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1053,12 +1190,12 @@ If you are submitting a PR changing an internal feature of KES itself, feel free
 <div class="ulist">
 <ul>
 <li>
-<p>Prefer private functions and local variables to reduce the possibility of collisions</p>
+<p>Encapsulate logic in a single private function and use local variables to reduce the possibility of collisions</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Bear in mind that KES ingests all of the script functions together into its scope, so unique identifiers are important.
+<p>KES ingests all of the script functions together into its scope, so unique identifiers and self-contained functions are important.
 While scripts are integration tested before deployment, you can make the testing process easier by using unique names and limiting the available
 scope.</p>
 </div>
@@ -1092,7 +1229,7 @@ complex workflows; scripts that make highly opinionated changes or themselves cr
 <p>If changing colors on a page, it is best to respect kbin&#8217;s internal themes by using the variables provided. These can be explored under the <code>var(--kbin-*)</code> prefix.
 A number of variables for success, alerts, backgrounds, text, hover, etc. are provided. These map to different colors within the theme a user has selected. If you hardcode
 an element to a specific color, there is a high likelihood it may not be visible on a dark or light theme, respectively. Similarly, do not set fonts verbatim, but use the
-<code>var(--kbin-body-font-family)</code> for a set of fallback fonts. Refer to <code>getHex()</code> in the section <a href="#_utility_functions">Utility functions</a> above for details on how to convert
+<code>var(--kbin-body-font-family)</code> for a set of fallback fonts. Refer to <code>getHex()</code> in the section <a href="#_api_reference">API reference</a> for details on how to convert
 color abstractions into hex values on the fly.</p>
 </li>
 </ul>
