@@ -1,5 +1,5 @@
 = EXIT: Export Across Instances Tool
-Latest version: 0.1.2 | Last updated: {d}
+Latest version: 0.1.3 | Last updated: {d}
 :nofooter:
 :stylesheet: dark.css
 :docinfo: private-head

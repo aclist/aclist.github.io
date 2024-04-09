@@ -1,4 +1,4 @@
-//0.1.2
+//0.1.3
 const modalHTML = `
 <span id="close-button" style="float: right;font-size:15px; cursor:pointer">✖</span>
 <br>
