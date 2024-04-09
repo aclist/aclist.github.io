@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.20">
-<meta name="author" content="Latest version: 0.1.2 | Last updated: 2024-03-05">
+<meta name="generator" content="Asciidoctor 2.0.21">
+<meta name="author" content="Latest version: 0.1.2 | Last updated: 2024-04-09">
 <title>EXIT: Export Across Instances Tool</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -160,7 +160,7 @@ button {
 <div id="header">
 <h1>EXIT: Export Across Instances Tool</h1>
 <div class="details">
-<span id="author" class="author">Latest version: 0.1.2 | Last updated: 2024-03-05</span><br>
+<span id="author" class="author">Latest version: 0.1.2 | Last updated: 2024-04-09</span><br>
 </div>
 </div>
 <div id="content">
@@ -326,7 +326,7 @@ destination instance, or a communication error could have occurred, so this list
 <div class="content">
 <div id="export-subs" class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-javascript" data-lang="javascript">//0.1.1
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">//0.1.2
 const modalHTML = `
 &lt;span id="close-button" style="float: right;font-size:15px; cursor:pointer"&gt;✖&lt;/span&gt;
 &lt;br&gt;
@@ -514,7 +514,7 @@ setupModal();</code></pre>
 <div class="content">
 <div id="import-subs" class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-javascript" data-lang="javascript">//0.1.1
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">//0.1.2
 const modalHTML = `
 &lt;span id="close-button" style="float: right;font-size:15px; cursor:pointer"&gt;✖&lt;/span&gt;
 &lt;br&gt;
@@ -688,22 +688,31 @@ async function getMagToken (origin, host, destination_username, arr) {
             "method": "GET",
             "mode": "cors"
         });
+
         switch (await resp.status) {
         case 200:
+        {
             const respText = await resp.text()
             const parser = new DOMParser();
             const XML = parser.parseFromString(respText, "text/html");
             const form = XML.querySelector('[name="magazine_subscribe"]')
             if (form) {
                 const token = form.querySelector('input').value
-                subscribeToMag(host, to_import, token, (i+1), arr.length)
+                await subscribeToMag(host, to_import, token, (i+1), arr.length)
             }
             break
+        }
         default:
-            updateTooltip('#status-msg', `Failed to fetch the page '${to_import}'`)
+        {
+            updateTooltip('#status-msg', `Failed to fetch the page '${to_import}' (${i+1}/${arr.length})`)
+            fail.push(to_import)
             break
         }
+        }
     }
+    updateTooltip('#status-msg', `Subscription process complete.`)
+    addExitButton('subs');
+    addLogButton();
 }
 
 function toggleLog () {
@@ -775,14 +784,7 @@ async function subscribeToMag (host, mag, token, iter, total) {
         msg = fail_msg
         fail.push(mag)
     }
-
-    if (iter === total) {
-        updateTooltip('#status-msg', `Subscription process complete.`)
-        addExitButton('subs');
-        addLogButton();
-    } else {
-        updateTooltip('#status-msg', msg)
-    }
+    updateTooltip('#status-msg', msg)
 }
 function updateTooltip (id, msg) {
     const modal = document.querySelector('#exit-modal');

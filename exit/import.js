@@ -172,22 +172,31 @@ async function getMagToken (origin, host, destination_username, arr) {
             "method": "GET",
             "mode": "cors"
         });
+
         switch (await resp.status) {
         case 200:
+        {
             const respText = await resp.text()
             const parser = new DOMParser();
             const XML = parser.parseFromString(respText, "text/html");
             const form = XML.querySelector('[name="magazine_subscribe"]')
             if (form) {
                 const token = form.querySelector('input').value
-                subscribeToMag(host, to_import, token, (i+1), arr.length)
+                await subscribeToMag(host, to_import, token, (i+1), arr.length)
             }
             break
+        }
         default:
-            updateTooltip('#status-msg', `Failed to fetch the page '${to_import}'`)
+        {
+            updateTooltip('#status-msg', `Failed to fetch the page '${to_import}' (${i+1}/${arr.length})`)
+            fail.push(to_import)
             break
         }
+        }
     }
+    updateTooltip('#status-msg', `Subscription process complete.`)
+    addExitButton('subs');
+    addLogButton();
 }
 
 function toggleLog () {
@@ -259,14 +268,7 @@ async function subscribeToMag (host, mag, token, iter, total) {
         msg = fail_msg
         fail.push(mag)
     }
-
-    if (iter === total) {
-        updateTooltip('#status-msg', `Subscription process complete.`)
-        addExitButton('subs');
-        addLogButton();
-    } else {
-        updateTooltip('#status-msg', msg)
-    }
+    updateTooltip('#status-msg', msg)
 }
 function updateTooltip (id, msg) {
     const modal = document.querySelector('#exit-modal');
