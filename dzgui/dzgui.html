@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.21">
-<meta name="author" content="DayZ server browser and mod manager for Linux | Last updated: 2024-04-19">
+<meta name="author" content="DayZ server browser and mod manager for Linux | Last updated: 2024-04-22">
 <title>DZGUI documentation (v5.x.x)</title>
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -442,7 +442,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>DZGUI documentation (v5.x.x)</h1>
 <div class="details">
-<span id="author" class="author">DayZ server browser and mod manager for Linux | Last updated: 2024-04-19</span><br>
+<span id="author" class="author">DayZ server browser and mod manager for Linux | Last updated: 2024-04-22</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -476,6 +476,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_filters">Filters</a></li>
 </ul>
 </li>
+<li><a href="#_debug_mode">Debug mode</a></li>
 <li><a href="#_troubleshootingfaq">Troubleshooting/FAQ</a></li>
 <li><a href="#_reference">Reference</a>
 <ul class="sectlevel2">
@@ -1510,6 +1511,17 @@ It is possible to filter the list to 0 results if you combine or exclude logical
 </table>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_debug_mode">Debug mode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Debug mode can be enabled via the button toggle on the right panel. When debug mode is enabled, any attempt to connect to a server will function as before, excluding the final connection step. DZGUI will attempt to synchronize and download mods and then print a dialog showing what options would have actually been run when connecting to the server.</p>
+</div>
+<div class="paragraph">
+<p>This can be used to diagnose problems and test functionality without actually launching the game.</p>
 </div>
 </div>
 </div>
