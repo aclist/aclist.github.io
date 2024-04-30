@@ -1317,6 +1317,12 @@
       "ac": "GG"
     },
     {
+      "name": "Gray Zone Warfare",
+      "status": "Broken",
+      "shortname": "gzw",
+      "ac": "EAC"
+    },
+    {
       "name": "Grey Goo",
       "status": "Unknown",
       "shortname": "greygoo",
