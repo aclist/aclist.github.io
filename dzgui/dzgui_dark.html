@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.21">
-<meta name="author" content="DayZ server browser and mod manager for Linux | Last updated: 2024-05-13">
+<meta name="author" content="DayZ server browser and mod manager for Linux | Last updated: 2024-05-22">
 <title>DZGUI documentation (v5.x.x)</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -135,7 +135,7 @@ a:hover,#toc.toc2 a:hover{
 <div id="header">
 <h1>DZGUI documentation (v5.x.x)</h1>
 <div class="details">
-<span id="author" class="author">DayZ server browser and mod manager for Linux | Last updated: 2024-05-13</span><br>
+<span id="author" class="author">DayZ server browser and mod manager for Linux | Last updated: 2024-05-22</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -149,6 +149,7 @@ a:hover,#toc.toc2 a:hover{
 <li><a href="#_first_time_launch">First-time launch</a></li>
 <li><a href="#_steam_integration_artwork">Steam integration &amp; artwork</a></li>
 <li><a href="#_updating_the_app">Updating the app</a></li>
+<li><a href="#_locale_support">Locale support</a></li>
 </ul>
 </li>
 <li><a href="#_basic_usage">Basic usage</a></li>
@@ -742,6 +743,23 @@ The file can be found at:</p>
 <div class="content">
 <pre class="highlight"><code>$HOME/.config/dztui/dztuirc.old</code></pre>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_locale_support">Locale support</h3>
+<div class="paragraph">
+<p>For internationalization purposes, DZGUI will inherit the default locale setting on the system when displaying numbers. This is used for thousands separators in long numbers and decimal separators in fractional numbers.</p>
+</div>
+<div class="paragraph">
+<p>If you wish to use a specific regional numbering preference while retaining a different base system language (e.g., English language with German-style numbering), pass the desired locale as a variable before launching DZGUI:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>LC_ALL=de_DE.UTF-8 ./dzgui.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you intend to use this frequently, you could wrap the above in a script or alias.</p>
 </div>
 </div>
 </div>
