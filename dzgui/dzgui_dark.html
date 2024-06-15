@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.21">
-<meta name="author" content="DayZ server browser and mod manager for Linux | Last updated: 2024-05-22">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="author" content="DayZ server browser and mod manager for Linux | Last updated: 2024-06-16">
 <title>DZGUI documentation (v5.x.x)</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -135,7 +135,7 @@ a:hover,#toc.toc2 a:hover{
 <div id="header">
 <h1>DZGUI documentation (v5.x.x)</h1>
 <div class="details">
-<span id="author" class="author">DayZ server browser and mod manager for Linux | Last updated: 2024-05-22</span><br>
+<span id="author" class="author">DayZ server browser and mod manager for Linux | Last updated: 2024-06-16</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -373,7 +373,7 @@ you find that the count is not sticking, check for the presence of the <code>day
 <div class="sect3">
 <h4 id="_battlemetrics_api_key_optional">BattleMetrics API key (optional)</h4>
 <div class="paragraph">
-<p>This key is optional. Using this key in conjunction with the above allows you to also connect to and query servers by numerical ID instead of by IP. See <a href="#Add server by ID">[Add server by ID]</a>.</p>
+<p>This key is optional. Using this key in conjunction with the above allows you to also connect to and query servers by numerical ID instead of by IP. See <a href="#_manage_add_server_by_id">Add server by ID</a>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -841,7 +841,7 @@ These servers can be filtered by various parameters in order to display a more g
 <div class="sect3">
 <h4 id="_main_menu_quick_connect_to_favorite_server">Main menu &gt; Quick connect to favorite server</h4>
 <div class="paragraph">
-<p>Bypasses the server list and quick-connects to a single favorite server specified in advance using the <a href="#Add (change) favorite server">[Add (change) favorite server]</a> option.</p>
+<p>Bypasses the server list and quick-connects to a single favorite server specified in advance using the <a href="#_manage_add_change_favorite_server">Add (change) favorite server</a> option.</p>
 </div>
 </div>
 <div class="sect3">
@@ -885,7 +885,7 @@ For example, in the URL <a href="https://www.battlemetrics.com/servers/dayz/8039
 <p>Provide the IP and query port in <code>&lt;IP&gt;:&lt;PORT&gt;</code> format.</p>
 </div>
 <div class="paragraph">
-<p>Servers you add will be saved and listed when using the <a href="#My saved servers">[My saved servers]</a> option.</p>
+<p>Servers you add will be saved and listed when using the <a href="#_main_menu_my_saved_servers">My saved servers</a> option.</p>
 </div>
 </div>
 <div class="sect3">
@@ -898,7 +898,7 @@ For example, in the URL <a href="https://www.battlemetrics.com/servers/dayz/8039
 For example, in the URL <a href="https://www.battlemetrics.com/servers/dayz/8039514" class="bare">https://www.battlemetrics.com/servers/dayz/8039514</a>, the ID is <code>8039514</code>.</p>
 </div>
 <div class="paragraph">
-<p>Servers you add will be saved and listed when using the <a href="#My saved servers">[My saved servers]</a> option.</p>
+<p>Servers you add will be saved and listed when using the <a href="#_main_menu_my_saved_servers">My saved servers</a> option.</p>
 </div>
 </div>
 <div class="sect3">
@@ -921,8 +921,9 @@ For example, in the URL <a href="https://www.battlemetrics.com/servers/dayz/8039
 <div class="paragraph">
 <p>If you right-click on an entry in the list, you have the option of opening the Workshop page for the mod in Steam or deleting the local mod.</p>
 </div>
-<div class="sect4">
-<h5 id="_options_toggle_release_branch">Options &gt; Toggle release branch</h5>
+</div>
+<div class="sect3">
+<h4 id="_options_toggle_release_branch">Options &gt; Toggle release branch</h4>
 <div class="paragraph">
 <p>Used to toggle the branch to fetch DZGUI from between <code>stable</code> and <code>testing</code>.</p>
 </div>
@@ -930,8 +931,8 @@ For example, in the URL <a href="https://www.battlemetrics.com/servers/dayz/8039
 <p>The app ships with the stable branch enabled, with the testing branch being used to elaborate various experimental features.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_options_toggle_mod_install_mode">Options &gt; Toggle mod install mode</h5>
+<div class="sect3">
+<h4 id="_options_toggle_mod_install_mode">Options &gt; Toggle mod install mode</h4>
 <div class="paragraph">
 <p>This feature is experimental. It attempts to queue the mods requested for download automatically, rather than prompting the user to subscribe to each one.</p>
 </div>
@@ -948,32 +949,32 @@ When using auto mod installation, DZGUI will track the latest version of your in
 </table>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_options_toggle_steamflatpak">Options &gt; Toggle Steam/Flatpak</h5>
+<div class="sect3">
+<h4 id="_options_toggle_steamflatpak">Options &gt; Toggle Steam/Flatpak</h4>
 <div class="paragraph">
 <p>This feature should be used if there are concurrent installations of Steam on the local system. Toggle between using Steam or Flatpak Steam to launch DayZ.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_options_change_player_name">Options &gt; Change player name</h5>
+<div class="sect3">
+<h4 id="_options_change_player_name">Options &gt; Change player name</h4>
 <div class="paragraph">
 <p>Used to change the in-game player name that is broadcast when on servers.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_options_change_steam_api_key">Options &gt; Change Steam API key</h5>
+<div class="sect3">
+<h4 id="_options_change_steam_api_key">Options &gt; Change Steam API key</h4>
 <div class="paragraph">
 <p>Used to change or update the Steam API key; can be used if the old key needs to be revoked and updated with a new one.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_options_change_battlemetrics_api_key">Options &gt; Change Battlemetrics API key</h5>
+<div class="sect3">
+<h4 id="_options_change_battlemetrics_api_key">Options &gt; Change Battlemetrics API key</h4>
 <div class="paragraph">
 <p>Identical to the option above, only for Battlemetrics.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_options_force_update_local_mods">Options &gt; Force update local mods</h5>
+<div class="sect3">
+<h4 id="_options_force_update_local_mods">Options &gt; Force update local mods</h4>
 <div class="paragraph">
 <p>Attempts to update the signatures of all local mods and synchronize them with the latest versions available on Steam Workshop. This option should be used when <a href="#_options_toggle_mod_install_mode">Toggle mod install mode</a> is set to AUTO.</p>
 </div>
@@ -981,14 +982,13 @@ When using auto mod installation, DZGUI will track the latest version of your in
 <p>This can be used in the event of mod corruption or linkage errors.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_output_system_info_to_log_file">Output system info to log file</h5>
+<div class="sect3">
+<h4 id="_output_system_info_to_log_file">Output system info to log file</h4>
 <div class="paragraph">
 <p>Writes a list of your current settings and system configuration to a local file that can be pasted into bug reports. This process may take some time.</p>
 </div>
 <div class="paragraph">
 <p>The file is written to <code>$HOME/.local/state/dzgui/logs/DZGUI_SYSTEM.log</code></p>
-</div>
 </div>
 </div>
 </div>
@@ -1075,7 +1075,7 @@ Due to size constraints, this button is not currently available on Steam Deck.
 <p>All server browser contexts (<a href="#_main_menu_my_saved_servers">My saved servers</a>, <a href="#_main_menu_server_browser">Server browser</a>, <a href="#_main_menu_recent_servers">Recent servers</a>) expose the following filters on the right-hand side. These options can be combined.</p>
 </div>
 <div class="paragraph">
-<p>The table lists servers in columnar fashion according by:</p>
+<p>The table lists servers in columnar fashion according to:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1096,6 +1096,9 @@ Due to size constraints, this button is not currently available on Steam Deck.
 </li>
 <li>
 <p><strong>Maximum</strong>: total players the server supports</p>
+</li>
+<li>
+<p><strong>Queue</strong>: total players in the waiting queue (for full servers)</p>
 </li>
 <li>
 <p><strong>Address</strong>: the address in IP:Port format</p>
