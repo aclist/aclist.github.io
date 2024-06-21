@@ -898,7 +898,10 @@
       "name": "Cry of Fear",
       "status": "Unknown",
       "shortname": "cryoffear",
-      "ac": "VAC"
+      "ac": "VAC",
+      "notes": [
+	      "This is ostensibly a single-player game, but is listed as being VAC-enabled."
+      ]
     },
     {
       "name": "Crysis",
@@ -929,6 +932,15 @@
       "status": "Unknown",
       "shortname": "danceonline",
       "ac": "GG"
+    },
+    {
+      "name": "Dark and Darker",
+      "status": "Broken",
+      "shortname": "dnd",
+      "ac": "Custom",
+      "notes": [
+	      "Broken as of Early Access Hotfix #54."
+      ]
     },
     {
       "name": "Darkfall: Rise of Agon",
@@ -1931,6 +1943,12 @@
       "name": "Overstep",
       "status": "Broken",
       "shortname": "overstep",
+      "ac": "EAC"
+    },
+    {
+      "name": "Pax Dei",
+      "status": "Broken",
+      "shortname": "paxdei",
       "ac": "EAC"
     },
     {
