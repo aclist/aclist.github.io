@@ -934,12 +934,13 @@
       "ac": "GG"
     },
     {
+      "appid": 2016590,
       "name": "Dark and Darker",
-      "status": "Broken",
+      "status": "Working",
       "shortname": "dnd",
       "ac": "Custom",
       "notes": [
-	      "Broken as of Early Access Hotfix #54."
+	      "Requires adding STEAMDECK=1 to launch options to enable Tavern anti-cheat support."
       ]
     },
     {
@@ -975,7 +976,7 @@
       "ac": "BE",
       "notes": [
         "https://store.steampowered.com/news/group/4145017/view/3104663180636096966",
-        "DZGUI server launcher: https://github.com/aclist/dztui/tree/dzgui"
+        "Use DZGUI launcher for modded servers: https://github.com/aclist/dztui/tree/dzgui"
       ]
     },
     {
