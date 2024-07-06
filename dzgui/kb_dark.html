@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="author" content="FAQs for DZGUI">
+<title>DZGUI Knowledge Base (v5.x.x)</title>
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+
+@import url(//fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css); /* Default asciidoc style framework - important */
+
+/* CUSTOMISATIONS */
+/* Change the values in root for quick customisation. If you want even more fine grain... venture further. */
+:root{
+--maincolor:#222222;
+--primarycolor:#aaa;
+--secondarycolor:#aaa;
+--tertiarycolor:#aaa;
+--sidebarbackground:#222222;
+--linkcolor:#ecc89e;
+--linkcoloralternate:#cbcbcb;
+--white:#777777;
+--codebg:#111;
+--codefg:#ffffff;
+--linkhover:#eb862f;
+}
+
+/* Text styles */
+
+body{font-family: "Noto Sans",sans-serif;background-color: var(--maincolor);color:var(--white);}
+
+h1{color:var(--primarycolor) !important;font-family:"Noto Sans",sans-serif;}
+h2,h3,h4,h5,h6{color:var(--secondarycolor) !important;font-family:"Noto Sans",sans-serif;}
+.title{color:var(--white) !important;font-family:"Noto Sans",sans-serif;font-style: normal; font-weight: normal;}
+p{font-family: "Noto Sans",sans-serif ! important}
+#toc.toc2 a:link{color:var(--linkcolor);}
+#toc.toc2 {border-right: 1px solid #8e8e96}
+blockquote{color:var(--tertiarycolor) !important}
+.quoteblock{color:var(--white)}
+code{color:var(--codefg);background-color: var(--codebg) !important}
+td.tableblock{border:0 solid #a9a9a9}
+
+
+/* Table styles */
+th{background-color: var(--maincolor);color:var(--primarycolor) !important;}
+td{background-color: var(--maincolor);color: var(--primarycolor) !important}
+
+
+#toc.toc2{background-color:var(--sidebarbackground);}
+#toctitle{color:var(--white);}
+
+/* Responsiveness fixes */
+video {
+  max-width: 100%;
+}
+
+@media all and (max-width: 600px) {
+  table {
+    width: 55vw!important;
+    font-size: 3vw;
+  }
+}
+
+.exampleblock > .content {
+  background-color: var(--maincolor);
+}
+
+a {
+  color: var(--linkcolor);
+}
+
+a:hover,#toc.toc2 a:hover{
+	color: var(--linkhover);
+}
+.admonitionblock td.icon .icon-tip::before {
+  text-shadow: none;
+  color: var(--white);
+}
+.admonitionblock td.icon .icon-note::before {
+  color: var(--tertiarycolor);
+}
+.admonitionblock td.icon .icon-important::before {
+  color: var(--linkcolor);
+}
+/*.admonitionblock td.icon .icon-caution::before {
+  color: var(--linkcoloralternate);
+}*/
+.admonitionblock td.icon .icon-warning::before {
+  color: var(--primarycolor);
+}
+
+#preamble > .sectionbody > .paragraph:first-of-type p {
+  color: var(--white);
+}
+
+.quoteblock blockquote::before {
+  color: var(--primarycolor);
+}
+.quoteblock .attribution cite, .verseblock .attribution cite {
+  color: var(--white);
+}
+.verseblock pre {
+  color: var(--white);
+}
+.quoteblock blockquote, .quoteblock blockquote p {
+  color: var(--white);
+}
+
+.sidebarblock {
+  background: var(--sidebarbackground);
+}
+.literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
+  background: var(--codebg);
+  color: var(--white);
+}
+
+.literalblock pre, .listingblock>.content>pre:not(.highlight), .listingblock>.content>pre[class=highlight], .listingblock>.content>pre[class^="highlight "] {
+  background: var(--codebg);
+}
+
+#header .details {
+  color: var(--white);
+}
+#header .details span.email a {
+  color: var(--linkcoloralternate);
+}
+
+</style>
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>DZGUI Knowledge Base (v5.x.x)</h1>
+<div class="details">
+<span id="author" class="author">FAQs for DZGUI</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#DZG-001">DZG-001: Periodically getting dropped from servers, or servers appear unreachable</a></li>
+<li><a href="#DZG-002">DZG-002: Some servers appear locked in the official DayZ client, and are unreachable in DZGUI</a></li>
+<li><a href="#DZG-003">DZG-003: On Steam Deck, DayZ becomes unresponsive/sluggish over time</a></li>
+<li><a href="#DZG-004">DZG-004: On Steam Deck, some mods in the Workshop show a black screen when DZGUI attempts to open them</a></li>
+<li><a href="#DZG-005">DZG-005: Rendering problems with objects in the Winter Chernarus v2 mod</a></li>
+<li><a href="#DZG-006">DZG-006: After moving DayZ to another drive, DZGUI fails to locate it on initial setup</a></li>
+<li><a href="#DZG-007">DZG-007: Why do I need a Steam API key? Is it safe?</a></li>
+<li><a href="#DZG-008">DZG-008: DZGUI server browser stops working, and Steam API key is seemingly malformed</a></li>
+<li><a href="#DZG-009">DZG-009: Livonia map is missing from maps dropdown in DZGUI</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Click <a href="https://aclist.github.io/dzgui/kb.html">here</a> for light mode</p>
+</div>
+<div class="paragraph">
+<p>Looking for the main DZGUI documentation? Click <a href="https://aclist.github.io/dzgui/dzgui_dark.html">here</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="DZG-001">DZG-001: Periodically getting dropped from servers, or servers appear unreachable</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Last updated: 2024-07-06</p>
+</div>
+<div class="paragraph">
+<p>It is a longstanding issue in DayZ that the game opens a large number of connections when querying servers and/or while connected to servers. This can result in excess traffic on the user&#8217;s PC which, depending on how much headroom your network has, can lead to getting dropped, unresponsiveness, or a timeout.</p>
+</div>
+<div class="paragraph">
+<p>If you are on Wi-Fi, try switching to a wired connection and see if the problem resolves itself. If it does, your wireless router settings do not have enough headroom for max simultaneous connections. Use a wired connection, or update your network settings to a more permissive setup.</p>
+</div>
+<div class="paragraph">
+<p>Bohemia has acknowledged this issue going back 10+ years and stated that DayZ has a heavy impact on the network, but there is as yet no proposed solution on the DayZ side.</p>
+</div>
+<div class="paragraph">
+<p>This issue is frequently seen on Steam Deck, due to the tendency for users to use it in an untethered Wi-Fi setup.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="DZG-002">DZG-002: Some servers appear locked in the official DayZ client, and are unreachable in DZGUI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Last updated: 2024-07-06</p>
+</div>
+<div class="paragraph">
+<p>This is a variant of <a href="#DZG-001">DZG-001</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="DZG-003">DZG-003: On Steam Deck, DayZ becomes unresponsive/sluggish over time</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Last updated: 2024-07-06</p>
+</div>
+<div class="paragraph">
+<p>When DayZ is open for 1+ hours, a gradual loss in performance and FPS may occur on the Steam Deck.</p>
+</div>
+<div class="paragraph">
+<p>A solution that seems to work for most users is to install <a href="https://github.com/CryoByte33/steam-deck-utilities">Cryo Utilities</a>, a third-party performance management application.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="DZG-004">DZG-004: On Steam Deck, some mods in the Workshop show a black screen when DZGUI attempts to open them</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Last updated: 2024-07-06</p>
+</div>
+<div class="paragraph">
+<p>This is a bug in the Steam client that is being tracked at Valve&#8217;s Steam for Linux issue tracker <a href="https://github.com/ValveSoftware/steam-for-linux/issues/9598">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>To resolve this issue, manually intervene in the Steam client by selecting a different context (e.g., Store, Library), waiting for it to load, then navigating back to the Workshop context. This should clear the blockage and allow the contents to render.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="DZG-005">DZG-005: Rendering problems with objects in the Winter Chernarus v2 mod</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Last updated: 2024-07-06</p>
+</div>
+<div class="paragraph">
+<p>This mod has LOD (level of detail) bugs that may cause objects near the player, such as leaves, to render incorrectly, or cause distant trees to pop in abruptly. This is an acknowledged issue with the mod itself, not with DayZ or DZGUI.</p>
+</div>
+<div class="paragraph">
+<p>There is no user-side fix for this issue; it is a problem solely on the mod side.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="DZG-006">DZG-006: After moving DayZ to another drive, DZGUI fails to locate it on initial setup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Last updated: 2024-07-06</p>
+</div>
+<div class="paragraph">
+<p>If you recently moved the location of DayZ using Steam&#8217;s internal dialogs, it may take some time for this information to update internally on Steam&#8217;s side.</p>
+</div>
+<div class="paragraph">
+<p>Steam stores the location of installed games in a unified file, and DZGUI checks this file during initial setup to determine where Steam claims DayZ is installed.</p>
+</div>
+<div class="paragraph">
+<p>If you recently moved DayZ to a different drive or partition but did not restart Steam, this information may be out of date, causing Steam to report the wrong location.</p>
+</div>
+<div class="paragraph">
+<p>Try restarting the Steam client and starting the DZGUI initial setup again.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="DZG-007">DZG-007: Why do I need a Steam API key? Is it safe?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Last updated: 2024-07-06</p>
+</div>
+<div class="paragraph">
+<p>In order to provide a server browser showing a searchable list of all available servers, DZGUI utilizes the Steam API.</p>
+</div>
+<div class="paragraph">
+<p>Actual connections and queries to individual servers are performed directly between the computer and the DayZ server.</p>
+</div>
+<div class="paragraph">
+<p>DZGUI gets its server information directly from the most authoritative source: Steam. It does this by letting the user be solely in control of their own API key and the application in an authenticated way. Users explicitly get permission to use an API key instead of scraping DayZ server info from third-party sites.</p>
+</div>
+<div class="paragraph">
+<p>Everything that happens between DZGUI and Steam takes place solely on the user&#8217;s computer, and no information gets sent back to the developer. DZGUI does not scrape third party DayZ APIs without permission.</p>
+</div>
+<div class="paragraph">
+<p>There is some misconception that a Steam API key could be used to gain information about a user&#8217;s account or control their account. Not only is this not possible, but the API key is used solely by the user on their own computer and is protected by Steam Guard.</p>
+</div>
+<div class="paragraph">
+<p>A Steam API key is the most strict way of getting authentic, reliable, and consistent server information in a zero-trust model.</p>
+</div>
+<div class="paragraph">
+<p>You are responsible for the creation, storage, management, and revocation of your API key.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="DZG-008">DZG-008: DZGUI server browser stops working, and Steam API key is seemingly malformed</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Last updated: 2024-07-06</p>
+</div>
+<div class="paragraph">
+<p>In order to use a Steam API key, you will have to enable Steam Guard (2FA) protection on your account. If you previously generated an API key and enabled Steam Guard, but then disabled Steam Guard for some other reason, this will also disable any prior API keys you had.</p>
+</div>
+<div class="paragraph">
+<p>If, after setting up DZGUI, you inadvertently turned off Steam Guard for some reason, check to see if your API key has been disabled, and reapply Steam Guard accordingly.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="DZG-009">DZG-009: Livonia map is missing from maps dropdown in DZGUI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Last updated: 2024-07-06</p>
+</div>
+<div class="paragraph">
+<p>The Livonia map was iterated off of a map used for the Arma 3 Contact DLC, and is internally called Enoch. Servers running the Livonia map thus use the internal name. Search for Enoch in the list.</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
