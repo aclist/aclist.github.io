@@ -453,7 +453,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#DZG-004">DZG-004: On Steam Deck, some mods in the Workshop show a black screen when DZGUI attempts to open them</a></li>
 <li><a href="#DZG-005">DZG-005: Rendering problems with objects in the Winter Chernarus v2 mod</a></li>
 <li><a href="#DZG-006">DZG-006: After moving DayZ to another drive, DZGUI fails to locate it on initial setup</a></li>
-<li><a href="#DZG-007">DZG-007: Why do I need a Steam API key? Is it safe?</a></li>
+<li><a href="#DZG-007">DZG-007: Why do I need a Steam Web API key? Is it safe?</a></li>
 <li><a href="#DZG-008">DZG-008: DZGUI server browser stops working, and Steam API key is seemingly malformed</a></li>
 <li><a href="#DZG-009">DZG-009: Livonia map is missing from maps dropdown in DZGUI</a></li>
 </ul>
@@ -474,7 +474,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="DZG-001">DZG-001: Periodically getting dropped from servers, or servers appear unreachable</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Last updated: 2024-07-06</p>
+<p>Last updated: 2024-07-14</p>
 </div>
 <div class="paragraph">
 <p>It is a longstanding issue in DayZ that the game opens a large number of connections when querying servers and/or while connected to servers. This can result in excess traffic on the user&#8217;s PC which, depending on how much headroom your network has, can lead to getting dropped, unresponsiveness, or a timeout.</p>
@@ -494,7 +494,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="DZG-002">DZG-002: Some servers appear locked in the official DayZ client, and are unreachable in DZGUI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Last updated: 2024-07-06</p>
+<p>Last updated: 2024-07-14</p>
 </div>
 <div class="paragraph">
 <p>This is a variant of <a href="#DZG-001">DZG-001</a>.</p>
@@ -505,7 +505,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="DZG-003">DZG-003: On Steam Deck, DayZ becomes unresponsive/sluggish over time</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Last updated: 2024-07-06</p>
+<p>Last updated: 2024-07-14</p>
 </div>
 <div class="paragraph">
 <p>When DayZ is open for 1+ hours, a gradual loss in performance and FPS may occur on the Steam Deck.</p>
@@ -519,7 +519,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="DZG-004">DZG-004: On Steam Deck, some mods in the Workshop show a black screen when DZGUI attempts to open them</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Last updated: 2024-07-06</p>
+<p>Last updated: 2024-07-14</p>
 </div>
 <div class="paragraph">
 <p>This is a bug in the Steam client that is being tracked at Valve&#8217;s Steam for Linux issue tracker <a href="https://github.com/ValveSoftware/steam-for-linux/issues/9598">here</a>.</p>
@@ -533,7 +533,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="DZG-005">DZG-005: Rendering problems with objects in the Winter Chernarus v2 mod</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Last updated: 2024-07-06</p>
+<p>Last updated: 2024-07-14</p>
 </div>
 <div class="paragraph">
 <p>This mod has LOD (level of detail) bugs that may cause objects near the player, such as leaves, to render incorrectly, or cause distant trees to pop in abruptly. This is an acknowledged issue with the mod itself, not with DayZ or DZGUI.</p>
@@ -547,7 +547,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="DZG-006">DZG-006: After moving DayZ to another drive, DZGUI fails to locate it on initial setup</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Last updated: 2024-07-06</p>
+<p>Last updated: 2024-07-14</p>
 </div>
 <div class="paragraph">
 <p>If you recently moved the location of DayZ using Steam&#8217;s internal dialogs, it may take some time for this information to update internally on Steam&#8217;s side.</p>
@@ -564,31 +564,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="DZG-007">DZG-007: Why do I need a Steam API key? Is it safe?</h2>
+<h2 id="DZG-007">DZG-007: Why do I need a Steam Web API key? Is it safe?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Last updated: 2024-07-06</p>
+<p>Last updated: 2024-07-14</p>
 </div>
 <div class="paragraph">
-<p>In order to provide a server browser showing a searchable list of all available servers, DZGUI utilizes the Steam API.</p>
+<p>In order to provide a server browser showing a searchable list of all available servers, DZGUI utilizes the Steam Web API.</p>
 </div>
 <div class="paragraph">
 <p>Actual connections and queries to individual servers are performed directly between the computer and the DayZ server.</p>
 </div>
 <div class="paragraph">
-<p>DZGUI gets its server information directly from the most authoritative source: Steam. It does this by letting the user be solely in control of their own API key and the application in an authenticated way. Users explicitly get permission to use an API key instead of scraping DayZ server info from third-party sites.</p>
+<p>DZGUI gets its server information directly from the most authoritative source: Steam. It does this by letting the user be solely in control of their own API key and the application in an authenticated way. Users explicitly get permission to use a Web API key instead of scraping DayZ server info from third-party sites.</p>
 </div>
 <div class="paragraph">
-<p>Everything that happens between DZGUI and Steam takes place solely on the user&#8217;s computer, and no information gets sent back to the developer. DZGUI does not scrape third party DayZ APIs without permission.</p>
+<p>Everything that happens between DZGUI and the Steam Web API endpoint takes place solely on the user&#8217;s computer, using a GET request (fetch server list), and no information gets sent back to the developer. DZGUI does not scrape third party DayZ APIs without permission.</p>
 </div>
 <div class="paragraph">
-<p>There is some misconception that a Steam API key could be used to gain information about a user&#8217;s account or control their account. Not only is this not possible, but the API key is used solely by the user on their own computer and is protected by Steam Guard.</p>
+<p>There is some misconception that a Steam Web API key could be used to gain information about a user&#8217;s account or control their account. Not only is this not possible, but the Web API key is used solely by the user on their own computer and is protected by Steam Guard.</p>
 </div>
 <div class="paragraph">
-<p>A Steam API key is the most strict way of getting authentic, reliable, and consistent server information in a zero-trust model.</p>
+<p>A Steam Web API key is the most strict way of getting authentic, reliable, and consistent server information in a zero-trust model.</p>
 </div>
 <div class="paragraph">
-<p>You are responsible for the creation, storage, management, and revocation of your API key.</p>
+<p>You are responsible for the creation, storage, management, and revocation of your Web API key.</p>
 </div>
 </div>
 </div>
@@ -596,7 +596,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="DZG-008">DZG-008: DZGUI server browser stops working, and Steam API key is seemingly malformed</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Last updated: 2024-07-06</p>
+<p>Last updated: 2024-07-14</p>
 </div>
 <div class="paragraph">
 <p>In order to use a Steam API key, you will have to enable Steam Guard (2FA) protection on your account. If you previously generated an API key and enabled Steam Guard, but then disabled Steam Guard for some other reason, this will also disable any prior API keys you had.</p>
@@ -610,7 +610,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="DZG-009">DZG-009: Livonia map is missing from maps dropdown in DZGUI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Last updated: 2024-07-06</p>
+<p>Last updated: 2024-07-14</p>
 </div>
 <div class="paragraph">
 <p>The Livonia map was iterated off of a map used for the Arma 3 Contact DLC, and is internally called Enoch. Servers running the Livonia map thus use the internal name. Search for Enoch in the list.</p>
