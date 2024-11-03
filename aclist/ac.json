@@ -988,6 +988,13 @@
       "notes": []
     },
     {
+      "appid": 1422450,
+      "name": "Deadlock",
+      "status": "Working",
+      "shortname": "deadlock",
+      "ac": "VAC"
+    },
+    {
       "name": "Deadside",
       "status": "Broken",
       "shortname": "deadside",
@@ -1096,6 +1103,12 @@
       "status": "Broken",
       "shortname": "dueprocess",
       "ac": "EAC"
+    },
+    {
+      "name": "Dungeonborne",
+      "status": "Broken",
+      "shortname": "dungeonborne",
+      "ac": "ACE"
     },
     {
       "name": "Dungeon & Fighter",
@@ -1520,10 +1533,14 @@
       "ac": "EAC"
     },
     {
+      "appid": 518150,
       "name": "Intruder",
-      "status": "Broken",
+      "status": "Working",
       "shortname": "intruder",
-      "ac": "EAC"
+      "ac": "EAC",
+      "notes": [
+	      "Set the flag STEAMDECK=1 in launch options"
+      ]
     },
     {
       "name": "Inversion",
@@ -1679,6 +1696,12 @@
       "name": "Lemnis Gate",
       "status": "Broken",
       "shortname": "lemnisgate",
+      "ac": "EAC"
+    },
+    {
+      "name": "Level Zero Extraction",
+      "status": "Broken",
+      "shortname": "levelzero",
       "ac": "EAC"
     },
     {
