@@ -1,0 +1,171 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setup &mdash; DZGUI 5.6.x documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d581d003"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Usage" href="usage.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DZGUI
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (5.6.x)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Setup</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dayz-license">DayZ license</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api-keys">API keys</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#steam-web-api-key">Steam Web API key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#battlemetrics-api-key">Battlemetrics API key</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uninstallation.html">Uninstallation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="steam.html">Steam integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="locale.html">Locale support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kb.html">Knowledge Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Submitting a ticket</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DZGUI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Setup</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h1>
+<section id="dayz-license">
+<h2>DayZ license<a class="headerlink" href="#dayz-license" title="Link to this heading"></a></h2>
+<p>Prepare a Steam account with a DayZ license (i.e., own the game). From Steam’s right-click menu for the game options, under <code class="docutils literal notranslate"><span class="pre">Compatibility</span></code>, enable a Proton version ≥ <code class="docutils literal notranslate"><span class="pre">6.8</span></code> (or use Proton
+Experimental for the latest version).</p>
+<p>As of this writing, any recent version of Proton should work, and it is encouraged to use the most recent one.</p>
+</section>
+<section id="api-keys">
+<h2>API keys<a class="headerlink" href="#api-keys" title="Link to this heading"></a></h2>
+<p>You will need at a minimum a <a class="reference internal" href="#steam-api"><span class="std std-ref">Steam Web API key</span></a> in order to browse the server index.</p>
+<section id="steam-web-api-key">
+<span id="steam-api"></span><h3>Steam Web API key<a class="headerlink" href="#steam-web-api-key" title="Link to this heading"></a></h3>
+<p><strong>This step is required</strong>.</p>
+<p>Register for a <a class="reference external" href="https://steamcommunity.com/dev/apikey">Steam Web API key</a> (free) using your Steam account. You will be asked for a unique URL for your app when registering.</p>
+<p>Since this key is for a personal use application and does not actually call back anywhere, set a generic local identifier here like “127.0.0.1” or some other name that is meaningful to you.</p>
+<p>Once configured, you can insert this key in the app when launching it for the first time.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are confused about this requirement, please refer to DZGUI Knowledge Base article <a class="reference internal" href="kb.html#dzg-007"><span class="std std-ref">DZG-007</span></a> for additional information.</p>
+</div>
+</section>
+<section id="battlemetrics-api-key">
+<h3>Battlemetrics API key<a class="headerlink" href="#battlemetrics-api-key" title="Link to this heading"></a></h3>
+<p><strong>This step is optional, but recommended</strong>. Using this key lets you also connect to and query servers by their shorthand ID instead of by IP.</p>
+<p>Register for an API key at <a class="reference external" href="https://www.battlemetrics.com/account/register?after=%2Fdevelopers">BattleMetrics</a> (free).</p>
+<p>From the <code class="docutils literal notranslate"><span class="pre">Personal</span> <span class="pre">Access</span> <span class="pre">Tokens</span> <span class="pre">area</span></code>, select <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Token</span></code>.</p>
+<p>Give the token any name in the field at the top.</p>
+<p>Leave <strong>all options unchecked</strong> and scroll to the bottom. Select <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Token</span></code>.</p>
+<p>Once configured, you can insert this key in the app when launching it for the first time (optional), or later on when using the connect/query by ID methods in the app.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Each server has a unique ID. This is the string of numbers at the end of the URL. For example, in the URL <code class="docutils literal notranslate"><span class="pre">https://www.battlemetrics.com/servers/dayz/8039514</span></code>, the ID is <code class="docutils literal notranslate"><span class="pre">8039514</span></code>.</p>
+</div>
+</section>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
+<p>Proceed to the next section for usage instructions.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

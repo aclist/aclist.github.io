@@ -1,0 +1,197 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steam integration &mdash; DZGUI 5.6.x documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d581d003"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Locale support" href="locale.html" />
+    <link rel="prev" title="Uninstallation" href="uninstallation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DZGUI
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (5.6.x)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Setup</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uninstallation.html">Uninstallation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced usage</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Steam integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#artwork">Artwork</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="locale.html">Locale support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kb.html">Knowledge Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Submitting a ticket</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DZGUI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Steam integration</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="steam-integration">
+<h1>Steam integration<a class="headerlink" href="#steam-integration" title="Link to this heading"></a></h1>
+<p>DZGUI can be added to Steam as a “non-Steam game” in order to facilitate integration with Steam Deck or desktop environments.</p>
+<p>First, launch Steam in the <strong>Large</strong> (default) view.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Steam Deck users: Gaming Mode has limited support for configuration of custom games. You will need to switch to <strong>Desktop Mode</strong> in order to add a non-Steam game.</p>
+</div>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/01.png"><img alt="Adding a non-Steam game" src="_images/01.png" style="width: 414.4px; height: 179.89999999999998px;" />
+</a>
+</figure>
+<p>Select <strong>Add a Game</strong> &gt; <strong>Add a Non-Steam Game</strong> from the bottom left corner of the Steam client.</p>
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/applications</span></code> and select <code class="docutils literal notranslate"><span class="pre">dzgui.desktop</span></code>.</p>
+<p>Select <strong>Add Selected Programs</strong> to add a shortcut to DZGUI.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It can be useful to make DZGUI aware that it is being launched through Steam. To do so, add the flag <code class="docutils literal notranslate"><span class="pre">-steam</span></code> in the game’s right-click options.</p>
+</div>
+<section id="artwork">
+<h2>Artwork<a class="headerlink" href="#artwork" title="Link to this heading"></a></h2>
+<p>DZGUI ships with custom artwork that provides various cover/splash images to allow it to integrate with the rest of your games library.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/02.png"><img alt="Adding a non-Steam game" src="_images/02.png" style="width: 700.0px; height: 268.09999999999997px;" />
+</a>
+</figure>
+<p>From the main library view, navigate to the app’s details page and right-click the blank image header at the top.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/03.png"><img alt="Adding a non-Steam game" src="_images/03.png" style="width: 700.0px; height: 265.3px;" />
+</a>
+</figure>
+<p>Select <strong>Set Custom Background</strong></p>
+<p>Select to display <strong>All Files</strong> from the <strong>File type</strong> dropdown</p>
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/dzgui</span></code> and select <code class="docutils literal notranslate"><span class="pre">hero.png</span></code>.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/04.png"><img alt="Adding a non-Steam game" src="_images/04.png" style="width: 700.0px; height: 268.09999999999997px;" />
+</a>
+</figure>
+<p>Next, right-click the image background and select <strong>Set Custom Logo</strong>.</p>
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/dzgui</span></code> and select <code class="docutils literal notranslate"><span class="pre">logo.png</span></code>.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/05.png"><img alt="Adding a non-Steam game" src="_images/05.png" style="width: 700.0px; height: 263.9px;" />
+</a>
+</figure>
+<p>Notice that this removes the redundant app name that occluded the image, as seen above.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/06.png"><img alt="Adding a non-Steam game" src="_images/06.png" style="width: 700.0px; height: 599.9px;" />
+</a>
+</figure>
+<p>Next, navigate to your Library index (looks like a bookshelf of cover art) and find the DZGUI app.</p>
+<p>Right-click its cover and select <strong>Manage</strong> &gt; <strong>Set custom artwork</strong>.</p>
+<p>Navigate to <code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/dzgui</span></code> and select <code class="docutils literal notranslate"><span class="pre">grid.png</span></code>.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/07.png"><img alt="Adding a non-Steam game" src="_images/07.png" style="width: 485.09999999999997px; height: 438.2px;" />
+</a>
+</figure>
+<p>The final result will create box art looking like the above.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/08.png"><img alt="Adding a non-Steam game" src="_images/08.png" style="width: 576.0px; height: 217.0px;" />
+</a>
+</figure>
+<p>Next, right-click the DZGUI entry in your Library and select <strong>Properties</strong> to open the properties dialog. Next to the <strong>Shortcut</strong> field, you will see a small square box which represents the game’s
+icon. Click this to open a file explorer, navigate to <code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/dzgui</span></code>, and select <code class="docutils literal notranslate"><span class="pre">icon.png</span></code>. This will add a small icon to the list view.</p>
+<p>Finally, after you launch DZGUI for the first time, you should quit the application and return to the Library view. Select the <strong>Recent Games</strong> dropdown on the right-hand side.</p>
+<p>Steam shows a collection of box art based on categories like “Play Next”, “Recent Games”, etc. Look for a <strong>downward-pointing caret icon</strong> and click it, then select the <strong>Recent Games</strong> category.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/09.png"><img alt="Adding a non-Steam game" src="_images/09.png" style="width: 323.0px; height: 360.0px;" />
+</a>
+</figure>
+<p>If DZGUI was the last item played, it will be shown with a landscape, rather than portrait, orientation cover, which is initially blank.</p>
+<p>To customize this cover, right click it and select <strong>Manage</strong> &gt; <strong>Set custom artwork</strong>, navigate to <code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/dzgui</span></code>, then select <code class="docutils literal notranslate"><span class="pre">hero.png</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="uninstallation.html" class="btn btn-neutral float-left" title="Uninstallation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="locale.html" class="btn btn-neutral float-right" title="Locale support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
