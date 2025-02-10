@@ -4,7 +4,7 @@ This repository currently hosts these documents:
 
 - A survey of games with anti-cheat compatibility in Linux. Games are whitelisted on a conservative basis after manual verification and testing.
 
-[DZGUI documentation](https://aclist.github.io/dzgui/dzgui.html)
+[DZGUI documentation](https://aclist.github.io/dzgui/index.html)
 
 - Help files and installation instructions for [DZGUI](https://github.com/aclist/dztui)
 
