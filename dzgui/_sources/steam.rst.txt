@@ -18,9 +18,6 @@ Navigate to ``$HOME/.local/share/applications`` and select ``dzgui.desktop``.
 
 Select **Add Selected Programs** to add a shortcut to DZGUI.
 
-.. note::
-   It can be useful to make DZGUI aware that it is being launched through Steam. To do so, add the flag ``--steam`` or ``-s`` in the game's right-click options.
-
 Artwork
 ^^^^^^^^^^
 
