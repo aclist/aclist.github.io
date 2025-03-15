@@ -33,7 +33,7 @@ See: :doc:`uninstallation`.
 
 Troubleshooting
 ----------------
-See: :doc:`kb` or `submit a ticket <https://codeberg.org/aclist/dztui/issues/new>`_ (requires a Codeberg account).
+See: :doc:`kb` or :ref:`Submitting a ticket`.
 
 .. toctree::
    :maxdepth: 3
