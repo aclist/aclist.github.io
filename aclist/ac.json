@@ -349,9 +349,12 @@
     {
       "appid": 1172470,
       "name": "Apex Legends",
-      "status": "Working",
+      "status": "Broken",
       "shortname": "apex",
-      "ac": "EAC"
+      "ac": "EAC",
+      "notes": [
+          "https://forums.ea.com/blog/apex-legends-game-info-hub-en/dev-team-update-linux--anti-cheat/9468053"
+      ]
     },
     {
       "name": "ArcheAge",
@@ -900,7 +903,7 @@
       "shortname": "cryoffear",
       "ac": "VAC",
       "notes": [
-	      "This is ostensibly a single-player game, but is listed as being VAC-enabled."
+          "This is ostensibly a single-player game, but is listed as being VAC-enabled."
       ]
     },
     {
@@ -940,7 +943,7 @@
       "shortname": "dnd",
       "ac": "Custom",
       "notes": [
-	      "Requires adding STEAMDECK=1 to launch options to enable Tavern anti-cheat support."
+          "Requires adding STEAMDECK=1 to launch options to enable Tavern anti-cheat support."
       ]
     },
     {
@@ -1539,7 +1542,7 @@
       "shortname": "intruder",
       "ac": "EAC",
       "notes": [
-	      "Set the flag STEAMDECK=1 in launch options"
+          "Set the flag STEAMDECK=1 in launch options"
       ]
     },
     {
@@ -2474,7 +2477,7 @@
       "shortname": "starcitizen",
       "ac": "EAC",
       "notes": [
-	      "See https://github.com/starcitizen-lug/lug-helper"
+         "See https://github.com/starcitizen-lug/lug-helper"
       ]
     },
     {
