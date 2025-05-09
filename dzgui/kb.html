@@ -70,6 +70,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#dzg-005-rendering-problems-with-objects-in-the-winter-chernarus-v2-mod">DZG-005: Rendering problems with objects in the Winter Chernarus v2 mod</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dzg-006-after-moving-dayz-to-another-drive-dzgui-fails-to-locate-it-on-initial-setup">DZG-006: After moving DayZ to another drive, DZGUI fails to locate it on initial setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dzg-007-why-do-i-need-a-steam-web-api-key-is-it-safe">DZG-007: Why do I need a Steam Web API key? Is it safe?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dzg-008-servers-do-not-return-any-modlists">DZG-008: Servers do not return any modlists</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="bugs.html">Submitting a ticket</a></li>
@@ -144,6 +145,16 @@ clear the blockage and allow the contents to render.</p>
 <p>There is some misconception that a Steam Web API key could be used to gain information about a user’s account or control their account. Not only is this not possible, but the Web API key is used solely by the user on their own computer and is protected by Steam Guard.</p>
 <p>A Steam Web API key is the most strict way of getting authentic, reliable, and consistent server information in a zero-trust model.</p>
 <p>You are responsible for the creation, storage, management, and revocation of your Web API key.</p>
+</section>
+<section id="dzg-008-servers-do-not-return-any-modlists">
+<span id="dzg-008"></span><h2>DZG-008: Servers do not return any modlists<a class="headerlink" href="#dzg-008-servers-do-not-return-any-modlists" title="Link to this heading"></a></h2>
+<p>If you are able to browse servers but cannot get a response back from them or cannot load their modlists, the issue is most likely localized
+to your network. Check if your network settings recently changed.</p>
+<p>As a general rule of thumb:</p>
+<ul class="simple">
+<li><p>If you are unable to load the list of servers at all: this points to an issue with your API key itself</p></li>
+<li><p>If you are able to load servers but cannot get a response from them: this points to an issue with your local network, not an API key issue</p></li>
+</ul>
 </section>
 </section>
 

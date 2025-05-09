@@ -75,3 +75,15 @@ There is some misconception that a Steam Web API key could be used to gain infor
 A Steam Web API key is the most strict way of getting authentic, reliable, and consistent server information in a zero-trust model.
 
 You are responsible for the creation, storage, management, and revocation of your Web API key.
+
+.. _DZG_008:
+
+DZG-008: Servers do not return any modlists
+-----------------------------------------------
+If you are able to browse servers but cannot get a response back from them or cannot load their modlists, the issue is most likely localized
+to your network. Check if your network settings recently changed.
+
+As a general rule of thumb:
+
+- If you are unable to load the list of servers at all: this points to an issue with your API key itself
+- If you are able to load servers but cannot get a response from them: this points to an issue with your local network, not an API key issue
