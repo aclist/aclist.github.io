@@ -6,17 +6,17 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Steam integration &mdash; DZGUI 5.8.x documentation</title>
+  <title>Steam integration &mdash; DZGUI 6.0.x documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=124735de"></script>
-      <script src="_static/doctools.js?v=9bcbadda"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/documentation_options.js?v=f6ee2c1f"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/js/theme.js"></script>
@@ -46,7 +46,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (5.8.x)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (6.0.x)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Setup</span></p>
 <ul>
@@ -102,7 +102,7 @@
 <p>Steam Deck users: Gaming Mode has limited support for configuration of custom games. You will need to switch to <strong>Desktop Mode</strong> in order to add a non-Steam game.</p>
 </div>
 <figure class="align-default">
-<a class="reference internal image-reference" href="_images/01.png"><img alt="Adding a non-Steam game" src="_images/01.png" style="width: 414.4px; height: 179.89999999999998px;" />
+<a class="reference internal image-reference" href="_images/01.png"><img alt="Adding a non-Steam game" height="180" src="_images/01.png" width="414" />
 </a>
 </figure>
 <p>Select <strong>Add a Game</strong> &gt; <strong>Add a Non-Steam Game</strong> from the bottom left corner of the Steam client.</p>
@@ -112,42 +112,42 @@
 <h2>Artwork<a class="headerlink" href="#artwork" title="Link to this heading"></a></h2>
 <p>DZGUI ships with custom artwork that provides various cover/splash images to allow it to integrate with the rest of your games library.</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="_images/02.png"><img alt="Adding a non-Steam game" src="_images/02.png" style="width: 700.0px; height: 268.09999999999997px;" />
+<a class="reference internal image-reference" href="_images/02.png"><img alt="Adding a non-Steam game" height="268" src="_images/02.png" width="700" />
 </a>
 </figure>
 <p>From the main library view, navigate to the app’s details page and right-click the blank image header at the top.</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="_images/03.png"><img alt="Adding a non-Steam game" src="_images/03.png" style="width: 700.0px; height: 265.3px;" />
+<a class="reference internal image-reference" href="_images/03.png"><img alt="Adding a non-Steam game" height="265" src="_images/03.png" width="700" />
 </a>
 </figure>
 <p>Select <strong>Set Custom Background</strong></p>
 <p>Select to display <strong>All Files</strong> from the <strong>File type</strong> dropdown</p>
 <p>Navigate to <code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/dzgui</span></code> and select <code class="docutils literal notranslate"><span class="pre">hero.png</span></code>.</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="_images/04.png"><img alt="Adding a non-Steam game" src="_images/04.png" style="width: 700.0px; height: 268.09999999999997px;" />
+<a class="reference internal image-reference" href="_images/04.png"><img alt="Adding a non-Steam game" height="268" src="_images/04.png" width="700" />
 </a>
 </figure>
 <p>Next, right-click the image background and select <strong>Set Custom Logo</strong>.</p>
 <p>Navigate to <code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/dzgui</span></code> and select <code class="docutils literal notranslate"><span class="pre">logo.png</span></code>.</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="_images/05.png"><img alt="Adding a non-Steam game" src="_images/05.png" style="width: 700.0px; height: 263.9px;" />
+<a class="reference internal image-reference" href="_images/05.png"><img alt="Adding a non-Steam game" height="264" src="_images/05.png" width="700" />
 </a>
 </figure>
 <p>Notice that this removes the redundant app name that occluded the image, as seen above.</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="_images/06.png"><img alt="Adding a non-Steam game" src="_images/06.png" style="width: 700.0px; height: 599.9px;" />
+<a class="reference internal image-reference" href="_images/06.png"><img alt="Adding a non-Steam game" height="600" src="_images/06.png" width="700" />
 </a>
 </figure>
 <p>Next, navigate to your Library index (looks like a bookshelf of cover art) and find the DZGUI app.</p>
 <p>Right-click its cover and select <strong>Manage</strong> &gt; <strong>Set custom artwork</strong>.</p>
 <p>Navigate to <code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/dzgui</span></code> and select <code class="docutils literal notranslate"><span class="pre">grid.png</span></code>.</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="_images/07.png"><img alt="Adding a non-Steam game" src="_images/07.png" style="width: 485.09999999999997px; height: 438.2px;" />
+<a class="reference internal image-reference" href="_images/07.png"><img alt="Adding a non-Steam game" height="438" src="_images/07.png" width="485" />
 </a>
 </figure>
 <p>The final result will create box art looking like the above.</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="_images/08.png"><img alt="Adding a non-Steam game" src="_images/08.png" style="width: 576.0px; height: 217.0px;" />
+<a class="reference internal image-reference" href="_images/08.png"><img alt="Adding a non-Steam game" height="217" src="_images/08.png" width="576" />
 </a>
 </figure>
 <p>Next, right-click the DZGUI entry in your Library and select <strong>Properties</strong> to open the properties dialog. Next to the <strong>Shortcut</strong> field, you will see a small square box which represents the game’s
@@ -155,7 +155,7 @@ icon. Click this to open a file explorer, navigate to <code class="docutils lite
 <p>Finally, after you launch DZGUI for the first time, you should quit the application and return to the Library view. Select the <strong>Recent Games</strong> dropdown on the right-hand side.</p>
 <p>Steam shows a collection of box art based on categories like “Play Next”, “Recent Games”, etc. Look for a <strong>downward-pointing caret icon</strong> and click it, then select the <strong>Recent Games</strong> category.</p>
 <figure class="align-default">
-<a class="reference internal image-reference" href="_images/09.png"><img alt="Adding a non-Steam game" src="_images/09.png" style="width: 323.0px; height: 360.0px;" />
+<a class="reference internal image-reference" href="_images/09.png"><img alt="Adding a non-Steam game" height="360" src="_images/09.png" width="323" />
 </a>
 </figure>
 <p>If DZGUI was the last item played, it will be shown with a landscape, rather than portrait, orientation cover, which is initially blank.</p>
