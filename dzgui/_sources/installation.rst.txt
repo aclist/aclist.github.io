@@ -71,7 +71,7 @@ Install the following build dependencies:
 
 .. code:: console
 
-    sudo apt install python3.13 python3.13-venv python3.13-dev build-essential python3-gi-cairo pkg-config libgirepository-2.0-dev
+    sudo apt install python3.13 python3.13-venv python3.13-dev build-essential python3-gi-cairo pkg-config libgirepository-2.0-dev libcairo2-dev
 
 .. include:: venv.rst
 
