@@ -35,6 +35,18 @@ Install the following build dependencies:
 
 .. include:: venv.rst
 
+CachyOS (Arch)
+^^^^^^^^^^^^^^^^^^^^^^^
+Refer to the build instructions for Arch Linux first.
+The ``python3.13`` package is not available on CachyOS, so it is recommended to
+use ``uv`` to manage Python versions.
+
+.. code:: console
+
+   sudo pacman -S uv
+
+.. include:: venv.rst
+
 Manjaro (Arch)
 ^^^^^^^^^^^^^^^^^^^^^^^
 Python 3.13 and PyGObject should be available out of the box.

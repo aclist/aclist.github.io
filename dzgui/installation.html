@@ -54,6 +54,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#basic-runtime-dependencies">Basic runtime dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ui-dependencies-python-and-pygobject">UI dependencies (Python and PyGObject)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#arch-linux-vanilla-variants">Arch Linux (vanilla variants)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cachyos-arch">CachyOS (Arch)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#manjaro-arch">Manjaro (Arch)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#debian-13-variants">Debian 13 variants</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fedora-43-variants">Fedora 43 variants</a></li>
@@ -137,8 +138,61 @@ Depending on your distribution, this may require additional manual intervention.
 </pre></div>
 </div>
 <p>After satisfying the dependencies above, create a virtual environment (venv) in which to install PyGObject:</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">uv</span></code> as your Python version manager, invoke the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">uv venv --python 3.13 $HOME/.virtualenvs/dzgui</span>
+</pre></div>
+</div>
+<p>If you installed the <code class="docutils literal notranslate"><span class="pre">python3.13</span></code> package directly, use the below:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3.13 -m venv $HOME/.virtualenvs/dzgui</span>
-<span class="go">source $HOME/.virtualenvs/dzgui</span>
+</pre></div>
+</div>
+<p>Install PyGObject in the new venv:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $HOME/.virtualenvs/dzgui</span>
+<span class="go">pip install PyGObject</span>
+</pre></div>
+</div>
+<p>You can now proceed to the <a class="reference internal" href="#installscript"><span class="std std-ref">Installscript</span></a>.
+After installation, refer to the additional remarks below.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Since PyGObject is localized to a venv, it is advisable to create a wrapper script to ensure
+the venv is activated on subsequent invocations of DZGUI.</p>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/usr/bin/env<span class="w"> </span>bash
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">&lt;insert your path to dzgui.sh&gt;</span>
+</pre></div>
+</div>
+<p>Make sure to update the placeholder path on the last line. For example, if you ran the
+installscript from your home directory, the wrapper script would look like:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/usr/bin/env<span class="w"> </span>bash
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="gp">$</span>HOME/dzgui.sh
+</pre></div>
+</div>
+<p>Save this wrapper script in a location of your choice, e.g., <code class="docutils literal notranslate"><span class="pre">mywrapper.sh</span></code> and set the
+executable bit: <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">mywrapper.sh</span></code> This script will be your entrypoint for
+future invocations of DZGUI, so you should launch it, not <code class="docutils literal notranslate"><span class="pre">dzgui.sh</span></code></p>
+</section>
+<section id="cachyos-arch">
+<h3>CachyOS (Arch)<a class="headerlink" href="#cachyos-arch" title="Link to this heading"></a></h3>
+<p>Refer to the build instructions for Arch Linux first.
+The <code class="docutils literal notranslate"><span class="pre">python3.13</span></code> package is not available on CachyOS, so it is recommended to
+use <code class="docutils literal notranslate"><span class="pre">uv</span></code> to manage Python versions.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo pacman -S uv</span>
+</pre></div>
+</div>
+<p>After satisfying the dependencies above, create a virtual environment (venv) in which to install PyGObject:</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">uv</span></code> as your Python version manager, invoke the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">uv venv --python 3.13 $HOME/.virtualenvs/dzgui</span>
+</pre></div>
+</div>
+<p>If you installed the <code class="docutils literal notranslate"><span class="pre">python3.13</span></code> package directly, use the below:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3.13 -m venv $HOME/.virtualenvs/dzgui</span>
+</pre></div>
+</div>
+<p>Install PyGObject in the new venv:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $HOME/.virtualenvs/dzgui</span>
 <span class="go">pip install PyGObject</span>
 </pre></div>
 </div>
@@ -184,8 +238,16 @@ virtual environment (venv) to prevent it from conflicting with the system packag
 </pre></div>
 </div>
 <p>After satisfying the dependencies above, create a virtual environment (venv) in which to install PyGObject:</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">uv</span></code> as your Python version manager, invoke the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">uv venv --python 3.13 $HOME/.virtualenvs/dzgui</span>
+</pre></div>
+</div>
+<p>If you installed the <code class="docutils literal notranslate"><span class="pre">python3.13</span></code> package directly, use the below:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3.13 -m venv $HOME/.virtualenvs/dzgui</span>
-<span class="go">source $HOME/.virtualenvs/dzgui</span>
+</pre></div>
+</div>
+<p>Install PyGObject in the new venv:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $HOME/.virtualenvs/dzgui</span>
 <span class="go">pip install PyGObject</span>
 </pre></div>
 </div>
@@ -224,8 +286,16 @@ Add the PPA below to add Python 3.13 to your sources:</p>
 </pre></div>
 </div>
 <p>After satisfying the dependencies above, create a virtual environment (venv) in which to install PyGObject:</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">uv</span></code> as your Python version manager, invoke the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">uv venv --python 3.13 $HOME/.virtualenvs/dzgui</span>
+</pre></div>
+</div>
+<p>If you installed the <code class="docutils literal notranslate"><span class="pre">python3.13</span></code> package directly, use the below:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3.13 -m venv $HOME/.virtualenvs/dzgui</span>
-<span class="go">source $HOME/.virtualenvs/dzgui</span>
+</pre></div>
+</div>
+<p>Install PyGObject in the new venv:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $HOME/.virtualenvs/dzgui</span>
 <span class="go">pip install PyGObject</span>
 </pre></div>
 </div>

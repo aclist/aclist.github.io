@@ -1,8 +1,22 @@
 After satisfying the dependencies above, create a virtual environment (venv) in which to install PyGObject:
 
+If you have ``uv`` as your Python version manager, invoke the following:
+
+.. code:: console
+
+    uv venv --python 3.13 $HOME/.virtualenvs/dzgui
+
+If you installed the ``python3.13`` package directly, use the below:
+
 .. code:: console
 
    python3.13 -m venv $HOME/.virtualenvs/dzgui
+
+
+Install PyGObject in the new venv:
+
+.. code:: console
+
    source $HOME/.virtualenvs/dzgui
    pip install PyGObject
 
