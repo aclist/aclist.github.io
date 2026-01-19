@@ -17,7 +17,7 @@ Install PyGObject in the new venv:
 
 .. code:: console
 
-   source $HOME/.virtualenvs/dzgui
+   source $HOME/.virtualenvs/dzgui/bin/activate
    pip install PyGObject
 
 You can now proceed to the :ref:`Installscript`.
