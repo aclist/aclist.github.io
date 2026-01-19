@@ -88,17 +88,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <p>After satisfying the dependencies above, create a virtual environment (venv) in which to install PyGObject:</p>
+  <p>After satisfying the dependencies above, create a virtual environment (venv) and install PyGObject:</p>
 <p>If you have <code class="docutils literal notranslate"><span class="pre">uv</span></code> as your Python version manager, invoke the following:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">uv venv --python 3.13 $HOME/.virtualenvs/dzgui</span>
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">uv pip install PyGObject</span>
 </pre></div>
 </div>
-<p>If you installed the <code class="docutils literal notranslate"><span class="pre">python3.13</span></code> package directly, use the below:</p>
+<p>If you installed the <code class="docutils literal notranslate"><span class="pre">python3.13</span></code> package directly instead of <code class="docutils literal notranslate"><span class="pre">uv</span></code>, use the below:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3.13 -m venv $HOME/.virtualenvs/dzgui</span>
-</pre></div>
-</div>
-<p>Install PyGObject in the new venv:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
 <span class="go">pip install PyGObject</span>
 </pre></div>
 </div>
