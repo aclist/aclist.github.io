@@ -47,10 +47,9 @@ use ``uv`` to manage Python versions.
 
 .. include:: venv.rst
 
-Manjaro (Arch)
+Manjaro 26 (Arch)
 ^^^^^^^^^^^^^^^^^^^^^^^
-Python 3.13 and PyGObject should be available out of the box.
-You can proceed to the :ref:`Installscript`.
+If Python 3.13 is not already available out of the box, refer to the build instructions for :ref:`Arch Linux (vanilla variants)`.
 
 Debian 13 variants
 ^^^^^^^^^^^^^^^^^^^^^^^
