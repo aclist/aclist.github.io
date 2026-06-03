@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation (DZGUI 6 legacy) &mdash; DZGUI 6.x.x - 7.x.x documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=cb033ade"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DZGUI
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (6.x.x - 7.x.x)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Setup</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uninstallation.html">Uninstallation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="steam.html">Steam integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="locale.html">Locale support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kb.html">Knowledge Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">Submitting a ticket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Developers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DZGUI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation (DZGUI 6 legacy)</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation-dzgui-6-legacy">
+<h1>Installation (DZGUI 6 legacy)<a class="headerlink" href="#installation-dzgui-6-legacy" title="Link to this heading"></a></h1>
+<section id="basic-runtime-dependencies">
+<h2>Basic runtime dependencies<a class="headerlink" href="#basic-runtime-dependencies" title="Link to this heading"></a></h2>
+<p>If not already installed, the below can be found in your system’s package manager.</p>
+<p>If any dependencies are missing when the application starts, it will warn you, so you need not take any preemptive measures here.</p>
+<ul class="simple">
+<li><p>curl</p></li>
+<li><p>jq</p></li>
+<li><p>steam</p></li>
+<li><p>wmctrl or xdotool</p></li>
+<li><p>zenity</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All dependencies are installed out of the box on Steam Deck.</p>
+</div>
+</section>
+<section id="ui-dependencies-python-and-pygobject">
+<h2>UI dependencies (Python and PyGObject)<a class="headerlink" href="#ui-dependencies-python-and-pygobject" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>As of version 6.0.0, you must have a valid Python 3.13 and matching PyGObject environment.
+Depending on your distribution, this may require additional manual intervention.</p>
+</div>
+<section id="arch-linux-vanilla-variants">
+<h3>Arch Linux (vanilla variants)<a class="headerlink" href="#arch-linux-vanilla-variants" title="Link to this heading"></a></h3>
+<p>You will need the <code class="docutils literal notranslate"><span class="pre">python3.13</span></code> package, if it is not already installed.</p>
+<p>Install the following build dependencies:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo pacman -S cmake gcc pkgconf python-cairo</span>
+</pre></div>
+</div>
+<p>After satisfying the dependencies above, create a virtual environment (venv) and install PyGObject:</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">uv</span></code> as your Python version manager, invoke the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">uv venv --python 3.13 $HOME/.virtualenvs/dzgui</span>
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">uv pip install PyGObject</span>
+</pre></div>
+</div>
+<p>If you installed the <code class="docutils literal notranslate"><span class="pre">python3.13</span></code> package directly instead of <code class="docutils literal notranslate"><span class="pre">uv</span></code>, use the below:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3.13 -m venv $HOME/.virtualenvs/dzgui</span>
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">pip install PyGObject</span>
+</pre></div>
+</div>
+<p>You can now proceed to the <a class="reference internal" href="#installscript"><span class="std std-ref">Installscript</span></a>.
+After installation, refer to the additional remarks below.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Since PyGObject is localized to a venv, it is advisable to create a wrapper script to ensure
+the venv is activated on subsequent invocations of DZGUI.</p>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/usr/bin/env<span class="w"> </span>bash
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">&lt;insert your path to dzgui.sh&gt;</span>
+</pre></div>
+</div>
+<p>Make sure to update the placeholder path on the last line. For example, if you ran the
+installscript from your home directory, the wrapper script would look like:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/usr/bin/env<span class="w"> </span>bash
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="gp">$</span>HOME/dzgui.sh
+</pre></div>
+</div>
+<p>Save this wrapper script in a location of your choice, e.g., <code class="docutils literal notranslate"><span class="pre">mywrapper.sh</span></code> and set the
+executable bit: <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">mywrapper.sh</span></code> This script will be your entrypoint for
+future invocations of DZGUI, so you should launch it, not <code class="docutils literal notranslate"><span class="pre">dzgui.sh</span></code></p>
+</section>
+<section id="cachyos-arch">
+<h3>CachyOS (Arch)<a class="headerlink" href="#cachyos-arch" title="Link to this heading"></a></h3>
+<p>Refer to the build instructions for Arch Linux first.
+The <code class="docutils literal notranslate"><span class="pre">python3.13</span></code> package is not available on CachyOS, so it is recommended to
+use <code class="docutils literal notranslate"><span class="pre">uv</span></code> to manage Python versions.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo pacman -S uv</span>
+</pre></div>
+</div>
+<p>After satisfying the dependencies above, create a virtual environment (venv) and install PyGObject:</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">uv</span></code> as your Python version manager, invoke the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">uv venv --python 3.13 $HOME/.virtualenvs/dzgui</span>
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">uv pip install PyGObject</span>
+</pre></div>
+</div>
+<p>If you installed the <code class="docutils literal notranslate"><span class="pre">python3.13</span></code> package directly instead of <code class="docutils literal notranslate"><span class="pre">uv</span></code>, use the below:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3.13 -m venv $HOME/.virtualenvs/dzgui</span>
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">pip install PyGObject</span>
+</pre></div>
+</div>
+<p>You can now proceed to the <a class="reference internal" href="#installscript"><span class="std std-ref">Installscript</span></a>.
+After installation, refer to the additional remarks below.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Since PyGObject is localized to a venv, it is advisable to create a wrapper script to ensure
+the venv is activated on subsequent invocations of DZGUI.</p>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/usr/bin/env<span class="w"> </span>bash
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">&lt;insert your path to dzgui.sh&gt;</span>
+</pre></div>
+</div>
+<p>Make sure to update the placeholder path on the last line. For example, if you ran the
+installscript from your home directory, the wrapper script would look like:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/usr/bin/env<span class="w"> </span>bash
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="gp">$</span>HOME/dzgui.sh
+</pre></div>
+</div>
+<p>Save this wrapper script in a location of your choice, e.g., <code class="docutils literal notranslate"><span class="pre">mywrapper.sh</span></code> and set the
+executable bit: <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">mywrapper.sh</span></code> This script will be your entrypoint for
+future invocations of DZGUI, so you should launch it, not <code class="docutils literal notranslate"><span class="pre">dzgui.sh</span></code></p>
+</section>
+<section id="manjaro-26-arch">
+<h3>Manjaro 26 (Arch)<a class="headerlink" href="#manjaro-26-arch" title="Link to this heading"></a></h3>
+<p>If Python 3.13 is not already available out of the box, refer to the build instructions for <a class="reference internal" href="#arch-linux-vanilla-variants"><span class="std std-ref">Arch Linux (vanilla variants)</span></a>.</p>
+</section>
+<section id="debian-13-variants">
+<h3>Debian 13 variants<a class="headerlink" href="#debian-13-variants" title="Link to this heading"></a></h3>
+<p>Python 3.13 and PyGObject are available out of the box. No additional steps are necessary.
+You can proceed to the <a class="reference internal" href="#installscript"><span class="std std-ref">Installscript</span></a>.</p>
+</section>
+<section id="fedora-43-variants">
+<h3>Fedora 43 variants<a class="headerlink" href="#fedora-43-variants" title="Link to this heading"></a></h3>
+<p>Fedora 43 ships with a newer version of Python (3.14), so you must set up Python 3.13 in its own
+virtual environment (venv) to prevent it from conflicting with the system package.</p>
+<p>Install the following build dependencies:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo dnf install cairo cairo-devel cairo-gobject-devel gcc python3.13 python3.13-devel</span>
+</pre></div>
+</div>
+<p>After satisfying the dependencies above, create a virtual environment (venv) and install PyGObject:</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">uv</span></code> as your Python version manager, invoke the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">uv venv --python 3.13 $HOME/.virtualenvs/dzgui</span>
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">uv pip install PyGObject</span>
+</pre></div>
+</div>
+<p>If you installed the <code class="docutils literal notranslate"><span class="pre">python3.13</span></code> package directly instead of <code class="docutils literal notranslate"><span class="pre">uv</span></code>, use the below:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3.13 -m venv $HOME/.virtualenvs/dzgui</span>
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">pip install PyGObject</span>
+</pre></div>
+</div>
+<p>You can now proceed to the <a class="reference internal" href="#installscript"><span class="std std-ref">Installscript</span></a>.
+After installation, refer to the additional remarks below.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Since PyGObject is localized to a venv, it is advisable to create a wrapper script to ensure
+the venv is activated on subsequent invocations of DZGUI.</p>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/usr/bin/env<span class="w"> </span>bash
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">&lt;insert your path to dzgui.sh&gt;</span>
+</pre></div>
+</div>
+<p>Make sure to update the placeholder path on the last line. For example, if you ran the
+installscript from your home directory, the wrapper script would look like:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/usr/bin/env<span class="w"> </span>bash
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="gp">$</span>HOME/dzgui.sh
+</pre></div>
+</div>
+<p>Save this wrapper script in a location of your choice, e.g., <code class="docutils literal notranslate"><span class="pre">mywrapper.sh</span></code> and set the
+executable bit: <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">mywrapper.sh</span></code> This script will be your entrypoint for
+future invocations of DZGUI, so you should launch it, not <code class="docutils literal notranslate"><span class="pre">dzgui.sh</span></code></p>
+</section>
+<section id="ubuntu-24-variants">
+<h3>Ubuntu 24 variants<a class="headerlink" href="#ubuntu-24-variants" title="Link to this heading"></a></h3>
+<p>Ubuntu ships with an older version of Python (3.12). You must install additional dependencies.
+Add the PPA below to add Python 3.13 to your sources:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo add-apt-repository ppa:deadsnakes/ppa</span>
+</pre></div>
+</div>
+<p>Install the following build dependencies:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt install python3.13 python3.13-venv python3.13-dev build-essential python3-gi-cairo pkg-config libgirepository-2.0-dev libcairo2-dev</span>
+</pre></div>
+</div>
+<p>After satisfying the dependencies above, create a virtual environment (venv) and install PyGObject:</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">uv</span></code> as your Python version manager, invoke the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">uv venv --python 3.13 $HOME/.virtualenvs/dzgui</span>
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">uv pip install PyGObject</span>
+</pre></div>
+</div>
+<p>If you installed the <code class="docutils literal notranslate"><span class="pre">python3.13</span></code> package directly instead of <code class="docutils literal notranslate"><span class="pre">uv</span></code>, use the below:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python3.13 -m venv $HOME/.virtualenvs/dzgui</span>
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">pip install PyGObject</span>
+</pre></div>
+</div>
+<p>You can now proceed to the <a class="reference internal" href="#installscript"><span class="std std-ref">Installscript</span></a>.
+After installation, refer to the additional remarks below.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Since PyGObject is localized to a venv, it is advisable to create a wrapper script to ensure
+the venv is activated on subsequent invocations of DZGUI.</p>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/usr/bin/env<span class="w"> </span>bash
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="go">&lt;insert your path to dzgui.sh&gt;</span>
+</pre></div>
+</div>
+<p>Make sure to update the placeholder path on the last line. For example, if you ran the
+installscript from your home directory, the wrapper script would look like:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/usr/bin/env<span class="w"> </span>bash
+<span class="go">source $HOME/.virtualenvs/dzgui/bin/activate</span>
+<span class="gp">$</span>HOME/dzgui.sh
+</pre></div>
+</div>
+<p>Save this wrapper script in a location of your choice, e.g., <code class="docutils literal notranslate"><span class="pre">mywrapper.sh</span></code> and set the
+executable bit: <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">mywrapper.sh</span></code> This script will be your entrypoint for
+future invocations of DZGUI, so you should launch it, not <code class="docutils literal notranslate"><span class="pre">dzgui.sh</span></code></p>
+</section>
+</section>
+<section id="installscript">
+<h2>Installscript<a class="headerlink" href="#installscript" title="Link to this heading"></a></h2>
+<p>Invoke the command below from a terminal. This script fetches the main DZGUI script from the repository,
+makes it executable, and launches DZGUI’s first-time setup. After running this installscript, you will
+have the file <code class="docutils literal notranslate"><span class="pre">dzgui.sh</span></code> wherever you invoked the command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -s &quot;https://codeberg.org/aclist/dztui/raw/branch/dzgui/install.sh&quot; | bash</span>
+</pre></div>
+</div>
+</section>
+<section id="nixos-installation">
+<h2>nixOS installation<a class="headerlink" href="#nixos-installation" title="Link to this heading"></a></h2>
+<p>Two packages are independently maintained by other contributors. Each takes a slightly different approach.
+nixOS packages are standalone and do not require cloning the git repository.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/lelgenio/dzgui-nix">https://github.com/lelgenio/dzgui-nix</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jiriks74/dzgui.flake">https://github.com/jiriks74/dzgui.flake</a></p></li>
+</ul>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
+<p>Proceed to the <a class="reference internal" href="setup.html"><span class="doc">Setup</span></a> section for setup instructions.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

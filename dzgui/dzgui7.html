@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DZGUI documentation (6.x.x - 7.x.x) &mdash; DZGUI 6.x.x - 7.x.x documentation</title>
+  <title>Installation (DZGUI 7 beta) &mdash; DZGUI 6.x.x - 7.x.x documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -21,8 +21,7 @@
       <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="installation.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -33,7 +32,7 @@
 
           
           
-          <a href="#" class="icon icon-home">
+          <a href="index.html" class="icon icon-home">
             DZGUI
           </a>
 <div role="search">
@@ -44,8 +43,8 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">DZGUI documentation (6.x.x - 7.x.x)</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (6.x.x - 7.x.x)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Setup</span></p>
 <ul>
@@ -72,15 +71,15 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">DZGUI</a>
+          <a href="index.html">DZGUI</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">DZGUI documentation (6.x.x - 7.x.x)</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation (DZGUI 7 beta)</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -89,53 +88,42 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="dzgui-documentation-release">
-<h1>DZGUI documentation (6.x.x - 7.x.x)<a class="headerlink" href="#dzgui-documentation-release" title="Link to this heading"></a></h1>
-<p>Last update: 2026-06-03</p>
-<section id="what-this-is">
-<h2>What this is<a class="headerlink" href="#what-this-is" title="Link to this heading"></a></h2>
-<p>A DayZ server browser/mod manager for Linux. Used to list official and community server details and quick connect to preferred servers by staging mods and concatenating launch options automatically.</p>
-<p>Source code:</p>
+  <section id="installation-dzgui-7-beta">
+<h1>Installation (DZGUI 7 beta)<a class="headerlink" href="#installation-dzgui-7-beta" title="Link to this heading"></a></h1>
+<p>In order to make the first-time setup experience easier for end-users, DZGUI 7 no longer requires
+the tool to be installed from source code into a working Python environment. All necessary dependencies and the
+runtime environment are built-in.</p>
+<section id="turnkey-installer">
+<h2>Turnkey installer<a class="headerlink" href="#turnkey-installer" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.github.com/aclist/dztui">GitHub</a></p></li>
-<li><p><a class="reference external" href="https://codeberg.org/aclist/dztui">Codeberg (mirror)</a></p></li>
+<li><p>Visit the project’s <a class="reference external" href="https://github.com/aclist/dztui/releases">Releases page</a>.</p></li>
+<li><p>Extract the DZGUI tarball from the top of the <strong>Assets</strong> list.</p></li>
+<li><p>From a terminal, run the command <code class="docutils literal notranslate"><span class="pre">./dzgui</span></code> or double click on the extracted file in
+a file explorer.</p></li>
+<li><p>Once the setup wizard opens, follow the steps at the bottom of this page.</p></li>
 </ul>
 </section>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>Step 1: <a class="reference internal" href="installation.html"><span class="doc">Installation</span></a></p></li>
-<li><p>Step 2: <a class="reference internal" href="setup.html"><span class="doc">Setup</span></a></p></li>
-</ul>
+<section id="ui-dependencies-python-and-pygobject">
+<h2>UI dependencies (Python and PyGObject)<a class="headerlink" href="#ui-dependencies-python-and-pygobject" title="Link to this heading"></a></h2>
+<p>On most major distributions, GObject introspection libraries should be available by default.</p>
+<p>If you receive an error about a missing <code class="docutils literal notranslate"><span class="pre">libgirepository-2.0</span></code> dependency, install it via your system’s package manager.</p>
+<p>On Debian-based distributions (Ubuntu, etc.), this package is not explicitly installed on the system.
+You can install it via the following set of commands:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt update</span>
+<span class="go">sudo apt install libgirepository-2.0</span>
+</pre></div>
+</div>
 </section>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
-<p>See: <a class="reference internal" href="usage.html"><span class="doc">Usage</span></a>.</p>
-</section>
-<section id="uninstallation">
-<h2>Uninstallation<a class="headerlink" href="#uninstallation" title="Link to this heading"></a></h2>
-<p>See: <a class="reference internal" href="uninstallation.html"><span class="doc">Uninstallation</span></a>.</p>
-</section>
-<section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
-<p>See: <a class="reference internal" href="kb.html"><span class="doc">Knowledge Base</span></a> or <a class="reference internal" href="bugs.html#submitting-a-ticket"><span class="std std-ref">Submitting a ticket</span></a>.</p>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
+<p>Proceed to the <a class="reference internal" href="setup.html"><span class="doc">Setup</span></a> section for setup instructions.</p>
 </section>
 </section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
