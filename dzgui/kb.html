@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Knowledge Base &mdash; DZGUI 6.x.x documentation</title>
+  <title>Knowledge Base &mdash; DZGUI 6.x.x - 7.x.x documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -14,7 +14,7 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=d7958644"></script>
+      <script src="_static/documentation_options.js?v=cb033ade"></script>
       <script src="_static/doctools.js?v=fd6eb6e6"></script>
       <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -46,7 +46,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (6.x.x)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (6.x.x - 7.x.x)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Setup</span></p>
 <ul>
@@ -63,7 +63,7 @@
 <p class="caption" role="heading"><span class="caption-text">Help</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Knowledge Base</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#dzg-001-periodically-getting-dropped-from-servers-or-servers-appear-unreachable">DZG-001: Periodically getting dropped from servers, or servers appear unreachable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dzg-001-periodically-getting-dropped-from-servers-or-servers-time-out-in-dzgui">DZG-001: Periodically getting dropped from servers, or servers time out in DZGUI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dzg-002-some-servers-appear-locked-in-the-official-dayz-client-and-are-unreachable-in-dzgui">DZG-002: Some servers appear locked in the official DayZ client, and are unreachable in DZGUI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dzg-003-on-steam-deck-dayz-becomes-unresponsive-sluggish-over-time">DZG-003: On Steam Deck, DayZ becomes unresponsive/sluggish over time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dzg-004-on-steam-deck-some-mods-in-the-workshop-show-a-black-screen-when-dzgui-attempts-to-open-them">DZG-004: On Steam Deck, some mods in the Workshop show a black screen when DZGUI attempts to open them</a></li>
@@ -101,17 +101,23 @@
              
   <section id="knowledge-base">
 <h1>Knowledge Base<a class="headerlink" href="#knowledge-base" title="Link to this heading"></a></h1>
-<section id="dzg-001-periodically-getting-dropped-from-servers-or-servers-appear-unreachable">
-<span id="dzg-001"></span><h2>DZG-001: Periodically getting dropped from servers, or servers appear unreachable<a class="headerlink" href="#dzg-001-periodically-getting-dropped-from-servers-or-servers-appear-unreachable" title="Link to this heading"></a></h2>
-<p>It is a longstanding issue in DayZ that the game opens a large number of connections when querying servers and/or while connected to servers.
-This can result in excess traffic on the user’s PC which, depending on how much headroom your network has, can lead to getting dropped, unresponsiveness, or a timeout.</p>
-<p>If you are on Wi-Fi, try switching to a wired connection and see if the problem resolves itself. If it does, your wireless router settings do not have enough headroom for max simultaneous connections. Use a wired connection, or update your network settings to a more permissive setup.</p>
-<p>Bohemia has acknowledged this issue going back 10+ years and stated that DayZ has a heavy impact on the network, but there is as yet no proposed solution on the DayZ side.</p>
-<p>This issue is frequently seen on Steam Deck, due to the tendency for users to use it in an untethered Wi-Fi setup.</p>
+<section id="dzg-001-periodically-getting-dropped-from-servers-or-servers-time-out-in-dzgui">
+<span id="dzg-001"></span><h2>DZG-001: Periodically getting dropped from servers, or servers time out in DZGUI<a class="headerlink" href="#dzg-001-periodically-getting-dropped-from-servers-or-servers-time-out-in-dzgui" title="Link to this heading"></a></h2>
+<p>DayZ opens a large number of connections while querying/connected to servers.</p>
+<p>In addition, packets sent from server responses are expected to be a standard size (see warning below).</p>
+<p>If your network does not have enough headroom or has settings departing from defaults, this may lead to getting dropped from servers,
+unresponsiveness, or a timeout.</p>
+<p>If you are on Wi-Fi, try switching to a wired connection and see if the problem resolves itself. Consumer Wi-Fi routers
+tend to have less headroom than their wired counterparts.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Ensure that MTU (maximum tranmission unit) on your network is set to the standard size of 1,500 bytes.
+If your network preferences or router have “jumbo” frames enabled, packets may be dropped, causing server queries to time out.</p>
+</div>
 </section>
 <section id="dzg-002-some-servers-appear-locked-in-the-official-dayz-client-and-are-unreachable-in-dzgui">
 <span id="dzg-002"></span><h2>DZG-002: Some servers appear locked in the official DayZ client, and are unreachable in DZGUI<a class="headerlink" href="#dzg-002-some-servers-appear-locked-in-the-official-dayz-client-and-are-unreachable-in-dzgui" title="Link to this heading"></a></h2>
-<p>This is a variant of <a class="reference internal" href="#dzg-001"><span class="std std-ref">DZG-001: Periodically getting dropped from servers, or servers appear unreachable</span></a>.</p>
+<p>This is a variant of <a class="reference internal" href="#dzg-001"><span class="std std-ref">DZG-001: Periodically getting dropped from servers, or servers time out in DZGUI</span></a>.</p>
 </section>
 <section id="dzg-003-on-steam-deck-dayz-becomes-unresponsive-sluggish-over-time">
 <span id="dzg-003"></span><h2>DZG-003: On Steam Deck, DayZ becomes unresponsive/sluggish over time<a class="headerlink" href="#dzg-003-on-steam-deck-dayz-becomes-unresponsive-sluggish-over-time" title="Link to this heading"></a></h2>
