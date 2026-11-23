@@ -6,17 +6,17 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Setup &mdash; DZGUI 6.x.x - 7.x.x documentation</title>
+  <title>Setup &mdash; DZGUI 7.x.x documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=cb033ade"></script>
-      <script src="_static/doctools.js?v=fd6eb6e6"></script>
-      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/documentation_options.js?v=2ae5b902"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/js/theme.js"></script>
@@ -46,7 +46,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (6.x.x - 7.x.x)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (7.x.x)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Setup</span></p>
 <ul class="current">
@@ -56,6 +56,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#api-keys">API keys</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#steam-web-api-key">Steam Web API key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#battlemetrics-api-key">Battlemetrics API key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#choosing-a-steam-client">Choosing a Steam client</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#next-steps">Next steps</a></li>
@@ -66,8 +67,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Advanced usage</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="steam.html">Steam integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="locale.html">Locale support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flags.html">Command line launch flags</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Help</span></p>
 <ul>
@@ -113,9 +114,10 @@ Experimental for the latest version).</p>
 <section id="steam-web-api-key">
 <span id="steam-api"></span><h3>Steam Web API key<a class="headerlink" href="#steam-web-api-key" title="Link to this heading"></a></h3>
 <p><strong>This step is required</strong>.</p>
-<p>Register for a <a class="reference external" href="https://steamcommunity.com/dev/apikey">Steam Web API key</a> (free) using your Steam account. You will be asked for a unique URL for your app when registering.</p>
-<p>Since this key is for a personal use application and does not actually call back anywhere, set a generic local identifier here like “127.0.0.1” or some other name that is meaningful to you.</p>
-<p>Once configured, you can insert this key in the app when launching it for the first time.</p>
+<p>Register for a <a class="reference external" href="https://steamcommunity.com/dev/apikey">Steam Web API key</a> (free) using your Steam account.</p>
+<p>You will be asked for a unique URL for your app when registering. Typically, an API would send logs back to your URL in the form of callbacks.
+However, since these API queries will be used for local consumption by a single user only, you can set a generic local identifier here like <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> to have the server discard them.</p>
+<p>Once configured, you can insert this API key in the app when launching it for the first time.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are confused about this requirement, please refer to DZGUI Knowledge Base article <a class="reference internal" href="kb.html#dzg-007"><span class="std std-ref">DZG-007</span></a> for additional information.</p>
@@ -125,8 +127,17 @@ Experimental for the latest version).</p>
 <h3>Battlemetrics API key<a class="headerlink" href="#battlemetrics-api-key" title="Link to this heading"></a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This feature is no longer supported in DZGUI. Battlemetrics has switched to a paid service.
-Battlemetrics queries are expected to fail in DZGUI 6. In DZGUI 7, this feature has been removed entirely.</p>
+<p>This feature is no longer supported in DZGUI. Battlemetrics has switched to a paid service.</p>
+</div>
+</section>
+<section id="choosing-a-steam-client">
+<h3>Choosing a Steam client<a class="headerlink" href="#choosing-a-steam-client" title="Link to this heading"></a></h3>
+<p>If multiple Steam clients are available (native Steam client/Flatpak Steam client), you will be
+asked to choose which you want to use. Due to the way Steam’s inter-process communication and internal URIs work,
+if you choose one or the other, you should not run both clients simultaneously. This can lead DZGUI to send requests to the wrong one.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you decide to switch to using a different Steam client with DZGUI, please uninstall fully (<code class="docutils literal notranslate"><span class="pre">dzgui</span> <span class="pre">-u</span></code>) and re-run the first time setup.</p>
 </div>
 </section>
 </section>

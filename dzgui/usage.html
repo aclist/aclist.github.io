@@ -6,17 +6,17 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Usage &mdash; DZGUI 6.x.x - 7.x.x documentation</title>
+  <title>Usage &mdash; DZGUI 7.x.x documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=cb033ade"></script>
-      <script src="_static/doctools.js?v=fd6eb6e6"></script>
-      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/documentation_options.js?v=2ae5b902"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/js/theme.js"></script>
@@ -46,7 +46,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (6.x.x - 7.x.x)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (7.x.x)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Setup</span></p>
 <ul class="current">
@@ -62,8 +62,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Advanced usage</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="steam.html">Steam integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="locale.html">Locale support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flags.html">Command line launch flags</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Help</span></p>
 <ul>
@@ -101,20 +101,32 @@
 <p>DZGUI can be launched in one of three ways.</p>
 <section id="from-a-terminal">
 <h2>From a terminal<a class="headerlink" href="#from-a-terminal" title="Link to this heading"></a></h2>
-<p>Invoke the command <code class="docutils literal notranslate"><span class="pre">./dzgui.sh</span></code> from wherever you downloaded the DZGUI script to.</p>
+<p>Invoke the command <code class="docutils literal notranslate"><span class="pre">./dzgui</span></code> from wherever you downloaded DZGUI to.</p>
 <p>Launching from a terminal may give more verbose information in the event of a crash, and can be a good way of troubleshooting problems.</p>
 </section>
 <section id="from-the-shortcut-shipped-with-the-application">
 <h2>From the shortcut shipped with the application<a class="headerlink" href="#from-the-shortcut-shipped-with-the-application" title="Link to this heading"></a></h2>
-<p>On most distributions, if you are using a desktop environment based on the Freedesktop specification, shortcuts will be installed for you.</p>
+<p>When completing the first-time setup, you will be asked if you want to create additional system shortcuts.
+If applicable for yourDesktop Environment, these shortcuts can be created.</p>
 <ul class="simple">
-<li><p>One shortcut is located under the <code class="docutils literal notranslate"><span class="pre">Games</span></code> category of your system’s applications list/start menu.</p></li>
-<li><p>The other is accessed via the <code class="docutils literal notranslate"><span class="pre">DZGUI</span></code> desktop icon (Steam Deck only)</p></li>
+<li><p>One shortcut will be located under the <code class="docutils literal notranslate"><span class="pre">Games</span></code> category of your system’s applications list/start menu.</p></li>
+<li><p>The other is accessed via the <code class="docutils literal notranslate"><span class="pre">DZGUI</span></code> shortcut on the desktop</p></li>
 </ul>
 </section>
 <section id="from-steam">
 <h2>From Steam<a class="headerlink" href="#from-steam" title="Link to this heading"></a></h2>
-<p>See <a class="reference internal" href="steam.html"><span class="doc">Steam integration</span></a>.</p>
+<p>DZGUI will also ask you if you want to add a “non-Steam game” shortcut to Steam.
+This shortcut will launch DZGUI directly and comes with integrated grid and cover artwork.
+You must restart Steam for this shortcut to take effect in your library.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Steam shortcut integration is not supported on the Snap package version of steam
+due to its containerized nature. Snap users should run DZGUI directly from the system.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also pass DZGUI launch parameter’s to the Steam shortcut via Steam’s right-click menu. See <a class="reference internal" href="flags.html"><span class="doc">Command line launch flags</span></a>.</p>
+</div>
 </section>
 </section>
 

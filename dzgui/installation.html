@@ -6,24 +6,24 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; DZGUI 6.x.x - 7.x.x documentation</title>
+  <title>Installation &mdash; DZGUI 7.x.x documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=cb033ade"></script>
-      <script src="_static/doctools.js?v=fd6eb6e6"></script>
-      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/documentation_options.js?v=2ae5b902"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Setup" href="setup.html" />
-    <link rel="prev" title="DZGUI documentation (6.x.x - 7.x.x)" href="index.html" /> 
+    <link rel="prev" title="DZGUI documentation (7.x.x)" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,13 +46,14 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (6.x.x - 7.x.x)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">DZGUI documentation (7.x.x)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Setup</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#dzgui-6">DZGUI 6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dzgui-7">DZGUI 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#turnkey-installer">Turnkey installer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ui-dependencies-python-and-pygobject">UI dependencies (Python and PyGObject)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next steps</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
@@ -61,8 +62,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Advanced usage</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="steam.html">Steam integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="locale.html">Locale support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flags.html">Command line launch flags</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Help</span></p>
 <ul>
@@ -96,25 +97,38 @@
              
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
-<p>As of this writing, you have a choice of two DZGUI versions:</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Version 6 of DZGUI 6 has been fully replaced with DZGUI 7.
+Users on existing DZGUI 6 installations should migrate to the DZGUI 7 build.</p>
+</div>
+<p>In order to make the first-time setup experience easier for end-users, DZGUI 7 no longer requires
+the tool to be installed from source code into a working Python environment. All necessary dependencies and the
+runtime environment are built-in.</p>
+<section id="turnkey-installer">
+<h2>Turnkey installer<a class="headerlink" href="#turnkey-installer" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>DZGUI 6: Legacy stable version, more complicated to install</p></li>
-<li><p>DZGUI 7: Unstable beta version, much easier to install</p></li>
+<li><p>Visit the project’s <a class="reference external" href="https://github.com/aclist/dzgui/releases/latest">Releases page</a>.</p></li>
+<li><p>Download the DZGUI archive from the top of the <strong>Assets</strong> list. This file will be labeled <code class="docutils literal notranslate"><span class="pre">dzgui-&lt;VERSION&gt;-x86_64-unknown-linux-musl.tar.gz</span></code>.</p></li>
+<li><p>Extract the archive’s contents.</p></li>
+<li><p>From a terminal, run the command <code class="docutils literal notranslate"><span class="pre">./dzgui</span></code> or double click on the extracted file in a file explorer.</p></li>
+<li><p>Once the setup wizard opens, follow the steps at the bottom of this page.</p></li>
 </ul>
-<section id="dzgui-6">
-<h2>DZGUI 6<a class="headerlink" href="#dzgui-6" title="Link to this heading"></a></h2>
-<p>This version is no longer receiving feature updates, but will receive security updates until it is replaced by DZGUI 7.</p>
-<p>DZGUI 6 must be installed from the source code and has many more package dependencies and prerequisites for it to function correctly.
-If you are looking for a one-click, self-contained installer, use <a class="reference internal" href="#dzgui-7"><span class="std std-ref">DZGUI 7</span></a> instead.</p>
-<p>To install <strong>DZGUI 6</strong>, visit <a class="reference internal" href="dzgui6.html"><span class="doc">Installation (DZGUI 6 legacy)</span></a>.</p>
 </section>
-<section id="dzgui-7">
-<h2>DZGUI 7<a class="headerlink" href="#dzgui-7" title="Link to this heading"></a></h2>
-<p>This version is currently in beta testing and has all of the features found in DZGUI 6, but may be unstable.</p>
-<p>DZGUI 7 has an all-in-one installer and setup wizard, and many new features not found in DZGUI 6.
-However, this codebase is newer and is provided as a pre-release beta candidate.</p>
-<p>If you want the simplest installer and don’t mind experiencing the occasional bug, use this version.</p>
-<p>To install <strong>DZGUI 7</strong>, visit <a class="reference internal" href="dzgui7.html"><span class="doc">Installation (DZGUI 7 beta)</span></a>.</p>
+<section id="ui-dependencies-python-and-pygobject">
+<h2>UI dependencies (Python and PyGObject)<a class="headerlink" href="#ui-dependencies-python-and-pygobject" title="Link to this heading"></a></h2>
+<p>On most major distributions, GObject introspection libraries should be available by default.</p>
+<p>If you receive an error about a missing <code class="docutils literal notranslate"><span class="pre">libgirepository-2.0</span></code> dependency, install it via your system’s package manager.</p>
+<p>On Debian-based distributions (Ubuntu, etc.), this package is not explicitly installed on the system.
+You can install it via the following set of commands:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo apt update</span>
+<span class="go">sudo apt install libgirepository-2.0-0</span>
+</pre></div>
+</div>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
+<p>Proceed to the <a class="reference internal" href="setup.html"><span class="doc">Setup</span></a> section for setup instructions.</p>
 </section>
 </section>
 
@@ -122,7 +136,7 @@ However, this codebase is newer and is provided as a pre-release beta candidate.
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="DZGUI documentation (6.x.x - 7.x.x)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="DZGUI documentation (7.x.x)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="setup.html" class="btn btn-neutral float-right" title="Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
